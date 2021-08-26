@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('marketplace.dashboard');
 });
+
+Route::get('/home', function () {
+    return view('marketplace.home');
+});
