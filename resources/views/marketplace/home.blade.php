@@ -124,6 +124,14 @@
         @media only screen and (max-width: 300px) {
           .prev, .next,.text {font-size: 11px}
         }
+
+        @media (max-width:700px)
+        {
+          #headerdua {
+            display: none;
+          }
+        }
+
         </style>
 
 
@@ -183,14 +191,14 @@
                 <!-- Search history -->
                 <div class="header__search-history">
                   <h3 class="header__search-history-heading">
-                    Lịch sử tìm kiếm
+                    Pencarian 1 
                   </h3>
                   <ul class="header__search-history-list">
                     <li class="header__search-history-item">
-                      <a href="">Ăn đầu buồi</a>
+                      <a href="">Pencarian 1 </a>
                     </li>
                     <li class="header__search-history-item">
-                      <a href="">Ăn cứt</a>
+                      <a href="">Pencarian 1 </a>
                     </li>
                   </ul>
                 </div>
@@ -237,7 +245,7 @@
                           </h5>
                           <div class="header__cart-item-price-wrap">
                             <span class="header__cart-item-price"
-                              >2.000.000đ</span
+                              >Rp. 2.000.000</span
                             >
                             <span class="header__cart-item-multiply">x</span>
                             <span class="header__cart-item-qnt">2</span>
@@ -349,7 +357,7 @@
                             <div class="mySlides fade">
                               <div class="numbertext">1 / 3</div>
                               <img src="{{asset('marketplace/produk-3.png')}}" alt="" style = "width:100%;" class = "gambar-slide">
-                              <div class="text">Caption Text</div>
+                              <div class="text"> <b>Inilah Tawaran Kami</b> </div>
                             </div>
                             
                             <div class="mySlides fade">
@@ -388,40 +396,40 @@
               <nav class="mobile-category">
                 <ul class="mobile-category__list">
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                 </ul>
               </nav>
@@ -432,7 +440,7 @@
 
 
  <br> <br>
-              <header class="header" style = "background-color: #972A29;">
+              <header class="header" style = "background-color: #972A29;" id = "headerdua">
                 <div class="grid wide">
                   <nav class="header__navbar hide-on-mobile-tablet">
                  
@@ -508,7 +516,7 @@
                                   </h5>
                                   <div class="header__cart-item-price-wrap">
                                     <span class="header__cart-item-price"
-                                      >2.000.000đ</span
+                                      >Rp. 2.000.000</span
                                     >
                                     <span class="header__cart-item-multiply">x</span>
                                     <span class="header__cart-item-qnt">2</span>
@@ -589,7 +597,7 @@
                                   </h5>
                                   <div class="header__cart-item-price-wrap">
                                     <span class="header__cart-item-price"
-                                      >2.000.000đ</span
+                                      >Rp. 2.000.000</span
                                     >
                                     <span class="header__cart-item-multiply">x</span>
                                     <span class="header__cart-item-qnt">2</span>
@@ -666,7 +674,7 @@
                           >
                         </div>
                       </div>
-                      <br>
+                      <br> <br>
                       <span> <b> <a href="" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
                       </span>
                     </div>
@@ -717,15 +725,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -754,24 +761,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -783,15 +790,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -820,24 +826,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -849,15 +855,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -886,24 +891,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -915,15 +920,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -952,24 +956,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -981,15 +985,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -1018,24 +1021,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -1047,15 +1050,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -1084,24 +1086,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -1113,15 +1115,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -1150,24 +1151,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -1179,15 +1180,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -1216,24 +1216,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -1245,15 +1245,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -1282,24 +1281,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -1311,15 +1310,14 @@
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Bộ kem đặc trị vùng mắt Ohui Age Recovery Wrinkle Cut
-                        Serum.
+                        Baju Kemeja A4
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >2.300.000đ</span
+                          >Rp. 2.300.000</span
                         >
                         <span class="home-product-item__price-current"
-                          >2.070.000đ</span
+                          >Rp. 2.070.000</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -1348,24 +1346,24 @@
                           ></i>
                           <i class="fas fa-star"></i>
                         </div>
-                        <div class="home-product-item__sold">88 Đã bán</div>
+                        <div class="home-product-item__sold">Rating Pelanggan</div>
                       </div>
                       <div class="home-product-item__origin">
                         <span class="home-product-item__brand">Whoo</span>
                         <span class="home-product-item__origin-name"
-                          >Hàn Quắc</span
+                          >2000 Terjual</span
                         >
                       </div>
                       <div class="home-product-item__favourite">
                         <i class="fas fa-check "></i>
-                        <span>Yêu thích</span>
+                        <span>Terbatas</span>
                       </div>
                       <div class="home-product-item__sale-off">
                         <span class="home-product-item__sale-off-percent"
                           >43%</span
                         >
                         <span class="home-product-item__sale-off-label"
-                          >GIẢM</span
+                          >OFF</span
                         >
                       </div>
                     </a>
@@ -1413,9 +1411,10 @@
       <footer class="footer">
         <div class="grid wide footer__content">
           <div class="row">
-            <div class="col l-2-4 m-4 c-6">
-              <h3 class="footer__heading">CHĂM SÓC KHÁCH HÀNG</h3>
-              <ul class="footer-list">
+            <div class="col l-4-8 m-4 c-8">
+              <h3 class="footer__heading">LOCUMART PRESENT</h3>
+
+              {{-- <ul class="footer-list">
                 <li class="footer-item">
                   <a href="#" class="footer-item__link">Trung Tâm Trợ Giúp</a>
                 </li>
@@ -1427,38 +1426,26 @@
                     >Chính Sách Vận Chuyển</a
                   >
                 </li>
-              </ul>
+              </ul> --}}
+
+            </div>
+
+            {{-- <div class="col l-2-4 m-4 c-6">
+      
             </div>
             <div class="col l-2-4 m-4 c-6">
-              <h3 class="footer__heading">VỀ CHÚNG TÔI</h3>
-              <ul class="footer-list">
-                <li class="footer-item">
-                  <a href="#" class="footer-item__link">Giới Thiệu Về Shop</a>
-                </li>
-                <li class="footer-item">
-                  <a href="#" class="footer-item__link">Tuyển Dụng</a>
-                </li>
-                <li class="footer-item">
-                  <a href="#" class="footer-item__link">Điều Khoản Shop</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col l-2-4 m-4 c-6">
-              <h3 class="footer__heading">DANH MỤC</h3>
-              <ul class="footer-list">
-                <li class="footer-item">
-                  <a href="#" class="footer-item__link">Cứt</a>
-                </li>
-                <li class="footer-item">
-                  <a href="#" class="footer-item__link">Đầu buồi</a>
-                </li>
-                <li class="footer-item">
-                  <a href="#" class="footer-item__link">ôn lằn</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col l-2-4 m-4 c-6">
-              <h3 class="footer__heading">THEO DÕI CHÚNG TÔI TRÊN</h3>
+        
+            </div>--}}
+            <div class="col l-4-8 m-4 c-8">
+              <h3 class="footer__heading">Tentang Kami</h3>
+
+              <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span>
+
+            </div> 
+
+
+            <div class="col l-4-8 m-4 c-8">
+              <h3 class="footer__heading">Sosial Media Kami</h3>
               <ul class="footer-list">
                 <li class="footer-item">
                   <a href="#" class="footer-item__link">
@@ -1479,40 +1466,17 @@
                   >
                 </li>
               </ul>
+
+
             </div>
-            <div class="col l-2-4 m-8 c-12">
-              <h3 class="footer__heading">VÀO CỬA HÀNG TRÊN ỨNG DỤNG</h3>
-              <div class="footer__download">
-                <img
-                  src="{{asset('shopeeclone/assets/img/qr_code.png')}}"
-                  alt="Download QR"
-                  class="footer__dowload-qr"
-                />
-                <div class="footer__download-apps">
-                  <a href="#" class="footer__download-app-link">
-                    <img
-                      src="{{asset('shopeeclone/assets/img/google_play.png')}}"
-                      alt="Google Play"
-                      class="footer__download-app-img"
-                    />
-                  </a>
-                  <a href="#" class="footer__download-app-link">
-                    <img
-                      src="{{asset('shopeeclone/assets/img/appstore.png')}}"
-                      alt="App store"
-                      class="footer__download-app-img"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
+
+
           </div>
         </div>
-        <div class="footer__bottom">
+        <div class="footer__bottom" style = "background-color:#972A29;">
           <div class="grid wide">
-            <p class="footer__text">
-              © 2020 Huấn Hoa Hồng - Không làm mà đòi có ăn chỉ có ăn đầu bùi ăn
-              cứt
+            <p class="footer__text" style = "color:white;">
+            <b>© 2021 Locumart PRESENT</b>  
             </p>
           </div>
         </div>

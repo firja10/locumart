@@ -1512,13 +1512,15 @@ i.home-product-item__like-icon-fill {
 .footer {
   padding-top: 20px;
   border-top: 4px solid var(--primary-color);
-  background-color: var(--white-color);
+  /* background-color: var(--white-color); */
+  background-color: #3a5a98;
 }
 
 .footer__heading {
   font-size: 1.4rem;
   text-transform: uppercase;
-  color: var(--text-color);
+  /* color: var(--text-color); */
+  color:#ffff;
 }
 .footer-list {
   padding-left: 0;
@@ -1528,7 +1530,8 @@ i.home-product-item__like-icon-fill {
 .footer-item__link {
   text-decoration: none;
   font-size: 1.2rem;
-  color: #737373;
+  /* color: #737373; */
+  color: #ffff;
   padding: 5px 0;
   display: flex;
   align-items: center;
@@ -1576,5 +1579,6 @@ i.home-product-item__like-icon-fill {
   margin: 0;
   font-size: 1.4rem;
   text-align: center;
-  color: #737373;
+  /* color: #737373; */
+  color: #ffff;
 }
