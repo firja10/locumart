@@ -24,3 +24,19 @@ Route::get('/dashboard', function () {
 Route::get('/home', function () {
     return view('marketplace.home');
 });
+
+Route::get('/tentang-locumart/deskripsi', function () {
+    return view('tentang-locumart/deskripsi');
+});
+
+Route::get('/tentang-locumart/nilai-unggul', function () {
+    return view('tentang-locumart/nilai-unggul');
+});
+
+Route::get('/tentang-locumart/media-locu', function () {
+    return view('tentang-locumart/media-locu');
+});
+
+Route::get('/tentang-locumart/partnership', function () {
+    return view('tentang-locumart/partnership');
+});

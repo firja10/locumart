@@ -166,7 +166,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #47b2e4;
+  /* color: #47b2e4; */
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-left: 10px;
+  padding-right: 10px;
+  color:#424242;
+  border-radius:5px;
 }
 
 .nav-menu .drop-down ul {
@@ -379,6 +384,24 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Hero Section

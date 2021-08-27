@@ -693,9 +693,20 @@ ol, li {
 }
 
 .header__logo-img {
-  width: 120px;
+  /* width: 120px; */
+  width: 50%;
   color: var(--white-color);
 }
+
+@media (max-width:700px) {
+  
+  .header__logo-img {
+    width: 10%;
+    color: var(--white-color);
+  }
+}
+
+
 
 /* Header search */
 .header__search {

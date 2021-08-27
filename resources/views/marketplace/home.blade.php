@@ -125,7 +125,7 @@
           .prev, .next,.text {font-size: 11px}
         }
 
-        @media (max-width:700px)
+        @media (max-width:1000px)
         {
           #headerdua {
             display: none;
@@ -1413,7 +1413,7 @@
           <div class="row">
             <div class="col l-4-8 m-4 c-8">
               <h3 class="footer__heading">LOCUMART PRESENT</h3>
-
+              <span class="footer__text">Memberi Pelayanan Terbaik untuk Kita Semua</span>
               {{-- <ul class="footer-list">
                 <li class="footer-item">
                   <a href="#" class="footer-item__link">Trung Tâm Trợ Giúp</a>
