@@ -12,13 +12,17 @@ background-size:cover; margin-top:-5%;">
 <div class="container">
     <div class="row" style = "margin-top:200px;">
 
-        <div class="col-xl-4 col-md-8 align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+
+
+        <div class="col-xl-4 col-md-8 align-items-stretch " data-aos="zoom-in" data-aos-delay="100">
             <center>
-                    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                        <div class="card-header"> <a href="">Klik Di sini</a> </div>
-                        <div class="card-body">
-                          <h5 class="card-title">Success card title</h5>
-                          <p class="card-text">Quick sample text to create the card title and make up the body of the card's content.</p>
+                    <div class="card text-white mb-3 " style="max-width: 18rem;background: rgba(255,255,255,0.5);">
+                        <div class="card-header" style = "text-align:left; color:#424242;" > <a href="" style = "color:#424242;">Klik Di sini</a> </div>
+                        <div class="card-body" style="background-color: #155059;">
+                            <h5 class="card-title">
+                            <img src="{{asset('/mitra-locumart/mulai-jualan.png')}}" alt="" style = "width:250px;">
+                            </h5>
+
                         </div>
                       </div>
             </center>
@@ -26,13 +30,49 @@ background-size:cover; margin-top:-5%;">
         </div>
 
 
+
+
+
+
+
+
+
+
+        <div class="col-xl-4 col-md-8 align-items-stretch " data-aos="zoom-in" data-aos-delay="100">
+            <center>
+                    <div class="card text-white mb-3 " style="max-width: 18rem;background: rgba(255,255,255,0.5);">
+                        <div class="card-header" style = "text-align:left; color:#424242;" > <a href="" style = "color:#424242;">Klik Di sini</a> </div>
+                        <div class="card-body" style="background-color: #155059;">
+                            <h5 class="card-title">
+                            <img src="{{asset('/mitra-locumart/mulai-jualan.png')}}" alt="" style = "width:250px;">
+                            </h5>
+
+                        </div>
+                      </div>
+            </center>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         <div class="col-xl-4 col-md-8 align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <center>
-                    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                        <div class="card-header"> <a href="">Klik Di sini</a> </div>
-                        <div class="card-body">
+                    <div class="card text-white mb-3" style="max-width: 18rem;background: rgba(255,255,255,0.5);">
+                        <div class="card-header" style = "text-align:left; color:#424242;" > <a href="" style = "color:#424242;">Klik Di sini</a> </div>
+                        <div class="card-body" style="background-color: #545454;">
                             <h5 class="card-title">
-                            <img src="{{asset('/mitra-locumart/mula-jualan.png')}}" alt="" style = "width:250px;">
+                            <img src="{{asset('/mitra-locumart/ngembangin-bisnis-mulai.png')}}" alt="" style = "width:250px;">
                             </h5>
 
                         </div>
@@ -50,6 +90,39 @@ background-size:cover; margin-top:-5%;">
 
 
 </section>
+
+
+
+<section id="home_dua" style = "background:url('/mitra-locumart/home-2_1.png'); background-size:cover; height:100vh; margin-top:-2%; ">
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+
+        </div>
+        <div class="col-6">
+            <center>
+                <img src="{{asset('/mitra-locumart/kanan-home-2.png')}}" alt="" style = "width:300px; margin-top:50px;">
+                <br>
+                {{-- <div style = "border:5px solid white;" ></div> --}}
+                <hr style = "border:5px solid white; border-radius:30px; " class = "mt-4">
+            </center>
+                <p style = "text-align: justify; color:#ffff;">
+                    Selain berkomitmen melestarikan kekayaan produk bernilai budaya nusantara, Loku juga berkomitmen untuk memberdayakan para pelaku UMKM yang menjual produk bernilai budaya nusantara hingga menciptakan keunggulan kompetitif pada usaha bisnisnya melalui fitur business upgrading dan atau crowdfunding yang dapat digunakan oleh mitra usaha Loku menyesuaikan dengan kebutuhan usaha bisnisnya.
+                </p>
+
+            
+        </div>
+    </div>
+</div>
+
+
+</section>
+
+
+
+
+
+
 
 
 @endsection

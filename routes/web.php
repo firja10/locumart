@@ -52,3 +52,11 @@ Route::get('/mitra-locumart/mulai-berjualan', function () {
 Route::get('/mitra-locumart/business-upgrading', function () {
     return view('mitra-locumart/business-upgrading');
 });
+
+Route::get('/mitra-locumart/crowdfunding', function () {
+    return view('mitra-locumart/crowdfunding');
+});
+
+Route::get('/mitra-locumart/survey', function () {
+    return view('mitra-locumart/survey');
+});
