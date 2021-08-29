@@ -50,7 +50,7 @@
           <li><a href="{{url('/mitra-locumart/business-upgrading')}}">Business Upgrading</a></li>
           <li><a href="{{url('/mitra-locumart/crowdfunding')}}">Crowdfunding</a></li>
           <li><a href="{{url('/mitra-locumart/survey')}}">Survey</a></li>
-          <li style = "display: inline-flex"><a href="#contact">Masuk</a> <a href="">&nbsp; | &nbsp;</a>  <a href="">Daftar</a> </li>
+          <li style = "display: inline-flex"><a href="{{url('/login')}}">Masuk</a> <a href="">&nbsp; | &nbsp;</a>  <a href="{{url('/register')}}">Daftar</a> </li>
           {{-- <li style = "display: inline-flex"><a href="#contact">Masuk</a> <a href="">&nbsp; | &nbsp;</a>  <a href="">Daftar</a> </li> --}}
 
         </ul>
@@ -79,10 +79,10 @@
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3 style = "color:white;">Locumart</h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-            United States <br><br>
+            <p style = "color:#fff;" >
+              Berusaha Memberikan <br>
+              yang terbaik<br>
+            {{-- United States <br><br> --}}
 
             </p>
           </div>
@@ -97,7 +97,7 @@
 
         <div class="col-lg-3 col-md-6 footer-links">
             <center>
-            <h4>Our Social Networks</h4>
+            <h4 style = "color:#fff;" >Sosial Media Kami</h4>
 
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

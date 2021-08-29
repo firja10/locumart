@@ -66,3 +66,11 @@ Route::get('/mitra-locumart/crowdfunding', function () {
 Route::get('/mitra-locumart/survey', function () {
     return view('mitra-locumart/survey');
 });
+
+Route::get('/login', function () {
+    return view('pages/auth/login');
+});
+
+Route::get('/register', function () {
+    return view('pages/auth/register');
+});
