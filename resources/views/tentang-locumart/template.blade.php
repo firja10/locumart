@@ -40,16 +40,16 @@
   <header id="header" class="fixed-top "  style = "background-color:#337A42;" >
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Tentang Locu</a></h1>
+      <h1 class="logo mr-auto"><a href="{{url('/tentang-locumart/deskripsi')}}">Tentang Locu</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li><a href="index.html">Deskripsi Locumart</a></li>
-          <li><a href="#about">Nilai Unggul</a></li>
-          <li><a href="#about">Media Locumart</a></li>
-          <li><a href="#about">Partnership</a></li>
+          <li><a href="{{url('/tentang-locumart/deskripsi')}}">Deskripsi Locumart</a></li>
+          <li><a href="{{url('/tentang-locumart/nilai-unggul')}}">Nilai Unggul</a></li>
+          <li><a href="{{url('/tentang-locumart/media-locu')}}">Media Locumart</a></li>
+          <li><a href="{{url('/tentang-locumart/partnership')}}">Partnership</a></li>
           {{-- <li style = "display: inline-flex"><a href="#contact">Masuk</a> <a href="">&nbsp; | &nbsp;</a>  <a href="">Daftar</a> </li> --}}
 
         </ul>

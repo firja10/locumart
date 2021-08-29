@@ -40,16 +40,16 @@
   <header id="header" class="fixed-top "  style = "background-color:#BC1823;" >
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Mitra Locu</a></h1>
+      <h1 class="logo mr-auto"><a href="{{url('/mitra-locumart/home')}}">Mitra Locu</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li><a href="index.html">Mulai Berjualan</a></li>
-          <li><a href="#about">Business Upgrading</a></li>
-          <li><a href="#about">Crowdfunding</a></li>
-          <li><a href="#about">Survey</a></li>
+          <li><a href="{{url('/mitra-locumart/mulai-berjualan')}}">Mulai Berjualan</a></li>
+          <li><a href="{{url('/mitra-locumart/business-upgrading')}}">Business Upgrading</a></li>
+          <li><a href="{{url('/mitra-locumart/crowdfunding')}}">Crowdfunding</a></li>
+          <li><a href="{{url('/mitra-locumart/survey')}}">Survey</a></li>
           <li style = "display: inline-flex"><a href="#contact">Masuk</a> <a href="">&nbsp; | &nbsp;</a>  <a href="">Daftar</a> </li>
           {{-- <li style = "display: inline-flex"><a href="#contact">Masuk</a> <a href="">&nbsp; | &nbsp;</a>  <a href="">Daftar</a> </li> --}}
 
@@ -82,7 +82,7 @@
             <p>
               A108 Adam Street <br>
               New York, NY 535022<br>
-              United States <br><br>
+            United States <br><br>
 
             </p>
           </div>

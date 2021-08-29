@@ -42,9 +42,9 @@ background-size:cover; margin-top:-5%;">
             <center>
                     <div class="card text-white mb-3 " style="max-width: 18rem;background: rgba(255,255,255,0.5);">
                         <div class="card-header" style = "text-align:left; color:#424242;" > <a href="" style = "color:#424242;">Klik Di sini</a> </div>
-                        <div class="card-body" style="background-color: #155059;">
+                        <div class="card-body" style="background-color: #CF9E49;">
                             <h5 class="card-title">
-                            <img src="{{asset('/mitra-locumart/mulai-jualan.png')}}" alt="" style = "width:250px;">
+                            <img src="{{asset('/mitra-locumart/ngembangin.png')}}" alt="" style = "width:250px;">
                             </h5>
 
                         </div>
@@ -70,9 +70,9 @@ background-size:cover; margin-top:-5%;">
             <center>
                     <div class="card text-white mb-3" style="max-width: 18rem;background: rgba(255,255,255,0.5);">
                         <div class="card-header" style = "text-align:left; color:#424242;" > <a href="" style = "color:#424242;">Klik Di sini</a> </div>
-                        <div class="card-body" style="background-color: #545454;">
+                        <div class="card-body" style="background-color: #337A42;">
                             <h5 class="card-title">
-                            <img src="{{asset('/mitra-locumart/ngembangin-bisnis-mulai.png')}}" alt="" style = "width:250px;">
+                            <img src="{{asset('/mitra-locumart/cari-modal.png')}}" alt="" style = "width:250px;">
                             </h5>
 
                         </div>
