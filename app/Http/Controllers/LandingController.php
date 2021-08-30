@@ -7,4 +7,10 @@ use Illuminate\Http\Request;
 class LandingController extends Controller
 {
     //
+    public function home()
+    {
+        # code...
+        return view('marketplace.home');
+
+    }
 }

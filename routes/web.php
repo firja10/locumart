@@ -3,6 +3,7 @@
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\LandingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,13 +30,18 @@ Route::get('/dashboard', function () {
     return view('marketplace.dashboard');
 });
 
-Route::get('/', function () {
-    return view('marketplace.home');
-});
+// Route::get('/', function () {
+//     return view('marketplace.home');
+// });
 
-Route::get('/home', function () {
-    return view('marketplace.home');
-});
+// Route::get('/home', function () {
+//     return view('marketplace.home');
+// });
+
+Route::get('/home',[LandingController::class,'home'])->name('home');
+
+Route::get('/',[LandingController::class,'home'])->name('home');
+
 
 Route::get('/tentang-locumart/deskripsi', function () {
     return view('tentang-locumart/deskripsi');

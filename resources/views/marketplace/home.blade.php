@@ -327,8 +327,9 @@
 
 
             @if(Auth::check())
-            <span> <b>{{Auth::user()->name}}</b></span>   
-            <a href="{{ route('logout') }}" id = "keluar"  onclick="event.preventDefault();
+            <span style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> <b>{{Auth::user()->name}}</b></span>   
+           
+           <a style = "color:white;font-size:15px; margin-left:5px; text-decoration:none;"  href="{{ route('logout') }}" id = "keluar"  onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">Logout</a>
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -336,7 +337,7 @@
 </form>
 
             @else
-            <span> <b> <a href="" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
+            <span> <b> <a href="{{url('/login')}}" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="{{url('/register')}}" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
             </span>       
             @endif
           </div>
@@ -685,7 +686,7 @@
                         </div>
                       </div>
                       <br> <br>
-                      <span> <b> <a href="" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
+                      <span> <b> <a href="{{url('/login')}}" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="{{url('/login')}}" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
                       </span>
                     </div>
         
