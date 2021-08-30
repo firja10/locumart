@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,14 +19,18 @@ use Illuminate\Support\Facades\Auth;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('marketplace.dashboard');
-});
+// Route::get('/', function () {
+//     return view('marketplace.dashboard');
+// });
 
 
 
 Route::get('/dashboard', function () {
     return view('marketplace.dashboard');
+});
+
+Route::get('/', function () {
+    return view('marketplace.home');
 });
 
 Route::get('/home', function () {
@@ -78,4 +83,8 @@ Route::get('/register', function () {
 
 Auth::routes();
 
-Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//HALAMAN ADMIN
+// Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
