@@ -16,6 +16,7 @@ class CreateTokosTable extends Migration
         Schema::create('tokos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_toko')->nullable();
+            $table->string('deskripsi_toko')->nullable();
             $table->string('gambar_toko')->nullable();
             $table->longText('lokasi_toko')->nullable();
             $table->longText('nomor_hp_toko')->nullable();

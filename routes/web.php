@@ -4,7 +4,8 @@ use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LandingController;
-
+use App\Http\Controllers\TokoController;
+use App\Http\Controllers\ProdukController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +41,19 @@ Route::get('/dashboard', function () {
 
 Route::get('/home',[LandingController::class,'home'])->name('home');
 
-Route::get('/',[LandingController::class,'home'])->name('home');
+Route::get('/',[LandingController::class,'landing'])->name('landing');
+Route::get('/pemilik/riwayat-toko',[LandingController::class,'daftartokouser'])->name('daftartokouser')->middleware('auth');
+
+
+// Halaman Pemilik 
+
+Route::resource('/pemilik/daftar-toko', TokoController::class)->middleware('auth');
+Route::resource('/pemilik/daftar-produk', ProdukController::class)->middleware('auth');
+Route::get('/pemilik/riwayat-toko',[LandingController::class,'daftartokouser'])->name('daftartokouser')->middleware('auth');
+Route::get('/pemilik/riwayat-produk/{id}',[LandingController::class,'daftarproduktoko'])->name('daftarproduktoko')->middleware('auth');
+
+
+
 
 
 Route::get('/tentang-locumart/deskripsi', function () {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Toko;
 
 class ProdukController extends Controller
 {
@@ -17,7 +18,7 @@ class ProdukController extends Controller
     {
         //
         $produk = Produk::all();
-        return view('pemilik-toko.produk');
+        return view('marketplace.pemilik.daftar-produk', compact('produk'));
     }
 
     /**
@@ -28,8 +29,7 @@ class ProdukController extends Controller
     public function create()
     {
         //
-        $produk = Produk::all();
-        return view('pemilik-toko.produk');
+        return view('marketplace.pemilik.daftar-produk');
     }
 
     /**
@@ -75,9 +75,12 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function show(Produk $produk)
+    public function show(Produk $produk, $id)
     {
         //
+        $produk = Produk::findOrFail($id);
+        return view('marketplace.pemilik.edit-produk', compact('produk'));
+
     }
 
     /**
@@ -86,9 +89,11 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produk $produk)
+    public function edit(Produk $produk, $id)
     {
         //
+        $produk = Produk::findOrFail($id);
+        return view('marketplace.pemilik.edit-produk', compact('produk'));
     }
 
     /**
@@ -98,9 +103,33 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produk $produk)
+    public function update(Request $request, Produk $produk, $id)
     {
         //
+
+        if($request->hasFile('gambar_produk')){
+            $filename = $request["gambar_produk"]->getClientOriginalName();
+
+            if( Produk::find($id)->gambar_produk ){
+                Storage::delete('/public/storage/Toko/'.Produk::find($id)->gambar_produk);
+            }
+            $request["gambar_produk"]->storeAs('Toko', $filename, 'public');
+        }else{
+            $filename=Produk::find($id)->gambar_produk;
+        }
+
+    $produk = Produk::where('id', $id)->update([
+
+            'gambar_produk' => $filename,
+            // 'gambar_produk' => $request['gambar_produk'],
+            'nama_toko' => $request['nama_toko'],
+            'lokasi_toko' => $request['lokasi_toko'],
+            'nomor_hp_toko' => $request['nomor_hp_toko'],
+            'rating_toko' => $request['rating_toko'],
+        ]);
+
+
+
     }
 
     /**
@@ -109,8 +138,13 @@ class ProdukController extends Controller
      * @param  \App\Models\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Produk $produk)
+    public function destroy(Produk $produk, $id)
     {
         //
+
+        $produk = Produk::findOrFail($id);
+        $produk->delete();
+        return view('marketplace.pemilik.daftar-produk', compact('produk'));
+
     }
 }

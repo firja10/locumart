@@ -27,7 +27,8 @@ class CreatePemesanansTable extends Migration
             $table->string('media_pengiriman')->nullable();
             $table->string('media_pembayaran')->nullable();
             $table->integer('status_pembayaran')->nullable();
-
+            $table->integer('rating_produk')->nullable();
+            $table->integer('rating_toko')->nullable();
             $table->timestamps();
         });
     }
