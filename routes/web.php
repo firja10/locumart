@@ -45,12 +45,24 @@ Route::get('/',[LandingController::class,'landing'])->name('landing');
 Route::get('/pemilik/riwayat-toko',[LandingController::class,'daftartokouser'])->name('daftartokouser')->middleware('auth');
 
 
+
+// Halaman Common 
+Route::get('/beranda',[LandingController::class,'berandahome'])->name('berandahome');
+Route::get('/produk/{id}',[LandingController::class,'lihatproduk'])->name('lihatproduk');
+
+Route::get('/produk/{id}',[LandingController::class,'lihatproduk'])->name('lihatproduk');
+
+// Halaman User 
+Route::get('/keranjang/{id}',[LandingController::class,'lihatkeranjangspesifik'])->name('lihatkeranjangspesifik');
+
+
 // Halaman Pemilik 
 
 Route::resource('/pemilik/daftar-toko', TokoController::class)->middleware('auth');
 Route::resource('/pemilik/daftar-produk', ProdukController::class)->middleware('auth');
 Route::get('/pemilik/riwayat-toko',[LandingController::class,'daftartokouser'])->name('daftartokouser')->middleware('auth');
 Route::get('/pemilik/riwayat-produk/{id}',[LandingController::class,'daftarproduktoko'])->name('daftarproduktoko')->middleware('auth');
+Route::get('/keranjang',[LandingController::class,'lihatkeranjang'])->name('lihatkeranjang')->middleware('auth');
 
 
 

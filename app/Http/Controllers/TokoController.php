@@ -62,7 +62,7 @@ class TokoController extends Controller
         $data->gambar_toko = $filename;
         $data->nama_toko = $request['nama_toko'];
         $data->lokasi_toko = $request['lokasi_toko'];
-        $data->deskripsi_toko_toko = $request['deskripsi_toko_toko'];
+        $data->deskripsi_toko = $request['deskripsi_toko'];
         $data->nomor_hp_toko = $request['nomor_hp_toko'];
         $data->rating_toko = $request['rating_toko'];
         $data->save();

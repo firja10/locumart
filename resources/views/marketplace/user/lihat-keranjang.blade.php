@@ -729,21 +729,23 @@
               <div class="home-product">
                 <div class="row sm-gutter">
                   <!-- Product item -->
+
+                  @foreach ($pemesanan as $produks)
                   <div class="col l-2-4 m-4 c-6">
-                    <a href="#" class="home-product-item">
+                    <a href="{{route('lihatkeranjangspesifik', $produks->id)}}" class="home-product-item">
                       <div
                         class="home-product-item__img"
                         style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        Baju Kemeja A4
+                        {{$produks->nama_produk}}
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >Rp. 2.300.000</span
+                          >Rp. {{$produks->harga_jual}}</span
                         >
                         <span class="home-product-item__price-current"
-                          >Rp. 2.070.000</span
+                          >Rp. {{$produks->harga_diskon}}</span
                         >
                       </div>
                       <div class="home-product-item__action">
@@ -794,6 +796,8 @@
                       </div>
                     </a>
                   </div>
+                  @endforeach
+            
                   
 
              
