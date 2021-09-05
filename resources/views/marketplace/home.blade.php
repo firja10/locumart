@@ -147,6 +147,141 @@
         <div class="grid wide">
           <nav class="header__navbar hide-on-mobile-tablet">
          
+
+
+
+            <!-- LIST ATAS  -->
+
+
+
+
+
+
+            <ul class="header__navbar-list">
+              <li
+                class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate"
+              >
+   Profil Anda
+                <!-- Header QR Code -->
+                <div class="header__qr">
+                  <img
+                    src="./assets/img/qr_code.png"
+                    alt="QR Code"
+                    class="header__qr-img"
+                  />
+                  <div class="header__qr-apps">
+                    <a href="" class="header__qr-link">
+                      <img
+                        src="./assets/img/google_play.png"
+                        alt="Google Play"
+                        class="header__qr-download-img"
+                      />
+                    </a>
+                    <a href="" class="header__qr-link">
+                      <img
+                        src="./assets/img/appstore.png"
+                        alt="App Store"
+                        class="header__qr-download-img"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="header__navbar-item">
+                <span class="header__navbar-title--no-pointer">Sosial Media Anda</span>
+
+                <a href="" class="header__navbar-icon-link">
+                  <i class="header__navbar-icon fab fa-facebook"></i>
+                </a>
+                <a href="" class="header__navbar-icon-link">
+                  <i class="header__navbar-icon fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+            <ul class="header__navbar-list">
+              <li class="header__navbar-item">
+                <a href="{{url('/pemilik/riwayat-toko')}}" class="header__navbar-item-link">
+                  {{-- <i class="header__navbar-icon far fa-question-circle"></i> --}}
+                  <i class="header__navbar-icon fas fa-funnel-dollar"></i>
+
+                Toko Saya
+                </a>
+              </li>
+              <li class="header__navbar-item">
+                <a href="" class="header__navbar-item-link">
+                  <i class="header__navbar-icon far fa-question-circle"></i>
+
+                  FAQ
+                </a>
+              </li>
+              <!-- <li
+                class="header__navbar-item header__navbar-item--strong header__navbar-item--separate"
+              >
+                Đăng ký
+              </li>
+              <li class="header__navbar-item header__navbar-item--strong">
+                Đăng Nhập
+              </li> -->
+
+
+
+
+
+
+              {{-- <li class="header__navbar-item header__navbar-user">
+                <img
+                  src="./assets/img/user_avatar.png"
+                  alt=""
+                  class="header__navbar-user-img"
+                />
+                <span class="header__navbar-user-name">
+                  Tín Phạm
+                </span>
+                <ul class="header__navbar-user-menu">
+                  <li class="header__navbar-user-item">
+                    <a href="">Tài khoản của tôi</a>
+                  </li>
+                  <li class="header__navbar-user-item">
+                    <a href="">Địa chỉ của tôi</a>
+                  </li>
+                  <li class="header__navbar-user-item">
+                    <a href="">Đơn mua</a>
+                  </li>
+                  <li
+                    class="header__navbar-user-item header__navbar-user-item--separate"
+                  >
+                    <a href="">Đăng xuất</a>
+                  </li>
+                </ul>
+              </li> --}}
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           
           </nav>
           <br>
@@ -215,7 +350,11 @@
             <div class="header__cart">
               <div class="header__cart-wrap">
                 <i class="header__cart-icon fas fa-shopping-cart"></i>
-                <span class="header__cart-notice">3</span>
+                <span class="header__cart-notice"> <?php 
+                 $user_id = Auth::id();
+                 $hitung = DB::table('pemesanans')->where('user_id',$user_id)->count();
+
+                echo $hitung;  ?> </span>
                 <!-- No cart : header__cart-list--no-cart -->
                 <div class="header__cart-list ">
                   <!-- Nocart -->
@@ -479,9 +618,9 @@
                             {{-- <img src="{{asset('')}}" alt=""> --}}
 
                             <ul style = "text-align: center;">
-                                <li style = "display: inline; float:left;"><a href=""><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;"> </a> </li>
-                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href=""><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"></a> </li>
-                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href=""><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"></a> </li>
+                                <li style = "display: inline; float:left;"><a href="" onclick="openKategori('Makanan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p style="color:#fff;font-size:13px;" >Makanan</p> </a>  </li>
+                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href="" onclick="openKategori('Kesenian')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"> <p style="color:#fff;font-size:13px;">Kesenian</p></a>  </li>
+                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href="" onclick="openKategori('Kebutuhan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"><p style="color:#fff;font-size:13px;">Kebutuhan</p></a>  </li>
                             </ul>
                            
 
@@ -497,7 +636,9 @@
                     <div class="header__cart" style = "width:400px;">
                       <div class="header__cart-wrap">
                         <i class="header__cart-icon fas fa-shopping-cart"></i>
-                        <span class="header__cart-notice">3</span>
+                        <span class="header__cart-notice">
+                          <?php echo $hitung; ?>
+                        </span>
                         <!-- No cart : header__cart-list--no-cart -->
                         <div class="header__cart-list ">
                           <!-- Nocart -->
@@ -686,8 +827,27 @@
                         </div>
                       </div>
                       <br> <br>
-                      <span> <b> <a href="{{url('/login')}}" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="{{url('/login')}}" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
-                      </span>
+
+                      {{-- <span> <b> <a href="{{url('/login')}}" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="{{url('/login')}}" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
+                      </span> --}}
+
+                      @if(Auth::check())
+                      <span style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> <b>{{Auth::user()->name}}</b></span>   
+                     
+                     <a style = "color:white;font-size:15px; margin-left:5px; text-decoration:none;"  href="{{ route('logout') }}" id = "keluar"  onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">Logout</a>
+          
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+          </form>
+          
+                      @else
+                      <span> <b> <a href="{{url('/login')}}" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="{{url('/register')}}" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
+                      </span>       
+                      @endif
+
+
+
                     </div>
         
         
@@ -726,7 +886,7 @@
 
 
               <!-- Product -->
-              <div class="home-product">
+              <div class="home-product" id = "makanan" class = "kategori">
                 <div class="row sm-gutter">
                   <!-- Product item -->
                   <div class="col l-2-4 m-4 c-6">
@@ -1624,6 +1784,27 @@
       <!-- </div>
       </div> -->
     </div>
+
+
+
+    <script>
+
+      function openKategori(kategoriName)
+      {
+        var i;
+        var x = document.getElementsByClassName("kategori");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        document.getElementById(kategoriName).style.display = "block";  
+      }
+
+
+
+    </script>
+
+
+
 
     <script>
         var slideIndex = 1;

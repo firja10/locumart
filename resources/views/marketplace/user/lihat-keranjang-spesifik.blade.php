@@ -64,87 +64,20 @@
                
 
                     <br>
-                  <a href="{{route('daftarproduktoko',$pemesanan->id)}}" class="btn btn-success" style = "margin-top:10px; margin-right:5px;"> <i class="fa fa-money-bill"></i> &nbsp; Beli Produk</a>
+                    <form action="{{route('hapusbayar',$pemesanan->id)}}" method = "POST">
+                        @csrf
+                        @method('DELETE')
+
+ <button  class="btn btn-danger" style = "margin-top:10px;"> <i class="fa fa-money-bill"></i> &nbsp; Hapus Produk</button>
+                    </form>
                  
-                  {{-- <form action="{{route('lihatkeranjang')}}" method = "POST" enctype="multipart/form-data">
-                    @csrf --}}
-                    <div class="form-group">
-                        {{-- <label for="nama_produk" class="col-form-label"> Nama Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="nama_produk" name = "nama_produk" placeholder="{{$pemesanan->nama_produk}}" value = "{{$pemesanan->nama_produk}}">
-            
-                      </div>
-                      <div class="form-group">
-                        {{-- <label for="kategori" class="col-form-label">Deskripsi Kelas :</label> --}}
-                        {{-- <textarea class="form-control" id="kategori" name = "kategori" placeholder="{{$pemesanan->kategori}}" value = "{{$pemesanan->kategori}}">{{$pemesanan->kategori}}</textarea> --}}
-                        <input type="hidden" class="form-control" id="kategori" name = "kategori" placeholder="{{$pemesanan->kategori}}" value = "{{$pemesanan->kategori}}">
-                    </div>
-            
-                      <div class="form-group">
-                        {{-- <label for="harga_jual" class="col-form-label"> Materi Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="harga_jual" name = "harga_jual" placeholder="{{$pemesanan->harga_jual}}" value = "{{$pemesanan->harga_jual}}">
-                      </div>
-            
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="jumlah_pesan" name = "jumlah_pesan" placeholder="{{$pemesanan->jumlah_pesan}}" value = "{{$pemesanan->jumlah_pesan}}">
-                      </div>
-            
-            
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="harga_diskon" name = "harga_diskon" placeholder="{{$pemesanan->harga_diskon}}" value = "{{$pemesanan->harga_diskon}}">
-                      </div>
-            
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="harga_total" name = "harga_total" placeholder="{{$pemesanan->harga_total}}" value = "{{$pemesanan->harga_total}}">
-                      </div>
-            
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="ongkos_kirim" name = "ongkos_kirim" placeholder="{{$pemesanan->ongkos_kirim}}" value = "{{$pemesanan->ongkos_kirim}}">
-                      </div>
-            
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="nama_toko" name = "nama_toko" placeholder="{{$pemesanan->nama_toko}}" value = "{{$pemesanan->nama_toko}}">
-                      </div>
-            
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="media_pengiriman" name = "media_pengiriman" placeholder="{{$pemesanan->media_pengiriman}}" value = "{{$pemesanan->media_pengiriman}}">
-                      </div>
-            
-            
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="media_pembayaran" name = "media_pembayaran" placeholder="{{$pemesanan->media_pembayaran}}" value = "{{$pemesanan->media_pembayaran}}">
-                      </div>
-            
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="status_pembayaran" name = "status_pembayaran" placeholder="{{$pemesanan->status_pembayaran}}" value = "{{$pemesanan->status_pembayaran}}">
-                      </div>
-            
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="rating_produk" name = "rating_produk" placeholder="{{$pemesanan->rating_produk}}" value = "{{$pemesanan->rating_produk}}">
-                      </div>
-    
-                    <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="rating_toko" name = "rating_toko" placeholder="{{$pemesanan->rating_toko}}" value = "{{$pemesanan->rating_toko}}">
-                      </div>
-
-                      <div class="form-group">
-                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
-                        <input type="hidden" class="form-control" id="produk_id" name = "produk_id" placeholder="{{$pemesanan->id}}" value = "{{$pemesanan->id}}">
-                      </div>
-
-                      <button type = "submit" name = "submit" class="btn btn-success" style = "margin-top:10px;margin-left:5px;"> <i class="fa fa-shopping-cart"></i> &nbsp; Masukkan Keranjang</button>
+                 
+                  <form action="{{route('pembayaran', $pemesanan->id)}}" method = "POST" enctype="multipart/form-data">
+                    @csrf
+                      <button type = "submit" name = "submit" class="btn btn-success" style = "margin-top:10px;"> <i class="fa fa-shopping-cart"></i> &nbsp; Beli produk</button>
 
 
-                  {{-- </form> --}}
+                  </form>
                  
             </center>
             <br>

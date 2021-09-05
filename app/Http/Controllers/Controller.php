@@ -10,4 +10,23 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+
+    protected function initPaymentGateway()
+    {
+        # code...
+
+
+        // \Midtrans\Config::$serverKey = '<your server key>';
+      
+        // \Midtrans\Config::$isProduction = false;
+
+        // \Midtrans\Config::$isSanitized = true;
+
+        // \Midtrans\Config::$is3ds = true;
+
+
+
+    }
+
 }

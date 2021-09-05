@@ -62,7 +62,15 @@ Route::resource('/pemilik/daftar-toko', TokoController::class)->middleware('auth
 Route::resource('/pemilik/daftar-produk', ProdukController::class)->middleware('auth');
 Route::get('/pemilik/riwayat-toko',[LandingController::class,'daftartokouser'])->name('daftartokouser')->middleware('auth');
 Route::get('/pemilik/riwayat-produk/{id}',[LandingController::class,'daftarproduktoko'])->name('daftarproduktoko')->middleware('auth');
+Route::get('/pemilik/store-produk',[LandingController::class,'formproduk'])->name('formproduk')->middleware('auth');
+
+
+Route::post('/pemilik/store-produk',[LandingController::class,'storeproduk'])->name('storeproduk')->middleware('auth');
+
+
 Route::get('/keranjang',[LandingController::class,'lihatkeranjang'])->name('lihatkeranjang')->middleware('auth');
+Route::post('/keranjang/{id}',[LandingController::class,'pembayaran'])->name('pembayaran')->middleware('auth');
+Route::delete('keranjang/{id}', [LandingController::class,'hapusbayar'])->name('hapusbayar')->middleware('auth');
 
 
 

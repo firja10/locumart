@@ -26,18 +26,8 @@
 
 <div class="container">
 
-    <div class="float-right">
-        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style = "margin-top:10px;">
-         <i class = "fa fa-plus"></i>    Tambah Data
-          </button> --}}
-          <a href="{{route('formproduk')}}" class="btn btn-primary">
-            <i class="fa fa-plus"></i>
-            Tambah Data Produk
-          </a>
-    </div><br> <br>
-
     <center>
-        <h1 style = "text-align: center;">Daftar produk Anda</h1>
+        <h1 style = "text-align: center;">Form Pengisian Produk</h1>
     </center>
  <br>
  <br>
@@ -46,73 +36,10 @@
     <div class="row" class = "mt-4">
 
 
-        
+        <div class="col-md-12">
 
 
-
-
-@foreach ($data as $produks)
-<div class="col-md-3">
-    <div class="card" style="width: 20rem;">
-        {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
-        <img src="{{asset('storage/Produk/'.$produks->gambar_produk)}}" alt="" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">{{$produks->nama_produk}}</h5>
-          <p class="card-text">{{$produks->deskripsi_produk}}</p>
-         
-          {{-- <span id="rateMe1"></span> --}}
-
-          <center>
-
-            <p>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-              </p>
-             
-
-
-            <a href="{{route('daftar-produk.edit', $produks->id)}}" class="btn btn-primary" style = "text-align:center;">Lihat Produk</a>
-            <br>
-
-
-
-        </center>
-
-        </div>
-      </div>
-   
-</div>
-@endforeach
-       
-        {{-- <div class="col-md-3">
-
-        </div> --}}
-    </div>
-</div>
-        
-
-
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
             
-
-
-
-
-
             <form action = "{{route('storeproduk')}}" method = "POST" enctype="multipart/form-data">
                 @csrf
               <div class="form-group">
@@ -126,12 +53,24 @@
 
               <div class="form-group">
                 <label for="harga_jual" class="col-form-label">Harga Jual : </label>
-                <input type="text" class="form-control" id="harga_jual" name = "harga_jual">
+                <input type="number" class="form-control" id="harga_jual" name = "harga_jual">
               </div>
 
               <div class="form-group">
                 <label for="nomor_hp_produk" class="col-form-label"> Nomor HP produk : </label>
                 <input type="number" class="form-control" id="nomor_hp_produk" name = "nomor_hp_produk">
+              </div>
+
+              <div class="form-group">
+                  <label for="toko_id" class="col-form-label">Nama Toko</label>
+                  <select name="toko_id" id="toko_id" class = "form-control">
+                    <option aria-disabled="true" >-- Silakan Pilih Toko dari Produk Ini --</option>
+                      @foreach ($toko as $store)
+                     
+                          <option value="{{$store->id}}">{{$store->nama_toko}}</option>
+                      @endforeach
+                     
+                  </select>
               </div>
 
 
@@ -140,7 +79,11 @@
                 <input type="file" class="form-control" id="gambar_produk" name = "gambar_produk">
               </div>
 
-              <button class="btn btn-primary" type = "submit" name = "submit">Submit</button>
+              <br><br>
+              <center>
+                <button class="btn btn-primary" type = "submit" name = "submit">Submit</button>
+              </center>
+            
 
             </form>
 
@@ -149,23 +92,16 @@
 
 
 
-
-
-
-
-
-
-
-
-
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+    
+
+
+
+
     </div>
-  </div>
+</div>
+        
+
 
 
 

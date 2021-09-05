@@ -17,6 +17,7 @@ class LandingController extends Controller
     public function home()
     {
         # code...
+
         return view('marketplace.home');
 
     }
@@ -50,6 +51,75 @@ class LandingController extends Controller
 
 
     }
+
+
+
+    public function formproduk()
+    {
+        # code...
+    
+        $user_id = Auth::id();
+        $toko = DB::table('tokos')->where('user_id', $user_id)->get();
+        return view('marketplace.pemilik.store-produk', compact('toko'));
+
+    }
+
+
+
+
+
+
+
+
+    public function storeproduk(Request $request)
+    {
+        # code...
+
+
+        $data = new Produk;
+        if($request->hasFile('gambar_produk'))
+        {
+
+                $filename = $request['gambar_produk']->getClientOriginalName();
+
+                if($data->gambar_produk)
+                {
+                    Storage::delete('/public/storage/Produk/'.$filename);
+                }
+
+                $request['gambar_produk']->storeAs('Produk',$filename,'public');
+        }
+
+        else {
+            $filename = $data->gambar_produk;
+        }
+
+
+        $data->gambar_produk = $filename;
+        $data->nama_produk = $request['nama_produk'];
+        $data->harga_jual = $request['harga_jual'];
+        $data->harga_diskon = $request['harga_diskon'];
+        $data->deskripsi_produk = $request['deskripsi_produk'];
+        $data->kategori = $request['kategori'];
+        $data->stok_terjual = $request['stok_terjual'];
+        $data->stok_sisa = $request['stok_sisa'];
+        $data->rating_produk = $request['rating_produk'];
+        $data->toko_id = $request['toko_id'];
+        
+        $data->save();
+        return redirect('pemilik/store-produk')->with('store-produk','Produk Berhasil Ditambahkan');
+
+
+
+
+    }
+
+
+
+
+
+
+
 
 
     public function berandahome()
@@ -135,6 +205,50 @@ class LandingController extends Controller
 
     }
 
+
+
+
+
+
+
+
+
+
+    public function pembayaran($id,Request $request, Pemesanan $pemesanan )
+    {
+        # code...
+
+        $pemesanan = Pemesanan::where('id', $id)->update([
+            'status_pembayaran'=>2,
+        ]);
+        return redirect('/keranjang/'.$request['id'])->with('update-bayar-a','Anda Harus Melakukan Pembayaran');
+
+    }
+
+    public function hapusbayar($id, Pemesanan $pemesanan)
+    {
+        # code...
+        $pemesanan = Pemesanan::findOrFail($id);
+        $pemesanan->delete();
+        return redirect('keranjang')->with('hapus-bayar','Slaah Satu Pemesanan Anda Sudah Dihapus');
+    }
+
+    protected function initPaymentGateway()
+    {
+        # code...
+
+
+        // \Midtrans\Config::$serverKey = '<your server key>';
+      
+        // \Midtrans\Config::$isProduction = false;
+
+        // \Midtrans\Config::$isSanitized = true;
+
+        // \Midtrans\Config::$is3ds = true;
+
+
+
+    }
 
 
 

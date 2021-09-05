@@ -479,9 +479,9 @@
                             {{-- <img src="{{asset('')}}" alt=""> --}}
 
                             <ul style = "text-align: center;">
-                                <li style = "display: inline; float:left;"><a href=""><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;"> </a> </li>
-                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href=""><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"></a> </li>
-                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href=""><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"></a> </li>
+                                <li style = "display: inline; float:left;"><a href=""><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;"> </a> <p>Makanan</p> </li>
+                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href=""><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"></a>  <p>Makanan</p> </li>
+                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href=""><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"></a> <p>Makanan</p>  </li>
                             </ul>
                            
 
@@ -725,8 +725,13 @@
 
 
 
+
               <!-- Product -->
               <div class="home-product">
+
+
+
+
                 <div class="row sm-gutter">
                   <!-- Product item -->
                   <div class="col l-2-4 m-4 c-6">

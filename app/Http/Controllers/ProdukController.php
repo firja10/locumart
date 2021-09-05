@@ -62,9 +62,16 @@ class ProdukController extends Controller
 
         $data->gambar_produk = $filename;
         $data->nama_produk = $request['nama_produk'];
-        $data->harga_produk = $request['harga_produk'];
+        $data->harga_jual = $request['harga_jual'];
         $data->harga_diskon = $request['harga_diskon'];
+        $data->deskripsi_produk = $request['deskripsi_produk'];
+        $data->kategori = $request['kategori'];
+        $data->stok_terjual = $request['stok_terjual'];
+        $data->stok_sisa = $request['stok_sisa'];
+        $data->rating_produk = $request['rating_produk'];
         
+        $data->save();
+        return redirect('pemilik/riwayat-produk/'.$request['toko_id'])->with('store-produk','Produk Berhasil Ditambahkan');
 
 
     }
