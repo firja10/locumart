@@ -74,6 +74,7 @@
                  
                   <form action="{{route('pembayaran', $pemesanan->id)}}" method = "POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PATCH')
                       <button type = "submit" name = "submit" class="btn btn-success" style = "margin-top:10px;"> <i class="fa fa-shopping-cart"></i> &nbsp; Beli produk</button>
 
 

@@ -50,7 +50,7 @@ Route::get('/pemilik/riwayat-toko',[LandingController::class,'daftartokouser'])-
 Route::get('/beranda',[LandingController::class,'berandahome'])->name('berandahome');
 Route::get('/produk/{id}',[LandingController::class,'lihatproduk'])->name('lihatproduk');
 
-Route::get('/produk/{id}',[LandingController::class,'lihatproduk'])->name('lihatproduk');
+
 
 // Halaman User 
 Route::get('/keranjang/{id}',[LandingController::class,'lihatkeranjangspesifik'])->name('lihatkeranjangspesifik');
@@ -69,9 +69,11 @@ Route::post('/pemilik/store-produk',[LandingController::class,'storeproduk'])->n
 
 
 Route::get('/keranjang',[LandingController::class,'lihatkeranjang'])->name('lihatkeranjang')->middleware('auth');
-Route::post('/keranjang/{id}',[LandingController::class,'pembayaran'])->name('pembayaran')->middleware('auth');
-Route::delete('keranjang/{id}', [LandingController::class,'hapusbayar'])->name('hapusbayar')->middleware('auth');
 
+Route::post('/keranjang/{id}',[LandingController::class,'masukkeranjang'])->name('masukkeranjang')->middleware('auth');
+Route::patch('/keranjang/{id}',[LandingController::class,'pembayaran'])->name('pembayaran')->middleware('auth');
+Route::delete('keranjang/{id}', [LandingController::class,'hapusbayar'])->name('hapusbayar')->middleware('auth');
+Route::delete('pemilik/daftar-produk/{id}',[LandingController::class,'hapusproduk'])->name('hapusproduk')->middleware('auth');
 
 
 

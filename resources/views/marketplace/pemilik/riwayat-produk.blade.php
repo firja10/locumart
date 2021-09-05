@@ -52,7 +52,7 @@
 
 
 @foreach ($data as $produks)
-<div class="col-md-3">
+<div class="col-md-3" style = "margin-bottom:10px;">
     <div class="card" style="width: 20rem;">
         {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
         <img src="{{asset('storage/Produk/'.$produks->gambar_produk)}}" alt="" class="card-img-top">
@@ -83,8 +83,9 @@
 
         </div>
       </div>
-   
+      <br>
 </div>
+
 @endforeach
        
         {{-- <div class="col-md-3">

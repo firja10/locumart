@@ -66,7 +66,7 @@
                     <br>
                   <a href="{{route('daftarproduktoko',$produk->id)}}" class="btn btn-success" style = "margin-top:10px; margin-right:5px;"> <i class="fa fa-money-bill"></i> &nbsp; Beli Produk</a>
                  
-                  <form action="{{route('masukkeranjang')}}" method = "POST" enctype="multipart/form-data">
+                  <form action="{{route('masukkeranjang', $produk->id)}}" method = "POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         {{-- <label for="nama_produk" class="col-form-label"> Nama Kelas : </label> --}}

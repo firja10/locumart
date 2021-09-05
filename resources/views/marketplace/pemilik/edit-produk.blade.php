@@ -46,7 +46,7 @@
 
 <div class="col-md-4" style = "margin-top:10px; margin-bottom:10px;">
     <center>
-    <img src="{{asset('storage/Toko/'.$produk->gambar_produk)}}" alt="" style = "width:300px; border-radius:50px;">
+    <img src="{{asset('storage/Produk/'.$produk->gambar_produk)}}" alt="" style = "width:300px; border-radius:50px;">
 </center>
 </div>
 
@@ -63,10 +63,15 @@
                 <h5> <i class="fas fa-location-arrow"></i> &nbsp; Lokasi : {{$produk->harga_jual}}</h5>
                
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style = "margin-top:10px;">
-                    <i class = "fa fa-edit" aria-hidden="true"></i>  Edit Toko 
+                    <i class = "fa fa-edit" aria-hidden="true"></i>  Edit Produk
                     </button>
                     <br>
-                  <a href="{{route('daftarproduktoko',$produk->id)}}" class="btn btn-success" style = "margin-top:10px;">Daftar Produk</a>
+                    <form action="" method="post">
+                      @csrf
+                      @method('DELETE')
+                      <button href="{{route('hapusproduk',$produk->id)}}" class="btn btn-danger" style = "margin-top:10px;">Hapus Produk</button>
+                    </form>
+
 
             </center>
             <br>

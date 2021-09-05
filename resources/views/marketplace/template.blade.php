@@ -150,6 +150,127 @@
         <div class="grid wide">
           <nav class="header__navbar hide-on-mobile-tablet">
          
+
+
+
+
+            <ul class="header__navbar-list">
+              <li
+                class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate"
+              >
+              Profil Anda
+                <!-- Header QR Code -->
+                <div class="header__qr">
+                  <img
+                    src="./assets/img/qr_code.png"
+                    alt="QR Code"
+                    class="header__qr-img"
+                  />
+                  <div class="header__qr-apps">
+                    <a href="" class="header__qr-link">
+                      <img
+                        src="./assets/img/google_play.png"
+                        alt="Google Play"
+                        class="header__qr-download-img"
+                      />
+                    </a>
+                    <a href="" class="header__qr-link">
+                      <img
+                        src="./assets/img/appstore.png"
+                        alt="App Store"
+                        class="header__qr-download-img"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li class="header__navbar-item">
+                <span class="header__navbar-title--no-pointer">Sosial Media Anda</span>
+
+                <a href="" class="header__navbar-icon-link">
+                  <i class="header__navbar-icon fab fa-facebook"></i>
+                </a>
+                <a href="" class="header__navbar-icon-link">
+                  <i class="header__navbar-icon fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+            <ul class="header__navbar-list">
+              <li class="header__navbar-item">
+                <a href="{{url('/pemilik/riwayat-toko')}}" class="header__navbar-item-link">
+                  {{-- <i class="header__navbar-icon far fa-question-circle"></i> --}}
+                  <i class="header__navbar-icon fas fa-funnel-dollar"></i>
+
+                Toko Saya
+                </a>
+              </li>
+              <li class="header__navbar-item">
+                <a href="" class="header__navbar-item-link">
+                  <i class="header__navbar-icon far fa-question-circle"></i>
+
+                  FAQ
+                </a>
+              </li>
+              <li class="header__navbar-item">
+                <a href="{{url('/')}}" class="header__navbar-item-link">
+                  <i class="header__navbar-icon fas fa-home"></i>
+                  Beranda
+                </a>
+              </li>
+              <!-- <li
+                class="header__navbar-item header__navbar-item--strong header__navbar-item--separate"
+              >
+                Đăng ký
+              </li>
+              <li class="header__navbar-item header__navbar-item--strong">
+                Đăng Nhập
+              </li> -->
+
+
+
+
+
+
+              {{-- <li class="header__navbar-item header__navbar-user">
+                <img
+                  src="./assets/img/user_avatar.png"
+                  alt=""
+                  class="header__navbar-user-img"
+                />
+                <span class="header__navbar-user-name">
+                  Tín Phạm
+                </span>
+                <ul class="header__navbar-user-menu">
+                  <li class="header__navbar-user-item">
+                    <a href="">Tài khoản của tôi</a>
+                  </li>
+                  <li class="header__navbar-user-item">
+                    <a href="">Địa chỉ của tôi</a>
+                  </li>
+                  <li class="header__navbar-user-item">
+                    <a href="">Đơn mua</a>
+                  </li>
+                  <li
+                    class="header__navbar-user-item header__navbar-user-item--separate"
+                  >
+                    <a href="">Đăng xuất</a>
+                  </li>
+                </ul>
+              </li> --}}
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
           
           </nav>
           <br>
@@ -218,8 +339,17 @@
             <div class="header__cart">
               <div class="header__cart-wrap">
                 <i class="header__cart-icon fas fa-shopping-cart"></i>
-                <span class="header__cart-notice">3</span>
+                <span class="header__cart-notice">
+
+                  <?php 
+                  $user_id = Auth::id();
+                  $hitung = DB::table('pemesanans')->where('user_id',$user_id)->count();
+                  $pesanan = DB::table('pemesanans')->where('user_id',$user_id)->get();
+                 echo $hitung;  ?> </span>
+
+                </span>
                 <!-- No cart : header__cart-list--no-cart -->
+
                 <div class="header__cart-list ">
                   <!-- Nocart -->
                   <img
@@ -231,24 +361,26 @@
                     Chưa có sản phẩm
                   </span>
                   <!-- Hascart -->
-                  <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                  <h4 class="header__cart-heading">Cek Keranjang</h4>
                   <!-- Cart item -->
                   <ul class="header__cart-list-item">
+
+
+                    @foreach ($pesanan as $item)
                     <li class="header__cart-item">
                       <img
-                        src="https://img.tickid.vn/photos/resized/320x/83-1580889448-myphamohui-lgvina.png')}}"
+                        src="{{asset('storage/Pemesanan/'.$item->gambar_produk)}}"
                         alt=""
                         class="header__cart-img"
                       />
                       <div class="header__cart-item-info">
                         <div class="header__cart-item-head">
                           <h5 class="header__cart-item-name">
-                            Set sữa rửa mặt Ohui Prime sữa rửa mặt Ohui Prime
-                            sữa rửa mặt Ohui Prime
+                          {{$item->nama_produk}}
                           </h5>
                           <div class="header__cart-item-price-wrap">
                             <span class="header__cart-item-price"
-                              >Rp. 2.000.000</span
+                              >Rp.{{$item->harga_jual}}</span
                             >
                             <span class="header__cart-item-multiply">x</span>
                             <span class="header__cart-item-qnt">2</span>
@@ -256,73 +388,19 @@
                         </div>
                         <div class="header__cart-item-body">
                           <span class="header__cart-item-description"
-                            >Phân loại : Bạc</span
+                            >{{$item->kategori}}</span
                           >
-                          <span class="header__cart-item-remove">Xóa</span>
+                          <span class="header__cart-item-remove">Selesaikan Pembayaran</span>
                         </div>
                       </div>
                     </li>
-                    <li class="header__cart-item">
-                      <img
-                        src="https://img.tickid.vn/photos/resized/320x/83-1580887317-myphamohui-lgvina.png')}}"
-                        alt=""
-                        class="header__cart-img"
-                      />
-                      <div class="header__cart-item-info">
-                        <div class="header__cart-item-head">
-                          <h5 class="header__cart-item-name">
-                            Set dưỡng ẩm whoo vàng
-                          </h5>
-                          <div class="header__cart-item-price-wrap">
-                            <span class="header__cart-item-price"
-                              >3.105.000đ
-                            </span>
-                            <span class="header__cart-item-multiply">x</span>
-                            <span class="header__cart-item-qnt">1</span>
-                          </div>
-                        </div>
-                        <div class="header__cart-item-body">
-                          <span class="header__cart-item-description"
-                            >Phân loại : Cứt</span
-                          >
-                          <span class="header__cart-item-remove">Xóa</span>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="header__cart-item">
-                      <img
-                        src="https://img.tickid.vn/photos/resized/320x/83-1580884899-myphamohui-lgvina.png')}}"
-                        alt=""
-                        class="header__cart-img"
-                      />
-                     
-                      <div class="header__cart-item-info">
-                        <div class="header__cart-item-head">
-                          <h5 class="header__cart-item-name">
-                            Set kem mắt hoàn lưu cao cấp
-                          </h5>
-                          <div class="header__cart-item-price-wrap">
-                            <span class="header__cart-item-price"
-                              >11.610.000đ
-                            </span>
-                            <span class="header__cart-item-multiply">x</span>
-                            <span class="header__cart-item-qnt">3</span>
-                          </div>
-                        </div>
-                        <div class="header__cart-item-body">
-                          <span class="header__cart-item-description"
-                            >Phân loại : Tinh hoa
-                          </span>
-                          <span class="header__cart-item-remove">Xóa</span>
-                        </div>
-                      </div>
-                    </li>
-
-
+                    @endforeach
+                   
+                
 
                   </ul>
                   <a href="#" class="header__cart-view-cart btn btn--primary"
-                    >Xem giỏ hàng</a
+                    >Lihat Riwayat Pesanan</a
                   >
                 </div>
               </div>

@@ -17,15 +17,16 @@ class LandingController extends Controller
     public function home()
     {
         # code...
-
-        return view('marketplace.home');
+        $home = Produk::all();
+        return view('marketplace.home', compact('home'));
 
     }
 
     public function landing()
     {
         # code...
-        return view('marketplace.home');
+        $home = Produk::all();
+        return view('marketplace.home', compact('home'));
     }
 
 
@@ -251,6 +252,15 @@ class LandingController extends Controller
     }
 
 
+    public function hapusproduk($id, Produk $produk, Request $request)
+    {
+        # code...
+        
+
+        $produk = Produk::findOrFail($id);
+        return redirect('/pemilik/riwayat-produk/' . $request['toko_id'])->with('hapus-produk','Produk Anda Sudah Terhapus');
+
+    }
 
 
 
