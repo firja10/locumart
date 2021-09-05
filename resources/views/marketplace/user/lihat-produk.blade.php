@@ -138,6 +138,11 @@
 
                       <div class="form-group">
                         {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
+                        <input type="hidden" class="form-control" id="gambar_produk" name = "gambar_produk" placeholder="{{$produk->gambar_produk}}" value = "{{$produk->gambar_produk}}">
+                      </div>
+
+                      <div class="form-group">
+                        {{-- <label for="jumlah_pesan" class="col-form-label"> Tanggal Kelas : </label> --}}
                         <input type="hidden" class="form-control" id="produk_id" name = "produk_id" placeholder="{{$produk->id}}" value = "{{$produk->id}}">
                       </div>
 

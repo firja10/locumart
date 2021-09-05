@@ -54,6 +54,8 @@ Route::get('/produk/{id}',[LandingController::class,'lihatproduk'])->name('lihat
 
 // Halaman User 
 Route::get('/keranjang/{id}',[LandingController::class,'lihatkeranjangspesifik'])->name('lihatkeranjangspesifik');
+Route::get('/bayar',[LandingController::class,'initPaymentGateway'])->name('initPaymentGateway')->middleware('auth');
+
 
 
 // Halaman Pemilik 
@@ -72,6 +74,8 @@ Route::get('/keranjang',[LandingController::class,'lihatkeranjang'])->name('liha
 
 Route::post('/keranjang/{id}',[LandingController::class,'masukkeranjang'])->name('masukkeranjang')->middleware('auth');
 Route::patch('/keranjang/{id}',[LandingController::class,'pembayaran'])->name('pembayaran')->middleware('auth');
+
+
 Route::delete('keranjang/{id}', [LandingController::class,'hapusbayar'])->name('hapusbayar')->middleware('auth');
 Route::delete('pemilik/daftar-produk/{id}',[LandingController::class,'hapusproduk'])->name('hapusproduk')->middleware('auth');
 

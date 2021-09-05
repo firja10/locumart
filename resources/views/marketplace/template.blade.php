@@ -14,6 +14,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css')}}"
     />
 
+    @yield('scriptatas')
     @yield('style')
 
 
@@ -369,7 +370,7 @@
                     @foreach ($pesanan as $item)
                     <li class="header__cart-item">
                       <img
-                        src="{{asset('storage/Pemesanan/'.$item->gambar_produk)}}"
+                        src="{{asset('storage/Produk/'.$item->gambar_produk)}}"
                         alt=""
                         class="header__cart-img"
                       />

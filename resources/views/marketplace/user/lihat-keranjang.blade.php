@@ -369,7 +369,7 @@
                     @foreach ($pesanan as $item)
                     <li class="header__cart-item">
                       <img
-                        src="{{asset('storage/Pemesanan/'.$item->gambar_produk)}}"
+                        src="{{asset('storage/Produk/'.$item->gambar_produk)}}"
                         alt=""
                         class="header__cart-img"
                       />
@@ -523,7 +523,7 @@
                     <a href="{{route('lihatkeranjangspesifik', $produks->id)}}" class="home-product-item">
                       <div
                         class="home-product-item__img"
-                        style="background-image: url(https://img.tickid.vn/photos/resized/320x320/83-1580888419-myphamohui-lgvina.png')}});"
+                        style="background-image:url({{asset('storage/Produk/'. $produks->gambar_produk)}});"
                       ></div>
                       <h4 class="home-product-item__name">
                         {{$produks->nama_produk}}
