@@ -66,6 +66,9 @@ Route::get('/pemilik/riwayat-toko',[LandingController::class,'daftartokouser'])-
 Route::get('/pemilik/riwayat-produk/{id}',[LandingController::class,'daftarproduktoko'])->name('daftarproduktoko')->middleware('auth');
 Route::get('/pemilik/store-produk',[LandingController::class,'formproduk'])->name('formproduk')->middleware('auth');
 
+Route::get('tambah-ongkir',[LandingController::class,'ongkir'])->name('ongkir')->middleware('auth');
+
+
 
 Route::post('/pemilik/store-produk',[LandingController::class,'storeproduk'])->name('storeproduk')->middleware('auth');
 

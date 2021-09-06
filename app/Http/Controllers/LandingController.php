@@ -10,6 +10,7 @@ use App\Models\Produk;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Kavist\RajaOngkir\RajaOngkir;
 
 class LandingController extends Controller
 {
@@ -236,7 +237,11 @@ class LandingController extends Controller
         $user_email = Auth::user()->email;
 
 
-
+        // if($pemesanan->status_pembayaran == 1)
+        // {
+            
+        // }
+        
 
             // Set your Merchant Server Key
   \Midtrans\Config::$serverKey = 'SB-Mid-server-JZ5ljmFCHcN1xo_JDqkrOs5a';
@@ -246,20 +251,66 @@ class LandingController extends Controller
   \Midtrans\Config::$isSanitized = true;
   // Set 3DS transaction for credit card to true
   \Midtrans\Config::$is3ds = true; 
-  $params = array(   
-       'transaction_details' => array(    
-            //    'order_id' => rand(),
-            'order_id' => $id,    
-               'gross_amount' => 10000,    ),  
-                'customer_details' => array(       
-                     'first_name' => $nama_lengkap[0],
-                     'last_name' => 'Firjatullah',
-                      'email' => $user_email,
-                      'phone' => '087847972064',    ),
-                    ); 
-                     $snapToken = \Midtrans\Snap::getSnapToken($params);
 
 
+  if(isset($_GET['result_data']))
+  {
+      $current_status = json_decode($_GET['result_data'], true);
+    //   dd($current_status);
+      $order_id = $current_status['order_id'];
+    //   $pemesanan = Pemesanan::where('id',$order_id)->first();
+    //   $pemesanan->status_pembayaran = 3;
+    //   $pemesanan->update();
+    $pemesanan = Pemesanan::where('id',$order_id)->first();
+    $pemesanan->update([
+        'status_pembayaran' => 3,
+    ]);
+ 
+  }
+  else {
+      $pemesanan = Pemesanan::find($id);
+  }
+
+
+// if($pemesanan->status_pembayaran == 2)
+// {
+
+    $params = array(   
+        'transaction_details' => array(    
+                'order_id' => $id,
+             // 'order_id' => $id,    
+                'gross_amount' => 10000,    ),  
+                 'customer_details' => array(       
+                      'first_name' => 'Saudara',
+                      'last_name' => $user_name,
+                       'email' => $user_email,
+                       'phone' => '087847972064',    ),
+                     ); 
+                      $snapToken = \Midtrans\Snap::getSnapToken($params);
+ 
+
+// }
+
+
+// elseif($pemesanan->status_pembayaran == 3)
+// {
+    // $status = \Midtrans\Transaction::status($pemesanan->id);
+    // $status = json_decode(json_decode($status), true);
+    // $va_number = $status['va_numbers'][0]['va_number'];
+    // $grouss_amount = $status['grouss_amount'];
+    // $bank = $status['va_numbers'][0]['bank'];
+    // $transaction_status = $status['transaction_status'];
+    // $transaction_time = $status['transaction_time'];
+    // $deadline = date('Y-m-d H:i:s', strtotime('+1 day', strtotime($transaction_time)));
+// }
+
+  
+
+
+
+
+
+           
 
 
         return view('marketplace.user.lihat-keranjang-spesifik', compact('pemesanan', 'snapToken'));
@@ -338,6 +389,92 @@ class LandingController extends Controller
         return redirect('/pemilik/riwayat-produk/' . $request['toko_id'])->with('hapus-produk','Produk Anda Sudah Terhapus');
 
     }
+
+
+
+
+    private $apikey = '68c70149d6d8d491948b6762b75edd22';
+    // public $provinsi_id, $kota_id, $jasa, $daftarProvinsi, $daftarKota, $nama_jasa;
+    public function ongkir()
+    {
+
+
+        // if($this->kota_id || $this->provinsi_id || $this->jasa){
+        //     return;
+        // }
+
+        # code...
+        $rajaOngkir = new RajaOngkir($this->apikey) ;
+
+
+
+            $cost = $rajaOngkir->ongkosKirim([
+            'origin'        => 489,     // ID kota/kabupaten asal
+            'originType' => "city",
+            'destination'   => 30,      // ID kota/kabupaten tujuan
+            'destinationType' => "city",
+            'weight'        => 1300,    // berat barang dalam gram
+            'courier'       => 'jne:pos:tiki'    // kode kurir pengiriman: ['jne', 'tiki', 'pos'] untuk starter
+        ])->get();
+
+        dd($cost);
+
+            // $this->jasa = $cost[0]['name'];
+            // foreach($cost[0]['costs'] as $row)
+            // {
+
+            //     $this->result[]=array(
+            //         'description' =>$row['description'],
+            //         'biaya' =>$row['cost'][0]['value'],
+            //         'etd' =>$row['cost'][0]['etd'],
+            //     );
+
+            // }
+
+
+
+
+        // $this->daftarProvinsi = $rajaOngkir->provinsi()->all();
+
+
+        // if($this->provinsi_id)
+        // {
+        //         $this->daftarkota = $rajaOngkir->kota()->dariProvinsi(1)->get();
+        // }
+
+
+        // $daftarKota = $rajaOngkir->kota()->dariProvinsi(1)->get();
+
+
+    
+
+        // dd($daftarProvinsi);
+
+
+        // return view('marketplace.user.tambah-provinsi',compact('daftarProvinsi'));
+        return view('marketplace.user.tambah-ongkir', compact('cost'));
+    }
+
+
+
+
+    public function getOngkir($id, Pemesanan $pemesanan, Request $request)
+    {
+        # code...
+        $user_id = Auth::id();
+        $pemesanan = Pemesanan::where('user_id',$user_id)->update([
+            'namaprovinsi' =>$request['namaprovinsi'],
+            'namakota' =>$request['namakota'],
+        ]);
+
+    }
+
+
+    public function statusbayartiga()
+    {
+        # code...
+    }
+
 
 
 

@@ -91,16 +91,29 @@
 
                   <button class="btn-warning btn" id = "pay-button" type = "button"> <i class="fa fa-search"></i> Lakukan Pembayaran </button>
 
+               @elseif($pemesanan->status_pembayaran == 3)
+                <a href="" class=" btn btn-dark">Lihat Detail Pembayaran</a>
               @endif
+
+              <br>
+
+              <a href="" class="btn btn-secondary">Pilih Ongkos Kirim </a>
                  
 
-              {{-- <form action="" id = "payment-form" method = "get" action = "Payment">
+
+
+
+
+
+
+
+              <form action="" id = "payment-form" method = "get" action = "Payment">
 
                 <input type="hidden" name="result_data" id = "result-data" value="">
-              </form> --}}
+              </form>
 
 
-              <pre><div id="result-data">JSON result will appear here after payment:<br></div></pre> 
+              {{-- <pre><div id="result-data">JSON result will appear here after payment:<br></div></pre>  --}}
                  
             </center>
             <br>
@@ -169,22 +182,25 @@
 
         <script type="text/javascript">
       document.getElementById('pay-button').onclick = function(){
-        // SnapToken acquired from previous step
+        $('payment-form').submit();
         snap.pay('<?=$snapToken?>', {
      
           onSuccess: function(result){
-            /* You may add your own js here, this is just example */
+        
              document.getElementById('result-data').innerHTML += JSON.stringify(result, null, 2);
+     
           },
-          // Optional
+        
           onPending: function(result){
-            /* You may add your own js here, this is just example */ 
+ 
             document.getElementById('result-data').innerHTML += JSON.stringify(result, null, 2);
+   
           },
-          // Optional
+      
           onError: function(result){
-            /* You may add your own js here, this is just example */
+        
              document.getElementById('result-data').innerHTML += JSON.stringify(result, null, 2);
+ 
           }
         });
       };
