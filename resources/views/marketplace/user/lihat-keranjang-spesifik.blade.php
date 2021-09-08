@@ -64,10 +64,10 @@
             <center>
                 <h1 style = "text-align: center;">{{$pemesanan->nama_produk}}</h1>
                 <br>
-                <p>{{$pemesanan->kategori}}</p>
+                <h5> <i class="fa fa-list-alt"></i> &nbsp; Kategori: {{$pemesanan->kategori}} </h5>
                 <h5> <i class="fa fa-phone"></i> &nbsp; Nomor Handphone : {{$pemesanan->nomor_hp_produk}} </h5>
 
-                <h5> <i class="fas fa-location-arrow"></i> &nbsp; Harga Jual : {{$pemesanan->harga_jual}}</h5>
+                <h5> <i class="fas fa-money-bill-alt"></i> &nbsp; Harga Jual : <?php echo " Rp " . number_format($pemesanan->harga_jual, 2, ',', '.')?></h5>
                
 
                     <br>
@@ -87,17 +87,22 @@
               </form>
               @elseif($pemesanan->status_pembayaran == 2)
               <br>
+              <a href="{{url('/cekongkir/'.$pemesanan->id)}}" class=" btn btn-dark">Pilih Ongkos Kirim</a>
                   {{-- <a href="" class="btn btn-warning" style = "padding-top:3px;"> <i class="fa fa-search"></i>  Lakukan Pembayaran</a> --}}
 
-                  <button class="btn-warning btn" id = "pay-button" type = "button"> <i class="fa fa-search"></i> Lakukan Pembayaran </button>
-
                @elseif($pemesanan->status_pembayaran == 3)
-                <a href="" class=" btn btn-dark">Lihat Detail Pembayaran</a>
+    
+                <button class="btn-warning btn" id = "pay-button" type = "button" style = "margin-top:10px;"> <i class="fa fa-search"></i> Lakukan Pembayaran </button>
+
+                @elseif($pemesanan->status_pembayaran == 4)
+                <br>
+                <span> Pembayaran Telah Dilakukan </span>
+                <br>
+                <a href="" class="btn btn-primary"> Lakukan Rating</a>
               @endif
 
               <br>
 
-              <a href="" class="btn btn-secondary">Pilih Ongkos Kirim </a>
                  
 
 
@@ -111,6 +116,15 @@
 
                 <input type="hidden" name="result_data" id = "result-data" value="">
               </form>
+
+
+              {{-- <form action="" id = "payment-form" method = "post" action = "{{route('lakukanpembayaran', $pemesanan->id)}}">
+
+                <input type="hidden" name="result_data" id = "result-data" value="">
+              </form> --}}
+
+
+
 
 
               {{-- <pre><div id="result-data">JSON result will appear here after payment:<br></div></pre>  --}}
@@ -159,19 +173,19 @@
             changeResult('success',result);
             console.log(result.status_message);
             console.log(result);
-            $('payment-form').submit();
+            $('#payment-form').submit();
 
           },
 
           onPending: function(result){
             changeResult('pending',result);
             console.log(result.status_message);
-            $('payment-form').submit();
+            $('#payment-form').submit();
           },
           onError: function(result){
             changeResult('error',result);
             console.log(result.status_message);
-            $('payment-form').submit();
+            $('#payment-form').submit();
           },
 
 
@@ -180,32 +194,59 @@
 
     </script> --}}
 
-        <script type="text/javascript">
+        {{-- <script type="text/javascript">
       document.getElementById('pay-button').onclick = function(){
-        $('payment-form').submit();
+    
         snap.pay('<?=$snapToken?>', {
      
           onSuccess: function(result){
         
              document.getElementById('result-data').innerHTML += JSON.stringify(result, null, 2);
-     
+             $('#payment-form').submit();
           },
         
           onPending: function(result){
  
             document.getElementById('result-data').innerHTML += JSON.stringify(result, null, 2);
-   
+            $('#payment-form').submit();
           },
       
           onError: function(result){
         
              document.getElementById('result-data').innerHTML += JSON.stringify(result, null, 2);
- 
+             $('#payment-form').submit();
           }
         });
       };
-    </script>
+    </script> --}}
  
+
+
+
+
+
+    <script type="text/javascript">
+      document.getElementById('pay-button').onclick = function(){
+    
+        snap.pay('<?=$snapToken?>', {
+          onSuccess: function(result){console.log('success');console.log(result);},
+          onPending: function(result){console.log('pending');console.log(result);},
+          onError: function(result){console.log('error');console.log(result);},
+          onClose: function(){console.log('customer closed the popup without finishing the payment');}
+        });
+      };
+    </script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

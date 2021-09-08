@@ -477,6 +477,20 @@ ol, li {
   transition: transform 0.1s;
 }
 
+
+.tombol {
+  border:none;
+  background-color:#972A29;
+
+}
+
+.tombol:hover{
+  background-color:#f5f5f5;
+  color:#972A29;
+}
+
+
+
 .carousel::before,
 .carousel::after,
 .carousel__prev,

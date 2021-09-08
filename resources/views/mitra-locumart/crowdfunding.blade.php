@@ -6,7 +6,7 @@ Crowdfunding
 
 @section('content')
 
-<section id="crowdfunding" style = "background:url('/mitra-locumart/crowdfunding.png'); background-size:cover; height:100vh; margin-top:-2.5%; ">
+<section id="crowdfunding" style = "background:url('/bg-locumart/mitra-kelima.png'); background-size:cover; height:100vh; margin-top:-2.5%; ">
 
 <div class="container">
     <div class="row">

@@ -51,9 +51,22 @@
                 <textarea class="form-control" id="deskripsi_produk" name = "deskripsi_produk"></textarea>
               </div>
 
+
+              <div class="form-group">
+                <label for="kategori" class="col-form-label">Kategori : </label>
+                <input type="number" class="form-control" id="kategori" name = "kategori">
+              </div>
+
+
               <div class="form-group">
                 <label for="harga_jual" class="col-form-label">Harga Jual : </label>
                 <input type="number" class="form-control" id="harga_jual" name = "harga_jual">
+              </div>
+
+
+              <div class="form-group">
+                <label for="harga_diskon" class="col-form-label">Harga Diskon : </label>
+                <input type="number" class="form-control" id="harga_diskon" name = "harga_jual">
               </div>
 
               <div class="form-group">

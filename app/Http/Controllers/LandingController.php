@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Kavist\RajaOngkir\RajaOngkir;
+use Midtrans\Snap;
+
 
 class LandingController extends Controller
 {
@@ -253,40 +255,58 @@ class LandingController extends Controller
   \Midtrans\Config::$is3ds = true; 
 
 
+
+
+
+
+
+
+  $params = array(   
+    'transaction_details' => array(    
+            'order_id' => rand(),
+        //  'order_id' => $id,    
+            'gross_amount' => 10000,    ),  
+             'customer_details' => array(       
+                  'first_name' => 'Saudara',
+                  'last_name' => $user_name,
+                   'email' => $user_email,
+                   'phone' => '087847972064',    ),
+                 ); 
+                  $snapToken = \Midtrans\Snap::getSnapToken($params);
+
+
+
+
+
+
+
+
+
+
   if(isset($_GET['result_data']))
   {
-      $current_status = json_decode($_GET['result_data'], true);
-    //   dd($current_status);
-      $order_id = $current_status['order_id'];
+    //   $current_status = json_decode($_GET['result_data'], true);
+    $current_status = json_decode($_GET['result_data'], true);
+    dd($current_status);
+    //   $order_id = $current_status['order_id'];
     //   $pemesanan = Pemesanan::where('id',$order_id)->first();
     //   $pemesanan->status_pembayaran = 3;
     //   $pemesanan->update();
-    $pemesanan = Pemesanan::where('id',$order_id)->first();
-    $pemesanan->update([
-        'status_pembayaran' => 3,
-    ]);
+    // $pemesanan = Pemesanan::where('id',$order_id)->first();
+    // $pemesanan->update([
+    //     'status_pembayaran' => 3,
+    // ]);
  
   }
   else {
-      $pemesanan = Pemesanan::find($id);
+      $pemesanan = Pemesanan::findOrFail($id);
   }
 
 
 // if($pemesanan->status_pembayaran == 2)
 // {
 
-    $params = array(   
-        'transaction_details' => array(    
-                'order_id' => $id,
-             // 'order_id' => $id,    
-                'gross_amount' => 10000,    ),  
-                 'customer_details' => array(       
-                      'first_name' => 'Saudara',
-                      'last_name' => $user_name,
-                       'email' => $user_email,
-                       'phone' => '087847972064',    ),
-                     ); 
-                      $snapToken = \Midtrans\Snap::getSnapToken($params);
+  
  
 
 // }
@@ -369,7 +389,7 @@ class LandingController extends Controller
                 'customer_details' => array(       
                      'first_name' => 'budi',
                      'last_name' => 'pratama',
-                      'email' => 'budi.pra@example.com',
+                      'email' => 'fairuzfirjatullah3@gmail.com',
                       'phone' => '08111222333',    ),); 
                      $snapToken = \Midtrans\Snap::getSnapToken($params);
                     // dd($snapToken);
@@ -474,6 +494,300 @@ class LandingController extends Controller
     {
         # code...
     }
+
+
+
+    public function searchkategori(Request $request)
+    {
+        # code...
+        $searchkategori = $request->get('searchkategori');
+        $home = DB::table('produks')->where('kategori','like',"%".$searchkategori."%")->paginate();
+        return view('marketplace.home', compact('home'));
+
+    }
+
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function homecekongkir($id, Pemesanan $pemesanan)
+    {
+        # code...
+
+
+
+
+
+        // $kota_asal = 'Tasikmalaya';
+        // $kota_tujuan = 'Bandung';
+        // $kurir = 'JNE';
+        // $berat = '20' * 1000;
+
+        // $curl = curl_init();
+        // curl_setopt_array($curl, array(
+        //     CURLOPT_URL => "http://api.rajaongkir.com/starter/cost",
+        //     CURLOPT_RETURNTRANSFER => true,
+        //     CURLOPT_ENCODING => "",
+        //     CURLOPT_MAXREDIRS => 10,
+        //     CURLOPT_TIMEOUT => 30,
+        //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        //     CURLOPT_CUSTOMREQUEST => "POST",
+        //     CURLOPT_POSTFIELDS => "origin=" . $kota_asal . "&destination=" . $kota_tujuan . "&weight=" . $berat . "&courier=" . $kurir . "",
+        //     CURLOPT_HTTPHEADER => array(
+        //         "content-type: application/x-www-form-urlencoded",
+        //         "key: 68c70149d6d8d491948b6762b75edd22"
+        //     ),
+        // ));
+        // $response = curl_exec($curl);
+        // $err = curl_error($curl);
+        // curl_close($curl);
+        // $data = json_decode($response, true);
+        // $costs = $data['rajaongkir']['results'][0]['costs'];
+        //echo json_encode($data);
+
+        // $kurir = $data['rajaongkir']['results'][0]['name'];
+        // $kotaasal = $data['rajaongkir']['origin_details']['city_name'];
+        // $provinsiasal = $data['rajaongkir']['origin_details']['province'];
+        // $kotatujuan = $data['rajaongkir']['destination_details']['city_name'];
+        // $provinsitujuan = $data['rajaongkir']['destination_details']['province'];
+        // $berat = $data['rajaongkir']['query']['weight'] / 1000;
+       
+
+        $pemesanan = Pemesanan::findOrFail($id);
+
+        return view('marketplace.user.pilih-daerah', compact('pemesanan'));
+
+    }
+
+
+    public function cek_ongkir(Request $request) {
+        $kota_asal = $_POST['kota_asal'];
+        $kota_tujuan = $_POST['kota_tujuan'];
+        $kurir = $_POST['kurir'];
+        $berat = $_POST['berat'] * 1000;
+
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://api.rajaongkir.com/starter/cost",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => "origin=" . $kota_asal . "&destination=" . $kota_tujuan . "&weight=" . $berat . "&courier=" . $kurir . "",
+            CURLOPT_HTTPHEADER => array(
+                "content-type: application/x-www-form-urlencoded",
+                "key: 68c70149d6d8d491948b6762b75edd22"
+            ),
+        ));
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+        curl_close($curl);
+        $data = json_decode($response, true);
+        //echo json_encode($data);
+
+        $kurir = $data['rajaongkir']['results'][0]['name'];
+        $kotaasal = $data['rajaongkir']['origin_details']['city_name'];
+        $provinsiasal = $data['rajaongkir']['origin_details']['province'];
+        $kotatujuan = $data['rajaongkir']['destination_details']['city_name'];
+        $provinsitujuan = $data['rajaongkir']['destination_details']['province'];
+        $berat = $data['rajaongkir']['query']['weight'] / 1000;
+
+        echo '<div class="card">';
+        echo '<h5 class="card-header text-black" style="background-color: .bg-secondary;">';
+        echo '<b>Result:</b>';
+        echo '</h5>';
+        echo '<div class="card-body">';
+        echo '<table width="100%">';
+        echo '<tr>';
+        echo '<td width="15%"><b>Kurir</b> </td>';
+        echo '<td>&nbsp;<b>' . $kurir . '</b></td>';
+        echo '</tr>';
+        echo '<tr>';
+        echo '<td>Dari</td>';
+        echo '<td>: ' . $kotaasal . ", " . $provinsiasal . '</td>';
+        echo '</tr>';
+        echo '<tr>';
+        echo '<td>Tujuan</td>';
+        echo '<td>: ' . $kotatujuan . ", " . $provinsitujuan . '</td>';
+        echo '</tr>';
+        echo '<tr>';
+        echo '<td>Berat (Kg)</td>';
+        echo '<td>: ' . $berat . '</td>';
+        echo '</tr>';
+
+        echo '</table><br>';
+        echo '<table class="table table-striped table-bordered ">';
+        echo '<thead>';
+        echo '<tr>';
+        echo '<th>Nama Layanan</th>';
+        echo '<th>Tarif</th>';
+        echo '<th>ETD(Estimates Days)</th>';
+        echo '<th>Aksi</th>';
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody>';
+        foreach ($data['rajaongkir']['results'][0]['costs'] as $value) {
+            echo "<tr>";
+            echo "<td>" . $value['service'] . "</td>";
+            echo '';
+            foreach ($value['cost'] as $tarif) {
+                echo "<td align='right'>Rp " . number_format($tarif['value'], 2, ',', '.') . "</td>";
+                echo "<td>" . $tarif['etd'] . " D</td>";
+                $biaya = $tarif['etd'];
+                
+                echo "<td>
+                <button class = 'btn btn-success' data-toggle = 'modal' data-target = '#exampleModal' > Ambil </button>
+           
+                </td>";
+
+
+
+       
+
+            }
+            echo '';
+
+            echo "</tr>";
+        }
+
+       
+        echo '</tbody>';
+        echo '</table>';
+        echo '</div>';
+        echo '</div>';
+
+        echo '<br>';
+        echo '<br>';
+    }
+
+
+
+ public function update_jasa(Request $request, $id, Pemesanan $Pemesanan)
+ {
+     # code...
+
+          $pemesanan = DB::table('pemesanans')->where('id', $id)->update([
+                        'namakota' => $request['namakota'],
+                        'ongkos_kirim' => $request['ongkos_kirim'],
+                        'media_pengiriman' => $request['media_pengiriman'],
+                        'harga_total' => $request['harga_total'],
+                        'status_pembayaran' => 3,
+                    ]);
+
+                    return redirect('/keranjang/'.$id)->with('sukses','Berhasil Diupdate');
+ }
+
+    
+
+
+
+
+
+
+
+    public function get_kota($q)
+    {
+        switch ($q) {
+            case 'kotaasal':
+                $curl = curl_init();
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => "http://api.rajaongkir.com/starter/city",
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 30,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+                    CURLOPT_HTTPHEADER => array(
+                        "key: 68c70149d6d8d491948b6762b75edd22"
+                    ),
+                ));
+                $response = curl_exec($curl);
+                $err = curl_error($curl);
+                curl_close($curl);
+                $data = json_decode($response, true);
+                for ($i = 0; $i < count($data['rajaongkir']['results']); $i++) {
+                    echo "<option></option>";
+                    echo "<option value='" . $data['rajaongkir']['results'][$i]['city_id'] . "'>" . $data['rajaongkir']['results'][$i]['city_name'] . "</option>";
+                }
+                break;
+
+            case 'kotatujuan':
+                $curl = curl_init();
+                curl_setopt_array($curl, array(
+                    CURLOPT_URL => "http://api.rajaongkir.com/starter/city",
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_ENCODING => "",
+                    CURLOPT_MAXREDIRS => 10,
+                    CURLOPT_TIMEOUT => 30,
+                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                    CURLOPT_CUSTOMREQUEST => "GET",
+                    CURLOPT_HTTPHEADER => array(
+                        "key: 68c70149d6d8d491948b6762b75edd22"
+                    ),
+                ));
+                $response = curl_exec($curl);
+                $err = curl_error($curl);
+                curl_close($curl);
+                $data = json_decode($response, true);
+                for ($i = 0; $i < count($data['rajaongkir']['results']); $i++) {
+                    echo "<option></option>";
+                    echo "<option value='" . $data['rajaongkir']['results'][$i]['city_id'] . "'>" . $data['rajaongkir']['results'][$i]['city_name'] . "</option>";
+                }
+                break;
+        }
+    }
+
+
+
+
+    public function daftartagihan()
+    {
+        # code...
+        $user_id = Auth::id();
+        $pesanan = DB::table('pemesanans')->where('user_id',$user_id);
+        $pemesanans = $pesanan->where('status_pembayaran',3)->get();
+        return view('marketplace.user.tagihan',compact('pemesanans'));
+    }
+
+
+    public function daftartagihanspesifik($id, Pemesanan $pemesanan)
+    {
+        # code...
+        $pemesanan = Pemesanan::findOrFail($id);
+        return view('marketplace.user.tagihan-spesifik',compact('pemesanan'));
+    }
+
+
+
+    public function ratingpesanan($id, Pemesanan $pemesanan)
+    {
+        # code...
+        $pemesanan = Pemesanan::findOrFail($id);
+        return view('marketplace.user.rating',compact('pemesanan'));
+    }
+
+
+    public function updaterating(Request $request, Pemesanan $pemesanan, $id)
+    {
+        # code...
+        $pemesanan = DB::table('pemesanans')->where('id', $id)->update([
+            'rating_produk' => $request['rating_produk'],
+
+        ]);
+        return redirect('/rating-pesanan/'.$id)->with('rating-sukses','Rating Anda Telah Diupdate');
+    }
+
+
+
+
+
+
 
 
 

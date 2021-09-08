@@ -218,6 +218,13 @@
                   Beranda
                 </a>
               </li>
+
+              <li class="header__navbar-item">
+                <a href="{{url('/tagihan-anda')}}" class="header__navbar-item-link">
+                  <i class="header__navbar-icon fas fa-money-bill-alt"></i>
+                  Tagihan Anda
+                </a>
+              </li>
               <!-- <li
                 class="header__navbar-item header__navbar-item--strong header__navbar-item--separate"
               >
@@ -308,11 +315,21 @@
                   placeholder="Silakan Cari Produk Anda"
                 />
                 <ul>
-                    <li style = "display:inline; float:left;"> <strong><a href="" style = "color:white; text-decoration:none; ">Rangginang</a> </strong></li>
+                  <?php 
+                    
+                  $pesansering = DB::table('produks')->paginate(4);
+
+                  ?>
+                    {{-- <li style = "display:inline; float:left;"> <strong><a href="" style = "color:white; text-decoration:none; ">Rangginang</a> </strong></li>
                     <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Dodol Garut</a> </strong></li>
                     <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Kelom Geulis</a> </strong></li>
-                    <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Wayang Cepot</a> </strong></li>
-                </ul>
+                    <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Wayang Cepot</a> </strong></li> --}}
+ 
+                    @foreach ($pesansering as $item)
+                    <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; "> {{$item->nama_produk}} </a> </strong></li>
+                    @endforeach
+
+                  </ul>
                 <!-- Search history -->
                 <div class="header__search-history">
                   <h3 class="header__search-history-heading">

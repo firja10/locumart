@@ -37,7 +37,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top "  style = "background-color:#BC1823;" >
+  <header id="header" class="fixed-top "  style = "background-color:#CD011C;" >
     <div class="container d-flex align-items-center">
 
       <h1 class="logo mr-auto"><a href="{{url('/mitra-locumart/home')}}">Mitra Locu</a></h1>

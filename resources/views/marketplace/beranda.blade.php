@@ -451,7 +451,7 @@
 
 
  <br> <br>
-              <header class="header" style = "background-color: #972A29;" id = "headerdua">
+              <header class="header" style = "background-color: #972A29; " id = "headerdua">
                 <div class="grid wide">
                   <nav class="header__navbar hide-on-mobile-tablet">
                  

@@ -7,10 +7,26 @@
   </head>
   <body>
     <button id="pay-button">Pay!</button>
+
+    <form action="bayar" method = "GET" id = "payment-form"> 
+
+      <input type="hidden" name="result_data" id = "result-data">
+
+    </form>
+
     <script type="text/javascript">
       var payButton = document.getElementById('pay-button');
       payButton.addEventListener('click', function () {
-        snap.pay('<?=$snapToken?>');
+        snap.pay('<?=$snapToken?>'
+        // ,
+      
+        // {$('#payment-form').submit();}
+        onSuccess: function(result){console.log('success');console.log(result);},
+          onPending: function(result){console.log('pending');console.log(result);},
+          onError: function(result){console.log('error');console.log(result);},
+          onClose: function(){console.log('customer closed the popup without finishing the payment');}
+        
+        );
       });
     </script>
   </body>

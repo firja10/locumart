@@ -6,8 +6,8 @@ Home - Mitra Locumart
 
 @section('content')
 
-<section id = "home" style = "background:url('/mitra-locumart/home-1.png');
-background-size:cover; margin-top:-5%;">
+<section id = "home" style = "background:url('/bg-locumart/mitra-pertama.png');
+background-size:cover; margin-top:-5%; height:90vh;">
 
 <div class="container">
     <div class="row" style = "margin-top:200px;">
@@ -93,7 +93,7 @@ background-size:cover; margin-top:-5%;">
 
 
 
-<section id="home_dua" style = "background:url('/mitra-locumart/home-2_1.png'); background-size:cover; margin-top:-2%; ">
+<section id="home_dua" style = "background:url('/bg-locumart/mitra-kedua.png'); background-size:cover; margin-top:-2%; ">
 <div class="container">
     <div class="row">
         <div class="col-xl-6 col-md-12 align-items-stretch">

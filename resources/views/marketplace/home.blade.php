@@ -318,10 +318,21 @@
                   placeholder="Silakan Cari Produk Anda"
                 />
                 <ul>
-                    <li style = "display:inline; float:left;"> <strong><a href="" style = "color:white; text-decoration:none; ">Rangginang</a> </strong></li>
+                  <?php 
+                    
+                    $pesansering = DB::table('produks')->paginate(4);
+
+                    ?>
+                    {{-- <li style = "display:inline; float:left;margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Rangginang</a> </strong></li>
                     <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Dodol Garut</a> </strong></li>
                     <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Kelom Geulis</a> </strong></li>
-                    <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Wayang Cepot</a> </strong></li>
+                    <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Wayang Cepot</a> </strong></li> --}}
+
+                    @foreach ($pesansering as $item)
+                    <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; "> {{$item->nama_produk}} </a> </strong></li>
+                    @endforeach
+
+
                 </ul>
                 <!-- Search history -->
                 <div class="header__search-history">
@@ -536,7 +547,7 @@
 
 
  <br> <br>
-              <header class="header" style = "background-color: #972A29;" id = "headerdua">
+              <header class="header" style = "background-color: #972A29; height:20vh;" id = "headerdua">
                 <div class="grid wide">
                   <nav class="header__navbar hide-on-mobile-tablet">
                  
@@ -556,17 +567,62 @@
       
             
                 <div class="col l-4">
-                    <div id = "category" style = "width:300px;">
+                    <div id = "category" style = "width:500px;">
                         <center>
-                            <center>
-                            <span style = "background-color: #19344F; padding:5px; font-size:15px; color:#ffff; text-align:center; float:center; display:inline;"> Kategori Pilihan </span>
-                        </center>
+                            {{-- <center>
+                            <span style = "background-color: #19344F; padding:5px; font-size:15px; color:#ffff; text-align:left; float:center;display:inline; "> Kategori Pilihan </span>
+                        </center> --}}
                             {{-- <img src="{{asset('')}}" alt=""> --}}
 
+
+                            <div class="col-1">
+
+                            </div>
+
+
+                            <div class="col-2">
+                              {{-- <center>
+                                <span style = "background-color: #19344F; padding:5px; font-size:15px; color:#ffff; text-align:center; float:center;display:inline; "> Kategori Pilihan </span>
+                            </center> --}}
+                            </div>
+
+                            <div class="col-1">
+
+                            </div>
+
                             <ul style = "text-align: center;">
-                                <li style = "display: inline; float:left;"><a href="" onclick="openKategori('Makanan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p style="color:#fff;font-size:13px;" >Makanan</p> </a>  </li>
-                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href="" onclick="openKategori('Kesenian')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"> <p style="color:#fff;font-size:13px;">Kesenian</p></a>  </li>
-                                <li style = "display: inline ; float:left;margin-left:10px;"> <a href="" onclick="openKategori('Kebutuhan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"><p style="color:#fff;font-size:13px;">Kebutuhan</p></a>  </li>
+
+                              
+                                <li style = "display: inline; float:left;">
+                                  <form action="/home/searchkategori" method="GET">
+                                      {{-- <a href="" onclick="openKategori('Makanan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p style="color:#fff;font-size:13px;" >Makanan</p> </a>  
+                                       --}}
+                                      <input type="hidden" name="kategori" value = "Makanan">
+                                       <button class = "tombol" type = "submit" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p style="color:#fff;font-size:13px;" >Makanan</p> </button>  
+                                  </form>
+                                </li>
+
+
+                                <li style = "display: inline ; float:left;margin-left:10px;"> 
+                                    <form action="/home/searchkategori" method="GET">
+                                      {{-- <a href="" onclick="openKategori('Kesenian')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"> <p style="color:#fff;font-size:13px;">Kesenian</p></a>  --}}
+
+                                      <input type="hidden" name="kategori" value = "Kesenian">
+                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"> <p style="color:#fff;font-size:13px;">Kesenian</p></button> 
+                                    </form>
+                                 </li>
+
+                                <li style = "display: inline ; float:left;margin-left:10px;">
+                                  
+                                    
+                                  <form action="/home/searchkategori" method="GET">
+                                      {{-- <a href="" onclick="openKategori('Kebutuhan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"><p style="color:#fff;font-size:13px;">Kebutuhan</p></a>   --}}
+                                      <input type="hidden" name="kategori" value = "Kebutuhan">
+                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"><p style="color:#fff;font-size:13px;">Kebutuhan</p></button>  
+
+                                  </form>
+
+                                </li>
                             </ul>
                            
 
@@ -1157,15 +1213,15 @@
 
     <script>
 
-      function openKategori(kategoriName)
-      {
-        var i;
-        var x = document.getElementsByClassName("kategori");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
-        }
-        document.getElementById(kategoriName).style.display = "block";  
-      }
+      // function openKategori(kategoriName)
+      // {
+      //   var i;
+      //   var x = document.getElementsByClassName("kategori");
+      //   for (i = 0; i < x.length; i++) {
+      //     x[i].style.display = "none";  
+      //   }
+      //   document.getElementById(kategoriName).style.display = "block";  
+      // }
 
 
 

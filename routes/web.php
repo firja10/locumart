@@ -55,7 +55,7 @@ Route::get('/produk/{id}',[LandingController::class,'lihatproduk'])->name('lihat
 // Halaman User 
 Route::get('/keranjang/{id}',[LandingController::class,'lihatkeranjangspesifik'])->name('lihatkeranjangspesifik');
 Route::get('/bayar',[LandingController::class,'initPaymentGateway'])->name('initPaymentGateway')->middleware('auth');
-
+Route::get('home/searchkategori',[LandingController::class,'searchkategori'])->name('searchkategori');
 
 
 // Halaman Pemilik 
@@ -67,6 +67,33 @@ Route::get('/pemilik/riwayat-produk/{id}',[LandingController::class,'daftarprodu
 Route::get('/pemilik/store-produk',[LandingController::class,'formproduk'])->name('formproduk')->middleware('auth');
 
 Route::get('tambah-ongkir',[LandingController::class,'ongkir'])->name('ongkir')->middleware('auth');
+
+
+
+
+
+
+
+// Route::get('cekongkir','LandingController@homecekongkir');
+Route::get('cekongkir/{id}',[LandingController::class,'homecekongkir'])->name('homecekongkir');
+Route::post('cek-ongkir', [LandingController::class,'cek_ongkir'])->name('cek.ongkir');
+Route::get('get-kota/{q?}', [LandingController::class,'get_kota'])->name('get.kota');
+Route::patch('cekongkir/{id}', [LandingController::class,'update_jasa'])->name('update_jasa');
+// Route::post('cek-ongkir', ['uses'=>'LandingController@cek_ongkir', 'as'=>'cek.ongkir']);
+// Route::get('get-kota/{q?}', ['uses'=>'LandingController@get_kota', 'as'=>'get.kota']);
+
+Route::get('tagihan-anda', [LandingController::class,'daftartagihan'])->name('daftartagihan')->middleware('auth');
+Route::get('tagihan-anda/{id}', [LandingController::class,'daftartagihanspesifik'])->name('daftartagihanspesifik')->middleware('auth');
+
+Route::get('rating-pesanan/{id}', [LandingController::class,'ratingpesanan'])->name('ratingpesanan')->middleware('auth');
+Route::patch('rating-pesanan/{id}', [LandingController::class,'updaterating'])->name('updaterating')->middleware('auth');
+
+
+
+
+
+
+
 
 
 

@@ -5,7 +5,7 @@ Business Upgrading
 @endsection
 
 @section('content')
-<section id="mulai-berjualan" style = "background:url('/mitra-locumart/home-4.png'); background-size:cover; height:100vh; margin-top:-2.5%; ">
+<section id="mulai-berjualan" style = "background:url('/bg-locumart/mitra-keempat.png'); background-size:cover; height:100vh; margin-top:-2.5%; ">
 <div class="container">
     <div class="row">
         <div class="col-4">
