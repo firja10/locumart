@@ -9,7 +9,7 @@ Deskripsi Locumart
 @section('content')
     
 
-<section id = "deskripsi" style = "background:url('/tentang-locumart/deskripsi-locu.png');  height:100vh;
+<section id = "deskripsi" style = "background:url('/bg-locumart/tentang-pertama.png');  height:100vh;
 background-size:cover; margin-top:-5%;">
 
 </section>

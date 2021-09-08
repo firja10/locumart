@@ -9,7 +9,7 @@ Partnership
 @section('content')
     
 
-<section id = "partnership" style = "background:url('/tentang-locumart/partner.png');  height:100vh;
+<section id = "partnership" style = "background:url('/bg-locumart/tentang-keempat.png');  height:100vh;
 background-size:cover; margin-top:-5%;">
 <div class="container">
     <div class="row">

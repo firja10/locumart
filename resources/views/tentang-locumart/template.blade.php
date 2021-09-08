@@ -78,10 +78,8 @@
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3 style = "color:white;">Locumart</h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
+            <p style = "color:white;">
+           Bersatu Demi Indonesia 
 
             </p>
           </div>
@@ -96,7 +94,7 @@
 
         <div class="col-lg-3 col-md-6 footer-links">
             <center>
-            <h4>Our Social Networks</h4>
+            <h4 style = "color:#fff;">Sosial Media Kami</h4>
 
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

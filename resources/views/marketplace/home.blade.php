@@ -208,10 +208,18 @@
                 </a>
               </li>
               <li class="header__navbar-item">
-                <a href="" class="header__navbar-item-link">
+                <a href="{{url('/tentang-locumart/deskripsi')}}" class="header__navbar-item-link">
                   <i class="header__navbar-icon far fa-question-circle"></i>
 
-                  FAQ
+                  Tentang Locumart
+                </a>
+              </li>
+
+              <li class="header__navbar-item">
+                <a href="{{url('/mitra-locumart/home')}}" class="header__navbar-item-link">
+                  <i class="header__navbar-icon fa fa-users"></i>
+
+                  Mitra Locumart
                 </a>
               </li>
               <!-- <li
