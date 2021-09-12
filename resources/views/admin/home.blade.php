@@ -81,10 +81,8 @@
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3 style = "color:white;">Locumart</h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
+            <p style = "color:white;">
+            Memberikan Yang Terbaik
 
             </p>
           </div>
