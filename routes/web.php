@@ -55,7 +55,9 @@ Route::get('/produk/{id}',[LandingController::class,'lihatproduk'])->name('lihat
 // Halaman User 
 Route::get('/keranjang/{id}',[LandingController::class,'lihatkeranjangspesifik'])->name('lihatkeranjangspesifik');
 Route::get('/bayar',[LandingController::class,'initPaymentGateway'])->name('initPaymentGateway')->middleware('auth');
-Route::get('home/searchkategori',[LandingController::class,'searchkategori'])->name('searchkategori');
+
+// Route::get('home/searchkategori',[LandingController::class,'searchkategori'])->name('searchkategori');
+Route::get('/home/searchkategori','App\Http\Controllers\LandingController@searchkategori')->middleware('auth');
 
 
 // Halaman Pemilik 

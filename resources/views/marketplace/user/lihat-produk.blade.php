@@ -57,14 +57,21 @@
             <center>
                 <h1 style = "text-align: center;">{{$produk->nama_produk}}</h1>
                 <br>
-                <p>{{$produk->kategori}}</p>
-                <h5> <i class="fa fa-phone"></i> &nbsp; Nomor Handphone : {{$produk->nomor_hp_produk}} </h5>
+                <p style = "font-size:15px;">{{$produk->kategori}}</p>
+                <h3> <i class="fa fa-phone"></i> &nbsp; Nomor Handphone : {{$produk->nomor_hp_produk}} </h3>
 
-                <h5> <i class="fas fa-location-arrow"></i> &nbsp; Harga Jual : {{$produk->harga_jual}}</h5>
+                <?php 
+                $angka = $produk->harga_jual;
+                $angka_diskon = $produk->harga_diskon;
+                $harga_sell = number_format($angka,2,',','.');
+                $harga_diskon = number_format($angka_diskon,2,',','.');
+
+                 ?>
+                <h3> <i class="fas fa-money-bill-alt"></i> &nbsp; Harga Produk : Rp. <?php echo $harga_diskon;  ?>  </h3>
                
 
                     <br>
-                  <a href="{{route('daftarproduktoko',$produk->id)}}" class="btn btn-success" style = "margin-top:10px; margin-right:5px;"> <i class="fa fa-money-bill"></i> &nbsp; Beli Produk</a>
+                  {{-- <a href="{{route('daftarproduktoko',$produk->id)}}" class="btn btn-success" style = "margin-top:10px; margin-right:5px;"> <i class="fa fa-money-bill"></i> &nbsp; Beli Produk</a> --}}
                  
                   <form action="{{route('masukkeranjang', $produk->id)}}" method = "POST" enctype="multipart/form-data">
                     @csrf
@@ -146,7 +153,7 @@
                         <input type="hidden" class="form-control" id="produk_id" name = "produk_id" placeholder="{{$produk->id}}" value = "{{$produk->id}}">
                       </div>
 
-                      <button type = "submit" name = "submit" class="btn btn-success" style = "margin-top:10px;margin-left:5px;"> <i class="fa fa-shopping-cart"></i> &nbsp; Masukkan Keranjang</button>
+                      <button type = "submit" name = "submit" class="btn btn-success" style = "margin-top:10px;margin-left:5px; font-size:15px; padding-bottom:10px;"> <i class="fa fa-shopping-cart"></i> &nbsp; Masukkan Keranjang</button>
 
 
                   </form>

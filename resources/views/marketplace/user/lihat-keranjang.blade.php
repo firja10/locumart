@@ -379,8 +379,22 @@
                           {{$item->nama_produk}}
                           </h5>
                           <div class="header__cart-item-price-wrap">
+
+
+                            <?php 
+                            $angka = $item->harga_jual;
+                            $angka_diskon = $item->harga_diskon;
+                            $harga_sell = number_format($angka,2,',','.');
+                            $harga_diskon = number_format($angka_diskon,2,',','.');
+ 
+                             ?>
+
+
+
                             <span class="header__cart-item-price"
-                              >Rp.{{$item->harga_jual}}</span
+                              >
+                              Rp. <?php echo $harga_diskon;  ?>
+                              </span
                             >
                             <span class="header__cart-item-multiply">x</span>
                             <span class="header__cart-item-qnt">2</span>
@@ -530,10 +544,10 @@
                       </h4>
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
-                          >Rp. {{$produks->harga_jual}}</span
+                          >Rp. <?php echo $harga_sell;  ?></span
                         >
                         <span class="home-product-item__price-current"
-                          >Rp. {{$produks->harga_diskon}}</span
+                          >Rp. <?php echo $harga_diskon;  ?></span
                         >
                       </div>
                       <div class="home-product-item__action">

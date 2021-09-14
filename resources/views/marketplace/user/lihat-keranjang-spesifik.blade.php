@@ -64,10 +64,10 @@
             <center>
                 <h1 style = "text-align: center;">{{$pemesanan->nama_produk}}</h1>
                 <br>
-                <h5> <i class="fa fa-list-alt"></i> &nbsp; Kategori: {{$pemesanan->kategori}} </h5>
-                <h5> <i class="fa fa-phone"></i> &nbsp; Nomor Handphone : {{$pemesanan->nomor_hp_produk}} </h5>
+                <h3> <i class="fa fa-list-alt"></i> &nbsp; Kategori: {{$pemesanan->kategori}} </h3>
+                <h3> <i class="fa fa-phone"></i> &nbsp; Nomor Handphone : {{$pemesanan->nomor_hp_produk}} </h3>
 
-                <h5> <i class="fas fa-money-bill-alt"></i> &nbsp; Harga Jual : <?php echo " Rp " . number_format($pemesanan->harga_jual, 2, ',', '.')?></h5>
+                <h3> <i class="fas fa-money-bill-alt"></i> &nbsp; Harga Jual : <?php echo " Rp " . number_format($pemesanan->harga_diskon, 2, ',', '.')?></h3>
                
 
                     <br>
@@ -75,7 +75,7 @@
                         @csrf
                         @method('DELETE')
 
-                    <button  class="btn btn-danger" style = "margin-top:10px;"> <i class="fa fa-money-bill"></i> &nbsp; Hapus Produk</button>
+                    <button  class="btn btn-danger" style = "margin-top:10px;font-size:15px;"> <i class="fa fa-money-bill"></i> &nbsp; Hapus Produk</button>
                     </form>
                  
     
@@ -83,22 +83,22 @@
               <form action="{{route('pembayaran', $pemesanan->id)}}" method = "POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
-                  <button type = "submit" name = "submit" class="btn btn-success" style = "margin-top:10px;"> <i class="fa fa-shopping-cart"></i> &nbsp; Beli produk</button>
+                  <button type = "submit" name = "submit" class="btn btn-success" style = "margin-top:10px; font-size:15px;"> <i class="fa fa-shopping-cart"></i> &nbsp; Beli produk</button>
               </form>
               @elseif($pemesanan->status_pembayaran == 2)
               <br>
-              <a href="{{url('/cekongkir/'.$pemesanan->id)}}" class=" btn btn-dark">Pilih Ongkos Kirim</a>
+              <a style = "font-size:15px;" href="{{url('/cekongkir/'.$pemesanan->id)}}" class=" btn btn-dark">Pilih Ongkos Kirim</a>
                   {{-- <a href="" class="btn btn-warning" style = "padding-top:3px;"> <i class="fa fa-search"></i>  Lakukan Pembayaran</a> --}}
 
                @elseif($pemesanan->status_pembayaran == 3)
     
-                <button class="btn-warning btn" id = "pay-button" type = "button" style = "margin-top:10px;"> <i class="fa fa-search"></i> Lakukan Pembayaran </button>
+                <button class="btn-warning btn" id = "pay-button" type = "button" style = "margin-top:10px; font-size:15px;"> <i class="fa fa-search"></i> Lakukan Pembayaran </button>
 
                 @elseif($pemesanan->status_pembayaran == 4)
                 <br>
                 <span> Pembayaran Telah Dilakukan </span>
                 <br>
-                <a href="" class="btn btn-primary"> Lakukan Rating</a>
+                <a href="" class="btn btn-primary" style = "font-size:15px;"> Lakukan Rating</a>
               @endif
 
               <br>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marketplace</title>
+    <title>Locumart - Marketplace</title>
     <link rel="shortcut icon" href="{{asset('marketplace/logo-locumart.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/base.css')}}" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/main.css')}}" />
@@ -477,14 +477,14 @@
                             
                             <div class="mySlides fade">
                               <div class="numbertext">2 / 3</div>
-                              <img src="img_snow_wide.jpg" style="width:100%"  class = "gambar-slide">
-                              <div class="text">Caption Two</div>
+                              <img src="{{asset('marketplace/produk-1.png')}}" style="width:100%"  class = "gambar-slide">
+                              <div class="text"> <b>Inilah Tawaran Kami</b> </div>
                             </div>
                             
                             <div class="mySlides fade">
                               <div class="numbertext">3 / 3</div>
-                              <img src="img_mountains_wide.jpg" style="width:100%"  class = "gambar-slide">
-                              <div class="text">Caption Three</div>
+                              <img src="{{asset('marketplace/produk-2.png')}}" style="width:100%"  class = "gambar-slide">
+                              <div class="text"> <b>Inilah Tawaran Kami</b> </div>
                             </div>
                             
                             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -899,9 +899,11 @@
               <div class="home-product" id = "makanan" class = "kategori">
                 <div class="row sm-gutter">
 
+                  
 
-                  @foreach ($home as $item)
+                  @foreach ($produks as $item)
                      <!-- Product item -->
+                     <td>
                      <div class="col l-2-4 m-4 c-6">
                       <a href="{{route('lihatproduk', $item->id)}}" class="home-product-item">
                         <div
@@ -913,11 +915,18 @@
                           {{$item->nama_produk}}
                         </h4>
                         <div class="home-product-item__price">
+                          <?php 
+                           $angka = $item->harga_jual;
+                           $angka_diskon = $item->harga_diskon;
+                           $harga_sell = number_format($angka,2,',','.');
+                           $harga_diskon = number_format($angka_diskon,2,',','.');
+
+                            ?>
                           <span class="home-product-item__price-old"
-                            >Rp. {{$item->harga_jual}}</span
+                            >Rp. <?php echo $harga_sell;  ?></span
                           >
                           <span class="home-product-item__price-current"
-                            >Rp. {{$item->harga_diskon}}</span
+                            >Rp. <?php echo $harga_diskon;  ?></span
                           >
                         </div>
                         <div class="home-product-item__action">
@@ -968,7 +977,7 @@
                         </div>
                       </a>
                     </div>
-
+                  </td>
                   @endforeach
 
                 </div>

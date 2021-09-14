@@ -20,16 +20,16 @@ class LandingController extends Controller
     public function home()
     {
         # code...
-        $home = Produk::all();
-        return view('marketplace.home', compact('home'));
+        $produks = Produk::all();
+        return view('marketplace.home', compact('produks'));
 
     }
 
     public function landing()
     {
         # code...
-        $home = Produk::all();
-        return view('marketplace.home', compact('home'));
+        $produks = Produk::all();
+        return view('marketplace.home', compact('produks'));
     }
 
 
@@ -501,8 +501,9 @@ class LandingController extends Controller
     {
         # code...
         $searchkategori = $request->get('searchkategori');
-        $home = DB::table('produks')->where('kategori','like',"%".$searchkategori."%")->paginate();
-        return view('marketplace.home', compact('home'));
+        $produks = DB::table('produks')->where('kategori','like',"%".$searchkategori."%")->paginate();
+        // return view('marketplace.home', compact('home'));
+        return view('marketplace.home', ['produks'=>$produks]);
 
     }
 
