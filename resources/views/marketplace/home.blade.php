@@ -337,7 +337,7 @@
                     <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; ">Wayang Cepot</a> </strong></li> --}}
 
                     @foreach ($pesansering as $item)
-                    <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="" style = "color:white; text-decoration:none; "> {{$item->nama_produk}} </a> </strong></li>
+                    <li style = "display:inline; float:left; margin-left:10px;"> <strong><a href="produk/{{$item->id}}" style = "color:white; text-decoration:none; "> {{$item->nama_produk}} </a> </strong></li>
                     @endforeach
 
 
