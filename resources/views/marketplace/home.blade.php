@@ -159,9 +159,9 @@
 
             <ul class="header__navbar-list">
               <li
-                class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate"
+                class="header__navbar-item header__navbar-item--has-qr "
               >
-   Profil Anda
+   Download Aplikasi Locumart
                 <!-- Header QR Code -->
                 <div class="header__qr">
                   <img
@@ -187,7 +187,7 @@
                   </div>
                 </div>
               </li>
-              <li class="header__navbar-item">
+              {{-- <li class="header__navbar-item">
                 <span class="header__navbar-title--no-pointer">Sosial Media Anda</span>
 
                 <a href="" class="header__navbar-icon-link">
@@ -196,7 +196,7 @@
                 <a href="" class="header__navbar-icon-link">
                   <i class="header__navbar-icon fab fa-instagram"></i>
                 </a>
-              </li>
+              </li> --}}
             </ul>
             <ul class="header__navbar-list">
               <li class="header__navbar-item">
@@ -661,24 +661,28 @@
                             Chưa có sản phẩm
                           </span>
                           <!-- Hascart -->
-                          <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                          <h4 class="header__cart-heading">Cek Keranjang</h4>
                           <!-- Cart item -->
                           <ul class="header__cart-list-item">
+                           
+
+
+
+                            @foreach ($pesanan as $item)
                             <li class="header__cart-item">
                               <img
-                                src="https://img.tickid.vn/photos/resized/320x/83-1580889448-myphamohui-lgvina.png')}}"
+                                src="{{asset('storage/Pemesanan/'.$item->gambar_produk)}}"
                                 alt=""
                                 class="header__cart-img"
                               />
                               <div class="header__cart-item-info">
                                 <div class="header__cart-item-head">
                                   <h5 class="header__cart-item-name">
-                                    Set sữa rửa mặt Ohui Prime sữa rửa mặt Ohui Prime
-                                    sữa rửa mặt Ohui Prime
+                                  {{$item->nama_produk}}
                                   </h5>
                                   <div class="header__cart-item-price-wrap">
                                     <span class="header__cart-item-price"
-                                      >Rp. 2.000.000</span
+                                      >Rp.{{$item->harga_jual}}</span
                                     >
                                     <span class="header__cart-item-multiply">x</span>
                                     <span class="header__cart-item-qnt">2</span>
@@ -686,153 +690,20 @@
                                 </div>
                                 <div class="header__cart-item-body">
                                   <span class="header__cart-item-description"
-                                    >Phân loại : Bạc</span
+                                    >{{$item->kategori}}</span
                                   >
-                                  <span class="header__cart-item-remove">Xóa</span>
+                                  <span class="header__cart-item-remove">Selesaikan Pembayaran</span>
                                 </div>
                               </div>
                             </li>
-                            <li class="header__cart-item">
-                              <img
-                                src="https://img.tickid.vn/photos/resized/320x/83-1580887317-myphamohui-lgvina.png')}}"
-                                alt=""
-                                class="header__cart-img"
-                              />
-                              <div class="header__cart-item-info">
-                                <div class="header__cart-item-head">
-                                  <h5 class="header__cart-item-name">
-                                    Set dưỡng ẩm whoo vàng
-                                  </h5>
-                                  <div class="header__cart-item-price-wrap">
-                                    <span class="header__cart-item-price"
-                                      >3.105.000đ
-                                    </span>
-                                    <span class="header__cart-item-multiply">x</span>
-                                    <span class="header__cart-item-qnt">1</span>
-                                  </div>
-                                </div>
-                                <div class="header__cart-item-body">
-                                  <span class="header__cart-item-description"
-                                    >Phân loại : Cứt</span
-                                  >
-                                  <span class="header__cart-item-remove">Xóa</span>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="header__cart-item">
-                              <img
-                                src="https://img.tickid.vn/photos/resized/320x/83-1580884899-myphamohui-lgvina.png')}}"
-                                alt=""
-                                class="header__cart-img"
-                              />
-                              <div class="header__cart-item-info">
-                                <div class="header__cart-item-head">
-                                  <h5 class="header__cart-item-name">
-                                    Set kem mắt hoàn lưu cao cấp
-                                  </h5>
-                                  <div class="header__cart-item-price-wrap">
-                                    <span class="header__cart-item-price"
-                                      >11.610.000đ
-                                    </span>
-                                    <span class="header__cart-item-multiply">x</span>
-                                    <span class="header__cart-item-qnt">3</span>
-                                  </div>
-                                </div>
-                                <div class="header__cart-item-body">
-                                  <span class="header__cart-item-description"
-                                    >Phân loại : Tinh hoa
-                                  </span>
-                                  <span class="header__cart-item-remove">Xóa</span>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="header__cart-item">
-                              <img
-                                src="https://img.tickid.vn/photos/resized/320x/83-1580889448-myphamohui-lgvina.png')}}"
-                                alt=""
-                                class="header__cart-img"
-                              />
-                              <div class="header__cart-item-info">
-                                <div class="header__cart-item-head">
-                                  <h5 class="header__cart-item-name">
-                                    Set sữa rửa mặt Ohui Prime
-                                  </h5>
-                                  <div class="header__cart-item-price-wrap">
-                                    <span class="header__cart-item-price"
-                                      >Rp. 2.000.000</span
-                                    >
-                                    <span class="header__cart-item-multiply">x</span>
-                                    <span class="header__cart-item-qnt">2</span>
-                                  </div>
-                                </div>
-                                <div class="header__cart-item-body">
-                                  <span class="header__cart-item-description"
-                                    >Phân loại : Bạc</span
-                                  >
-                                  <span class="header__cart-item-remove">Xóa</span>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="header__cart-item">
-                              <img
-                                src="https://img.tickid.vn/photos/resized/320x/83-1580887317-myphamohui-lgvina.png')}}"
-                                alt=""
-                                class="header__cart-img"
-                              />
-                              <div class="header__cart-item-info">
-                                <div class="header__cart-item-head">
-                                  <h5 class="header__cart-item-name">
-                                    Set dưỡng ẩm whoo vàng
-                                  </h5>
-                                  <div class="header__cart-item-price-wrap">
-                                    <span class="header__cart-item-price"
-                                      >3.105.000đ
-                                    </span>
-                                    <span class="header__cart-item-multiply">x</span>
-                                    <span class="header__cart-item-qnt">1</span>
-                                  </div>
-                                </div>
-                                <div class="header__cart-item-body">
-                                  <span class="header__cart-item-description"
-                                    >Phân loại : Cứt</span
-                                  >
-                                  <span class="header__cart-item-remove">Xóa</span>
-                                </div>
-                              </div>
-                            </li>
-                            <li class="header__cart-item">
-                              <img
-                                src="https://img.tickid.vn/photos/resized/320x/83-1580884899-myphamohui-lgvina.png')}}"
-                                alt=""
-                                class="header__cart-img"
-                              />
-                              <div class="header__cart-item-info">
-                                <div class="header__cart-item-head">
-                                  <h5 class="header__cart-item-name">
-                                    Set kem mắt hoàn lưu cao cấp
-                                  </h5>
-                                  <div class="header__cart-item-price-wrap">
-                                    <span class="header__cart-item-price"
-                                      >11.610.000đ
-                                    </span>
-                                    <span class="header__cart-item-multiply">x</span>
-                                    <span class="header__cart-item-qnt">3</span>
-                                  </div>
-                                </div>
-                                <div class="header__cart-item-body">
-                                  <span class="header__cart-item-description"
-                                    >Phân loại : Tinh hoa
-                                  </span>
-                                  <span class="header__cart-item-remove">Xóa</span>
-                                </div>
-                              </div>
-                            </li>
-        
+                            @endforeach
+
+
         
         
                           </ul>
                           <a href="#" class="header__cart-view-cart btn btn--primary"
-                            >Xem giỏ hàng</a
+                            >Lihat Riwayat Pesanan</a
                           >
                         </div>
                       </div>
