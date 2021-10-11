@@ -1153,6 +1153,40 @@
 
 
 
+
+
+    <script>
+
+      // $(document).ready(function{
+      //   $('.home-product').after('<div id="nav" class="text-center"></div>');
+      //   var jumlahBaris = $('.home-product .row').length;
+      //   var tampilBaris = 3
+      //   var angkahalaman = jumlahBaris/jumlahBaris;
+      //   for (let i = 0; i < angkahalaman; i++) {
+      //     var pageNum = i + 1;
+      //     $('#nav').append('<a href="#" class="btn-outline-info" rel="' + i + '">&emsp;' + pageNum + '&emsp;</a> ');
+        
+      //   };
+
+      //   $('.home-product').hide();
+
+
+
+
+
+
+      // });
+    </script>
+
+
+
+
+
+
+
+
+
+
     <script>
         var slideIndex = 1;
         showSlides(slideIndex);
