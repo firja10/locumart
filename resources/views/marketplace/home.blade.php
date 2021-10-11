@@ -132,6 +132,16 @@
           }
         }
 
+        .logo-bayar{
+          width:100px;
+          margin-bottom:10px;
+          text-align:left;
+        }
+
+       footer nav ul #id-bayar{
+          display:inline;
+        }
+
         </style>
 
 
@@ -141,9 +151,9 @@
 
 
   </head>
-  <body style = "margin:0;">
+  <body style = "margin:0; background-color:#f2f2f2">
     <div class="app">
-      <header class="header">
+      <header class="header" id = "headersatu" style = "position:fixed; width:100%;z-index:3;">
         <div class="grid wide">
           <nav class="header__navbar hide-on-mobile-tablet">
          
@@ -161,7 +171,7 @@
               <li
                 class="header__navbar-item header__navbar-item--has-qr "
               >
-   Download Aplikasi Locumart
+              Download Aplikasi Locumart
                 <!-- Header QR Code -->
                 <div class="header__qr">
                   <img
@@ -450,19 +460,19 @@
       </header>
 
 
-      <div class="app__container">
+      <div class="app__container"  >
         <div class="grid wide">
-          <div class="row sm-gutter app__content">
+          <div class="row sm-gutter app__content" style = "position: relative; margin-top:200px;z-index:1;  ">
             <!-- Category -->
-            <div class="col l-4 m-0 c-0">
-            <div class="col l-3">
+            <div class="col l-4 m-0 c-0" style = "position: relative;z-index:1;">
+            <div class="col l-3" style = "position: relative;z-index:2;">
                 <img src="{{asset('marketplace/produk-1.png')}}" alt="" style = "width:440%;">
                 <br>
                 <img src="{{asset('marketplace/produk-2.png')}}" alt="" style = "width:440%;">
             </div>
 
             </div>
-            <div class="col l-8 m-12 c-12">
+            <div class="col l-8 m-12 c-12" style = "position: relative;z-index:2;">
 
                         {{-- <img src="{{asset('marketplace/produk-3.png')}}" alt="" style = "width:100%;" class="d-block w-100"> --}}
                       
@@ -894,7 +904,7 @@
       <footer class="footer">
         <div class="grid wide footer__content">
           <div class="row">
-            <div class="col l-4-8 m-4 c-8">
+            <div class="col l-3-6 m-3 c-6">
               <h3 class="footer__heading">LOCUMART PRESENT</h3>
               <span class="footer__text">Memberi Pelayanan Terbaik untuk Kita Semua</span>
               {{-- <ul class="footer-list">
@@ -919,7 +929,18 @@
             <div class="col l-2-4 m-4 c-6">
         
             </div>--}}
-            <div class="col l-4-8 m-4 c-8">
+            <div class="col l-3-6 m-3 c-6">
+              <h3 class="footer__heading">Pembayaran :</h3>
+
+              {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
+
+
+            </div> 
+
+
+
+
+            <div class="col l-3-6 m-3 c-6">
               <h3 class="footer__heading">Tentang Kami</h3>
 
               <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span>
@@ -927,7 +948,13 @@
             </div> 
 
 
-            <div class="col l-4-8 m-4 c-8">
+
+
+
+            
+
+
+            <div class="col l-3-6 m-3 c-6">
               <h3 class="footer__heading">Sosial Media Kami</h3>
               <ul class="footer-list">
                 <li class="footer-item">

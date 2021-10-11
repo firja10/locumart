@@ -4,7 +4,11 @@
 
 .header {
   /* height: var(--header-height); */
-  height: 30vh;
+  /* height: 30vh; */
+
+  height: 30%;
+
+  z-index:1;
   /* background-image: linear-gradient(0, #fe6433, #81514d); */
   background-color: #37517e;
 
