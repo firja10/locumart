@@ -866,7 +866,31 @@
 
                 </div>
               </div>
-              <ul class="pagination home-product__pagination">
+
+
+
+
+
+              <center>
+                <div class="lihat-product-lain">
+                    <a href="" class="btn lihat-lain">  <strong>Lihat Lainnya</strong> </a>
+
+
+                </div>
+
+              </center>
+
+
+
+
+
+
+
+
+
+
+
+              {{-- <ul class="pagination home-product__pagination">
                 <li class="pagination-item">
                   <a href="" class="pagination-item__link">
                     <i class="pagination-item__icon fas fa-angle-left"></i>
@@ -898,7 +922,18 @@
                     <i class="pagination-item__icon fas fa-angle-right"></i>
                   </a>
                 </li>
-              </ul>
+              </ul> --}}
+
+
+
+
+
+
+
+
+
+
+
             </div>
           </div>
         </div>
@@ -1157,25 +1192,37 @@
 
     <script>
 
-      // $(document).ready(function{
-      //   $('.home-product').after('<div id="nav" class="text-center"></div>');
-      //   var jumlahBaris = $('.home-product .row').length;
-      //   var tampilBaris = 3
-      //   var angkahalaman = jumlahBaris/jumlahBaris;
-      //   for (let i = 0; i < angkahalaman; i++) {
-      //     var pageNum = i + 1;
-      //     $('#nav').append('<a href="#" class="btn-outline-info" rel="' + i + '">&emsp;' + pageNum + '&emsp;</a> ');
+      $(document).ready(function{
+        $('.home-product').after('<div id="nav" class="text-center"></div>');
+        var jumlahBaris = $('.home-product .row').length;
+        var tampilBaris = 3
+        var angkahalaman = jumlahBaris/jumlahBaris;
+        for (let i = 0; i < angkahalaman; i++) {
+          var pageNum = i + 1;
+          $('#nav').append('<a href="#" class="btn-outline-info" rel="' + i + '">&emsp;' + pageNum + '&emsp;</a> ');
         
-      //   };
+        };
 
-      //   $('.home-product').hide();
-
-
+        $('.home-product').hide();
 
 
+        $('.home-product .row').slice(0, rowsShown).show();
+        $('#nav a:first').addClass('active');
+        $('#nav a').bind('click', function(e) {
+        e.preventDefault();
+        $('#nav a').removeClass('active');
+        $(this).addClass('active');
+        var currPage = $(this).attr('rel');
+        var startItem = currPage * rowsShown;
+        var endItem = startItem + rowsShown;
+        $('.home-product .row').css('opacity', '0').hide().slice(startItem, endItem).
+        css('display', 'flex').animate({
+          opacity: 1
+        }, 300);
 
+      });
 
-      // });
+      });
     </script>
 
 
