@@ -142,6 +142,39 @@
           display:inline;
         }
 
+
+
+        .header{
+        
+          padding-bottom:50px;
+
+        }
+
+
+
+
+
+        .lihat-product-lain{
+  margin-bottom:40px;
+  margin-top:40px;
+}
+
+.lihat-product-lain .lihat-lain{
+  background-color:red; color:white;
+  font-size:20px;
+  border-radius:5px;
+  padding:20px;
+}
+
+
+.lihat-product-lain .lihat-lain:hover{
+  background-color:yellow; color:red;
+}
+
+
+
+
+
         </style>
 
 
