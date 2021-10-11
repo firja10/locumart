@@ -174,25 +174,28 @@
               Download Aplikasi Locumart
                 <!-- Header QR Code -->
                 <div class="header__qr">
-                  <img
+                  {{-- <img
                     src="./assets/img/qr_code.png"
                     alt="QR Code"
                     class="header__qr-img"
-                  />
+                  /> --}}
                   <div class="header__qr-apps">
                     <a href="" class="header__qr-link">
                       <img
-                        src="./assets/img/google_play.png"
+                      src="{{url('google-play.png')}}"
                         alt="Google Play"
                         class="header__qr-download-img"
                       />
+                      Google Play
                     </a>
                     <a href="" class="header__qr-link">
                       <img
-                        src="./assets/img/appstore.png"
+                        src="{{url('app-store.png')}}"
                         alt="App Store"
                         class="header__qr-download-img"
                       />
+                      App Store
+
                     </a>
                   </div>
                 </div>
@@ -934,6 +937,11 @@
 
               {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
 
+              <br>
+              <br>
+
+              <h3 class="footer__heading">Pengantaran :</h3>
+        
 
             </div> 
 

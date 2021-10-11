@@ -219,6 +219,13 @@
 .header__qr-apps {
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
+  color:#424242;
+}
+
+.header__qr-link{
+  text-decoration: none;
+  color:#424242;
 }
 
 .header__qr-link:nth-child(1) {
