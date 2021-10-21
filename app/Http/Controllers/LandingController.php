@@ -17,6 +17,16 @@ use Midtrans\Snap;
 class LandingController extends Controller
 {
     //
+
+    public function daftarprodukberanda()
+    {
+        # code...
+        $hitung = DB::table('produks')->count();
+        $produks = Produk::all();
+        return view('marketplace/daftar-produk',compact('produks', 'hitung'));
+    }
+
+
     public function home()
     {
         # code...

@@ -1157,6 +1157,7 @@ ol, li {
 
 .app__container {
   background-color: #f2f2f2;
+  padding-bottom:100px;
 }
 
 .app__content {

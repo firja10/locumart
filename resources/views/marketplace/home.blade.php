@@ -168,7 +168,7 @@
 
 
 .lihat-product-lain .lihat-lain:hover{
-  background-color:yellow; color:red;
+  background-color:#37517e; color:white;
 }
 
 
@@ -652,7 +652,7 @@
                                       {{-- <a href="" onclick="openKategori('Makanan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p style="color:#fff;font-size:13px;" >Makanan</p> </a>  
                                        --}}
                                       <input type="hidden" name="kategori" value = "Makanan">
-                                       <button class = "tombol" type = "submit" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p style="color:#fff;font-size:13px;" >Makanan</p> </button>  
+                                       <button class = "tombol" type = "submit" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p  style="color:#fff;font-size:13px;" >Makanan</p> </button>  
                                   </form>
                                 </li>
 
@@ -906,7 +906,7 @@
 
               <center>
                 <div class="lihat-product-lain">
-                    <a href="" class="btn lihat-lain">  <strong>Lihat Lainnya</strong> </a>
+                    <a href="{{url('/daftar-produk')}}" class="btn lihat-lain">  <strong>Lihat Lainnya</strong> </a>
 
 
                 </div>

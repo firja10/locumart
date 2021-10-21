@@ -31,6 +31,22 @@ Route::get('/dashboard', function () {
     return view('marketplace.dashboard');
 });
 
+
+// Route::get('/temp', function () {
+//     return view('marketplace.template');
+// });
+
+Route::get('/daftar-produk',[LandingController::class,'daftarprodukberanda'])->name('daftarprodukberanda');
+
+
+
+
+
+
+
+
+
+
 // Route::get('/', function () {
 //     return view('marketplace.home');
 // });
