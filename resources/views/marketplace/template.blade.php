@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marketplace - Template</title>
+    <title>@yield('judul')</title>
     <link rel="shortcut icon" href="{{asset('marketplace/logo-locumart.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/base.css')}}" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/main.css')}}" />
@@ -162,25 +162,23 @@
               Profil Anda
                 <!-- Header QR Code -->
                 <div class="header__qr">
-                  <img
-                    src="./assets/img/qr_code.png"
-                    alt="QR Code"
-                    class="header__qr-img"
-                  />
+
                   <div class="header__qr-apps">
                     <a href="" class="header__qr-link">
                       <img
-                        src="./assets/img/google_play.png"
+                      src="{{url('google-play.png')}}"
                         alt="Google Play"
                         class="header__qr-download-img"
                       />
+                      Google Play
                     </a>
                     <a href="" class="header__qr-link">
                       <img
-                        src="./assets/img/appstore.png"
+                      src="{{url('app-store.png')}}"
                         alt="App Store"
                         class="header__qr-download-img"
                       />
+                      App Store
                     </a>
                   </div>
                 </div>

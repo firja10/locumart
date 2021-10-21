@@ -1,4 +1,10 @@
 @extends('./marketplace/template')
+
+@section('judul')
+    Daftar Produk
+@endsection
+
+
 @section('content')
 
 <div class="app__container"  >
