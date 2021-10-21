@@ -15,7 +15,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
 </head>
-<body class="hold-transition login-page" style = "background:url('login-bg.png') ">
+<body class="hold-transition login-page" style = "background:url('login-bg.png'); background-repeat:no-repeat; align-items:center; text-align:center; background-size:cover ">
 <div class="login-box">
   {{-- <div class="login-logo" style = "background-color:#337A42; ">
     <a href="{{asset('adminlte/index2.html')}}" style = "color:white;"><b>Login </b>LOCUMART</a>
