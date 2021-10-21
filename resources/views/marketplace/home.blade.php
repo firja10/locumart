@@ -554,12 +554,23 @@
 
 
               <!-- Mobile Category -->
-              <nav class="mobile-category">
+              <center>
+
+            
+              <nav class="mobile-category" style = 'text-align:center; '>
+                <center>
+
                 <ul class="mobile-category__list">
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Kategori A Kategori A</a>
+                    <a href="#" class="mobile-category__link">Makanan</a>
                   </li>
                   <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link">Kesehatan</a>
+                  </li>
+                  <li class="mobile-category__item">
+                    <a href="#" class="mobile-category__link">Pakaian</a>
+                  </li>
+                  {{-- <li class="mobile-category__item">
                     <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
@@ -585,16 +596,11 @@
                   </li>
                   <li class="mobile-category__item">
                     <a href="#" class="mobile-category__link">Kategori A</a>
-                  </li>
-                  <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Kategori A</a>
-                  </li>
-                  <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Kategori A</a>
-                  </li>
+                  </li> --}}
                 </ul>
+              </center>
               </nav>
-
+            </center>
 
 
  <!-- PERHATIKAN BAIK2 ! -->

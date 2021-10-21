@@ -14,7 +14,7 @@
           <nav class="mobile-category">
             <ul class="mobile-category__list">
               <li class="mobile-category__item">
-                <a href="#" class="mobile-category__link">Kategori A</a>
+                <a href="#" class="mobile-category__link">Makanan</a>
               </li>
               <li class="mobile-category__item">
                 <a href="#" class="mobile-category__link">Kategori A</a>

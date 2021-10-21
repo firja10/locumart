@@ -1241,6 +1241,8 @@ ol, li {
   padding-left: 0;
   max-width: 100%;
   overflow-x: auto ;
+  align-items:center;
+  text-align: center;
 }
 
 .mobile-category__list::-webkit-scrollbar{
@@ -1250,6 +1252,7 @@ ol, li {
 .mobile-category__item{
   flex-shrink: 0;
   margin-right: 10px;
+  text-align: center;
 }
 
 .mobile-category__item:nth-of-type(3n + 1) .mobile-category__link{
