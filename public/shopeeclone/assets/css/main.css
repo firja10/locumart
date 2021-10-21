@@ -1256,6 +1256,7 @@ ol, li {
   flex-shrink: 0;
   margin-right: 10px;
   text-align: center;
+  padding-top:5px;
 }
 
 .mobile-category__item:nth-of-type(3n + 1) .mobile-category__link{
@@ -1282,7 +1283,7 @@ ol, li {
   width: 110px;
   border-radius: 5px;
   font-weight: 300;
-  padding: 0 6px;
+  padding: 6px 6px;
   /* Lam dau 3 cham khi qua 2 dong */
   display: block;
   display: -webkit-box;
