@@ -25,7 +25,7 @@
     <div class="card-body login-card-body" style = "border-radius:100px;">
 
         <div class="login-logo">
-            <a href="{{asset('adminlte/index2.html')}}" >
+            <a href="{{url('/login')}}" >
                 <img src="{{asset('marketplace/logo-locumart.png')}}" alt="" style = "width:20%;">
                 <br>
                   <b>Login </b>LOCUMART
@@ -85,7 +85,7 @@
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="forgot-password.html">Lupa Password ?</a>
+        <a href="#">Lupa Password ?</a>
       </p>
       <p class="mb-0">
         <a href="{{url('/register')}}" class="text-center">Belum Punya Akun</a>
