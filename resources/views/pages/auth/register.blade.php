@@ -29,6 +29,12 @@
       {{-- <p class="login-box-msg">Register a new membership</p> --}}
 
       <form action="{{route('register')}}" method="post">
+        <center>
+               <h1><strong>Register </strong>Locumart</h1>
+     
+          <br>
+        </center>
+
         @csrf
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Nama Lengkap" name = "name">
