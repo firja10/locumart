@@ -88,7 +88,7 @@
         <a href="forgot-password.html">Lupa Password ?</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Belum Punya Akun</a>
+        <a href="{{url('/register')}}" class="text-center">Belum Punya Akun</a>
       </p>
     </div>
     <!-- /.login-card-body -->

@@ -96,7 +96,7 @@
         </a>
       </div>
 
-      <a href="login.html" class="text-center">Sudah Punya Akun ?</a>
+      <a href="{{url('/login')}}" class="text-center">Sudah Punya Akun ?</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
