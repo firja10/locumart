@@ -15,7 +15,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
 </head>
-<body class="hold-transition register-page" style="background:url('register-bg.png');">
+<body class="hold-transition register-page" style="background:url('register-bg.png'); background-size:cover; background-repeat:no-repeat;">
 <div class="register-box">
   <div class="card card-outline card-danger">
     <div class="card-header text-center">
