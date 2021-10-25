@@ -271,10 +271,10 @@
               <!-- <li
                 class="header__navbar-item header__navbar-item--strong header__navbar-item--separate"
               >
-                Đăng ký
+                
               </li>
               <li class="header__navbar-item header__navbar-item--strong">
-                Đăng Nhập
+                
               </li> -->
 
 
@@ -293,18 +293,18 @@
                 </span>
                 <ul class="header__navbar-user-menu">
                   <li class="header__navbar-user-item">
-                    <a href="">Tài khoản của tôi</a>
+                    <a href=""></a>
                   </li>
                   <li class="header__navbar-user-item">
-                    <a href="">Địa chỉ của tôi</a>
+                    <a href=""></a>
                   </li>
                   <li class="header__navbar-user-item">
-                    <a href="">Đơn mua</a>
+                    <a href=""></a>
                   </li>
                   <li
                     class="header__navbar-user-item header__navbar-user-item--separate"
                   >
-                    <a href="">Đăng xuất</a>
+                    <a href=""></a>
                   </li>
                 </ul>
               </li> --}}
