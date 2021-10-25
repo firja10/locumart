@@ -1605,8 +1605,8 @@ i.home-product-item__like-icon-fill {
   color: var(--primary-color);
 }
 .footer-item__icon {
-  font-size: 1.8rem;
-  margin: -1px 8px 0 0;
+  font-size: 2.8rem;
+  margin: -1px 8px 5px 5px;
 }
 .footer__download {
   display: flex;

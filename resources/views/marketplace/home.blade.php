@@ -905,7 +905,7 @@
       <footer class="footer">
         <div class="grid wide footer__content">
           <div class="row">
-            <div class="col l-2-4 m-2 c-4">
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">LOCUMART PRESENT</h3>
               <span class="footer__text">Memberi Pelayanan Terbaik untuk Kita Semua</span>
               {{-- <ul class="footer-list">
@@ -930,11 +930,13 @@
             <div class="col l-2-4 m-4 c-6">
         
             </div>--}}
-            <div class="col l-2-4 m-2 c-4">
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">Pembayaran :</h3>
-
-              <div>
-                <img src="{{url('assets/PEMBAYARAN.svg')}}" alt="">
+              
+              <div 
+              {{-- style = "text-align: center" --}}
+              >
+                <img src="{{url('assets/pembayarans.png')}}" alt="" style = "width:150px;">
               </div>
               {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
 
@@ -948,7 +950,7 @@
 
 
 
-            <div class="col l-2-4 m-2 c-4">
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">Tentang Kami</h3>
 
               <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span>
@@ -962,37 +964,47 @@
             
 
 
-            <div class="col l-2-4 m-2 c-4">
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">Sosial Media Kami</h3>
-              <ul class="footer-list">
-                <li class="footer-item">
+              <center>
+
+          
+              <ul class="footer-list" style = "text-align: center; display:flex; justify-content:center;">
+                <li class="footer-item" style = "display:inline-block; justify-content:center;" >
                   <a href="#" class="footer-item__link">
                     <i class="footer-item__icon fab fa-facebook-square"></i>
-                    Facebook</a
+                    {{-- Facebook --}}
+                    </a
                   >
                 </li>
-                <li class="footer-item">
+                <li class="footer-item" style = "display:inline-block;justify-content:center;">
                   <a href="#" class="footer-item__link">
                     <i class="footer-item__icon fab fa-instagram-square"></i>
-                    Instagram</a
+                    {{-- Instagram --}}
+                    </a
                   >
                 </li>
-                <li class="footer-item">
+                <li class="footer-item" style = "display:inline-block; justify-content:center;">
                   <a href="#" class="footer-item__link">
                     <i class="footer-item__icon fab fa-linkedin"></i>
-                    Linkedin</a
+                    {{-- Linkedin --}}
+                    </a
                   >
                 </li>
               </ul>
-
+            </center>
 
             </div>
 
-            <div class="col l-2-4 m-2 c-4">
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">Pengantaran :</h3>
 
               {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
-
+              <div 
+              {{-- style = "text-align: center" --}}
+              >
+                <img src="{{url('assets/pengantarans.png')}}" alt="" style = "width:150px;">
+              </div>
             </div> 
 
 
