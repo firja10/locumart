@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Locumart - Marketplace</title>
-    <link rel="shortcut icon" href="{{asset('marketplace/logo-locumart.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/logo-locumart.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/base.css')}}" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/main.css')}}" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/grid.css')}}" />
@@ -156,14 +156,14 @@
 
         .lihat-product-lain{
   margin-bottom:40px;
-  margin-top:40px;
+  margin-top:60px;
 }
 
 .lihat-product-lain .lihat-lain{
-  background-color:red; color:white;
-  font-size:20px;
+  background-color:#FF9C34; color:white;
+  font-size:25px;
   border-radius:5px;
-  padding:20px;
+  padding:30px;
 }
 
 
@@ -200,7 +200,7 @@
 
 
 
-            <ul class="header__navbar-list">
+            <ul class="header__navbar-list" >
               <li
                 class="header__navbar-item header__navbar-item--has-qr "
               >
@@ -346,16 +346,18 @@
             </label>
 
             <!-- Header Logo -->
-            <div class="header__logo hide-on-tablet">
+            <div class="header__logo hide-on-tablet" style = "flex-direction: row; align-items:center ">
               <a href="/" class="header__logo-link">
 
                 <img
-                src="{{asset('marketplace/logo-locumart.png')}}"
+                src="{{asset('assets/logo-locumart.png')}}"
                 alt="Logo Locumart"
                 class="header__logo-img" 
               />
+              {{-- <h1 style = "color:white; display:inline-block; text-align:center;justify-content:center; margin-bottom:20px"> LOCUMART</h1> --}}
 
               </a>
+  
             </div>
             <input
               type="checkbox"
@@ -468,7 +470,7 @@
 
 
                   </ul>
-                  <a href="{{url('/keranjang')}}" class="header__cart-view-cart btn btn--primary"
+                  <a href="{{url('/keranjang')}}" class="header__cart-view-cart btn"
                     >Lihat Riwayat Pesanan</a
                   >
                 </div>
@@ -500,15 +502,15 @@
         <div class="grid wide">
           <div class="row sm-gutter app__content" style = "position: relative; margin-top:200px;z-index:1;  ">
             <!-- Category -->
-            <div class="col l-4 m-0 c-0" style = "position: relative;z-index:1;">
+            {{-- <div class="col l-4 m-0 c-0" style = "position: relative;z-index:1;">
             <div class="col l-3" style = "position: relative;z-index:2;">
                 <img src="{{asset('marketplace/produk-1.png')}}" alt="" style = "width:440%;">
                 <br>
                 <img src="{{asset('marketplace/produk-2.png')}}" alt="" style = "width:440%;">
             </div>
 
-            </div>
-            <div class="col l-8 m-12 c-12" style = "position: relative;z-index:2;">
+            </div> --}}
+            <div   class="col l-12 m-24 c-24"  style = "position: relative;z-index:2; text-align:center; ">
 
                         {{-- <img src="{{asset('marketplace/produk-3.png')}}" alt="" style = "width:100%;" class="d-block w-100"> --}}
                       
@@ -607,7 +609,7 @@
 
 
  <br> <br>
-              <header class="header" style = "background-color: #972A29; height:20vh;" id = "headerdua">
+              <header class="header" style = "background-color: #ffff; height:165px;" id = "headerdua">
                 <div class="grid wide">
                   <nav class="header__navbar hide-on-mobile-tablet">
                  
@@ -617,16 +619,20 @@
                   <!-- Header with Search -->
                   <div class="header-with-search">
                     <!-- Header Logo -->
-                    <div class="col l-4">
+                    <div class="col l-4" style = "margin-right:-150px;">
                     <div class="header__logo hide-on-tablet">
                       <a href="/" class="header__logo-link">
-                        <h1 style = "color:white;">LOCUMART</h1>
+                        <h1 style = "color:black;">KATEGORI</h1>
                       </a>
                     </div>
                 </div>
       
             
-                <div class="col l-4">
+                <div class="col l-4" 
+                style = "
+                /* margin-right:50px; */
+                margin:auto
+                " >
                     <div id = "category" style = "width:500px;">
                         <center>
                             {{-- <center>
@@ -653,12 +659,16 @@
                             <ul style = "text-align: center;">
 
                               
-                                <li style = "display: inline; float:left;">
-                                  <form action="/home/searchkategori" method="GET">
+                                <li style = "display: inline; float:left;  
+                                /* box-shadow: 2px 2px 8px; */
+                                  border-radius:20px;
+                                ">
+                                
+                                <form action="/home/searchkategori" method="GET" style = "      border-radius:20px;">
                                       {{-- <a href="" onclick="openKategori('Makanan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p style="color:#fff;font-size:13px;" >Makanan</p> </a>  
                                        --}}
                                       <input type="hidden" name="kategori" value = "Makanan">
-                                       <button class = "tombol" type = "submit" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p  style="color:#fff;font-size:13px;" >Makanan</p> </button>  
+                                       <button class = "tombol" type = "submit" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px; padding-top:8px; "> <p  style="color:black;font-size:13px;" >Makanan</p> </button>  
                                   </form>
                                 </li>
 
@@ -668,7 +678,7 @@
                                       {{-- <a href="" onclick="openKategori('Kesenian')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"> <p style="color:#fff;font-size:13px;">Kesenian</p></a>  --}}
 
                                       <input type="hidden" name="kategori" value = "Kesenian">
-                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"> <p style="color:#fff;font-size:13px;">Kesenian</p></button> 
+                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;padding-top:8px;"> <p style="color:black7;font-size:13px;">Kesenian</p></button> 
                                     </form>
                                  </li>
 
@@ -678,7 +688,7 @@
                                   <form action="/home/searchkategori" method="GET">
                                       {{-- <a href="" onclick="openKategori('Kebutuhan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"><p style="color:#fff;font-size:13px;">Kebutuhan</p></a>   --}}
                                       <input type="hidden" name="kategori" value = "Kebutuhan">
-                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"><p style="color:#fff;font-size:13px;">Kebutuhan</p></button>  
+                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;padding-top:8px;"><p style="color:black;font-size:13px;">Kebutuhan</p></button>  
 
                                   </form>
 
@@ -693,96 +703,10 @@
                     </div>
 
                     
-        <div class="col l-4">
+        <div class="col l-4" style = "margin:auto;">
                     <!-- Cart layout -->
-                    <div class="header__cart" style = "width:400px;">
-                      <div class="header__cart-wrap">
-                        <i class="header__cart-icon fas fa-shopping-cart"></i>
-                        <span class="header__cart-notice">
-                          <?php echo $hitung; ?>
-                        </span>
-                        <!-- No cart : header__cart-list--no-cart -->
-                        <div class="header__cart-list ">
-                          <!-- Nocart -->
-                          <img
-                            src="{{asset('shopeeclone/assets/img/no-cart.png')}}"
-                            alt="No Cart"
-                            class="header__cart-no-cart-img"
-                          />
-                          <span class="header__cart-list-no-cart-msg">
-                            Chưa có sản phẩm
-                          </span>
-                          <!-- Hascart -->
-                          <h4 class="header__cart-heading">Cek Keranjang</h4>
-                          <!-- Cart item -->
-                          <ul class="header__cart-list-item">
-                           
-
-
-
-                            @foreach ($pesanan as $item)
-                            <li class="header__cart-item">
-                              <img
-                                src="{{asset('storage/Pemesanan/'.$item->gambar_produk)}}"
-                                alt=""
-                                class="header__cart-img"
-                              />
-                              <div class="header__cart-item-info">
-                                <div class="header__cart-item-head">
-                                  <h5 class="header__cart-item-name">
-                                  {{$item->nama_produk}}
-                                  </h5>
-                                  <div class="header__cart-item-price-wrap">
-                                    <span class="header__cart-item-price"
-                                      >Rp.{{$item->harga_jual}}</span
-                                    >
-                                    <span class="header__cart-item-multiply">x</span>
-                                    <span class="header__cart-item-qnt">2</span>
-                                  </div>
-                                </div>
-                                <div class="header__cart-item-body">
-                                  <span class="header__cart-item-description"
-                                    >{{$item->kategori}}</span
-                                  >
-                                  <span class="header__cart-item-remove">Selesaikan Pembayaran</span>
-                                </div>
-                              </div>
-                            </li>
-                            @endforeach
-
-
-        
-        
-                          </ul>
-                          <a href="#" class="header__cart-view-cart btn btn--primary"
-                            >Lihat Riwayat Pesanan</a
-                          >
-                        </div>
-                      </div>
-                      <br> <br>
-
-                      {{-- <span> <b> <a href="{{url('/login')}}" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="{{url('/login')}}" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
-                      </span> --}}
-
-                      @if(Auth::check())
-                      <span style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> <b>{{Auth::user()->name}}</b></span>   
-                     
-                     <a style = "color:white;font-size:15px; margin-left:5px; text-decoration:none;"  href="{{ route('logout') }}" id = "keluar"  onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();">Logout</a>
-          
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-          </form>
-          
-                      @else
-                      <span> <b> <a href="{{url('/login')}}" style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> Masuk</a> <a  style = "color:white;font-size:15px;">|</a>  <a href="{{url('/register')}}" style = "color:white;font-size:15px;margin-left:5px;text-decoration:none;"> Daftar</a></b>
-                      </span>       
-                      @endif
-
-
-
-                    </div>
-        
+                    <h2 style = "color:black; align-items: right" >Kategori</h2>
+                    <p style = "color:black">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
         
 
 
@@ -981,7 +905,7 @@
       <footer class="footer">
         <div class="grid wide footer__content">
           <div class="row">
-            <div class="col l-3-6 m-3 c-6">
+            <div class="col l-2-4 m-2 c-4">
               <h3 class="footer__heading">LOCUMART PRESENT</h3>
               <span class="footer__text">Memberi Pelayanan Terbaik untuk Kita Semua</span>
               {{-- <ul class="footer-list">
@@ -1006,15 +930,17 @@
             <div class="col l-2-4 m-4 c-6">
         
             </div>--}}
-            <div class="col l-3-6 m-3 c-6">
+            <div class="col l-2-4 m-2 c-4">
               <h3 class="footer__heading">Pembayaran :</h3>
 
+              <div>
+                <img src="{{url('assets/PEMBAYARAN.svg')}}" alt="">
+              </div>
               {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
 
               <br>
               <br>
 
-              <h3 class="footer__heading">Pengantaran :</h3>
         
 
             </div> 
@@ -1022,7 +948,7 @@
 
 
 
-            <div class="col l-3-6 m-3 c-6">
+            <div class="col l-2-4 m-2 c-4">
               <h3 class="footer__heading">Tentang Kami</h3>
 
               <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span>
@@ -1036,7 +962,7 @@
             
 
 
-            <div class="col l-3-6 m-3 c-6">
+            <div class="col l-2-4 m-2 c-4">
               <h3 class="footer__heading">Sosial Media Kami</h3>
               <ul class="footer-list">
                 <li class="footer-item">
@@ -1062,12 +988,22 @@
 
             </div>
 
+            <div class="col l-2-4 m-2 c-4">
+              <h3 class="footer__heading">Pengantaran :</h3>
+
+              {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
+
+            </div> 
+
+
+
+
 
           </div>
         </div>
-        <div class="footer__bottom" style = "background-color:#972A29;">
+        <div class="footer__bottom" style = "background-color:#E4C752">
           <div class="grid wide">
-            <p class="footer__text" style = "color:white;">
+            <p class="footer__text" style = "color:#2C3764;">
             <b>© 2021 Locumart PRESENT</b>  
             </p>
           </div>

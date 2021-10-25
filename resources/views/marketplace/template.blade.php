@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('judul')</title>
-    <link rel="shortcut icon" href="{{asset('marketplace/logo-locumart.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/logo-locumart.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/base.css')}}" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/main.css')}}" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/grid.css')}}" />
@@ -291,7 +291,7 @@
               <a href="/" class="header__logo-link">
 
                 <img
-                src="{{asset('marketplace/logo-locumart.png')}}"
+                src="{{asset('assets/logo-locumart.png')}}"
                 alt="Logo Locumart"
                 class="header__logo-img" 
               />
@@ -516,9 +516,9 @@
 
           </div>
         </div>
-        <div class="footer__bottom" style = "background-color:#972A29;">
+        <div class="footer__bottom" style = "background-color:#E4C752;">
           <div class="grid wide">
-            <p class="footer__text" style = "color:white;">
+            <p class="footer__text" style = "color:#2C3764;">
             <b>© 2021 Locumart PRESENT</b>  
             </p>
           </div>
