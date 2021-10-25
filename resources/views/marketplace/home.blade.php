@@ -510,7 +510,7 @@
             </div>
 
             </div> --}}
-            <div   class="col l-12 m-24 c-24"  style = "position: relative;z-index:2; text-align:center; ">
+            <div   class="col l-12 m-12 c-12"  style = "position: relative;z-index:2; ">
 
                         {{-- <img src="{{asset('marketplace/produk-3.png')}}" alt="" style = "width:100%;" class="d-block w-100"> --}}
                       
