@@ -15,7 +15,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
 </head>
-<body class="hold-transition login-page" style = "background:url('login-bg.png'); background-repeat:no-repeat; align-items:center; text-align:center; background-size:cover ">
+<body class="hold-transition login-page" style = "background:url('bg-masuk.png'); background-repeat:no-repeat; align-items:center; text-align:center; background-size:cover ">
 <div class="login-box">
   {{-- <div class="login-logo" style = "background-color:#337A42; ">
     <a href="{{asset('adminlte/index2.html')}}" style = "color:white;"><b>Login </b>LOCUMART</a>
@@ -26,7 +26,7 @@
 
         <div class="login-logo">
             <a href="{{url('/login')}}" >
-                <img src="{{asset('marketplace/logo-locumart.png')}}" alt="" style = "width:20%;">
+                <img src="{{asset('logo-locumart.png')}}" alt="" style = "width:20%;">
                 <br>
                   <b>Login </b>LOCUMART
             </a>
@@ -73,9 +73,9 @@
       <div class="social-auth-links text-center mb-3">
         <p>- ATAU -</p>
         <center>
-            <a href="#" class="btn btn-block btn-primary">
+            {{-- <a href="#" class="btn btn-block btn-primary">
                 <i class="fab fa-facebook mr-2"></i> Login Menggunakan Facebook
-              </a>
+              </a> --}}
               <a href="#" class="btn btn-block btn-danger">
                 <i class="fab fa-google-plus mr-2"></i> Login Menggunakan Google+
               </a>

@@ -199,7 +199,7 @@ class LandingController extends Controller
         $data->media_pembayaran = $request['media_pembayaran'];
         $data->status_pembayaran = 1;
         $data->rating_produk = $request['rating_produk'];
-        $data->rating_toko = $request['rating_toko'];
+        // $data->tanggal_lahir = $request['tanggal_lahir'];
         $data->user_id = Auth::id();
         $data->produk_id = $request['produk_id'];
         $data->save();
@@ -402,8 +402,8 @@ class LandingController extends Controller
                       'email' => 'fairuzfirjatullah3@gmail.com',
                       'phone' => '08111222333',    ),); 
                      $snapToken = \Midtrans\Snap::getSnapToken($params);
-                    // dd($snapToken);
-                    return view('marketplace.user.bayar', compact('snapToken'));
+                    dd($snapToken);
+                    // return view('marketplace.user.bayar', compact('snapToken'));
                     // return view('marketplace.lihat-produk');
 
 
@@ -794,6 +794,73 @@ class LandingController extends Controller
         return redirect('/rating-pesanan/'.$id)->with('rating-sukses','Rating Anda Telah Diupdate');
     }
 
+
+
+    public function edit_daftarmitra()
+    {
+        # code...
+        $user_id = Auth::user()->id;
+        $mitra = User::findOrFail($user_id);
+        return view('mitra-locumart.form-daftar-mitra',compact('mitra'));
+    }
+
+
+
+    public function daftarmitra(Request $request, User $user, $id)
+    {
+        # code...
+        $user_id = Auth::user()->id;
+
+        if($request->hasFile('foto')){
+            $filename = $request["foto"]->getClientOriginalName();
+
+            if( User::find($user_id)->foto ){
+                Storage::delete('/public/storage/User/'.User::find($user_id)->foto);
+            }
+            $request["foto"]->storeAs('User', $filename, 'public');
+        }
+        else{
+            $filename = User::find($user_id)->foto;
+        }
+
+        $user = User::where('id', Auth::user()->id)->update([
+            'foto'=>$filename,
+            'name'=>$request['name'],
+            'email'=>$request['email'],
+            'jenis_kelamin'=>$request['jenis_kelamin'],
+            'tempat_lahir'=>$request['tempat_lahir'],
+            'tanggal_lahir' => $request['tanggal_lahir'],
+            'nomor_hp' => $request['nomor_hp'],
+            'nomor_telp_perusahaan' => $request['nomor_telp_perusahaan'],
+            'alamat' => $request['alamat'],
+            'nama_usaha' => $request['nama_usaha'],
+            'kategori_usaha' => $request['kategori_usaha'],
+            'alamat_perusahaan' => $request['alamat_perusahaan'],
+            'nomor_rekening'=>$request['nomor_rekening'],
+            'jenis_bank'=>$request['jenis_bank'],
+
+        ]);
+
+        return redirect('/daftar-mitra/' . $request['id'])->with('success-daftar-mitra','Selamat Anda Telah Terdaftar Sebagai Mitra');
+
+
+
+
+
+    }
+
+
+
+    public function daftarnorek($id, Request $request, User $user)
+    {
+        # code...
+        $mitra = User::where('id', Auth::user()->id)->update([
+            'nomor_rekening'=>$request['nomor_rekening'],
+            'jenis_bank'=>$request['jenis_bank'],
+        ]);
+
+        return redirect('/daftar-mitra/'.Auth::user()->id)->with('success-no-rek','Nomor Rekening Anda Sukses Terdaftar');
+    }
 
 
 

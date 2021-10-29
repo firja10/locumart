@@ -194,7 +194,7 @@
 
     </script> --}}
 
-        {{-- <script type="text/javascript">
+        <script type="text/javascript">
       document.getElementById('pay-button').onclick = function(){
     
         snap.pay('<?=$snapToken?>', {
@@ -218,14 +218,14 @@
           }
         });
       };
-    </script> --}}
+    </script>
  
 
 
 
 
 
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
       document.getElementById('pay-button').onclick = function(){
     
         snap.pay('<?=$snapToken?>', {
@@ -235,7 +235,7 @@
           onClose: function(){console.log('customer closed the popup without finishing the payment');}
         });
       };
-    </script>
+    </script> --}}
 
 
 

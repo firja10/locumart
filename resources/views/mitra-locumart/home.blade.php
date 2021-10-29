@@ -17,7 +17,7 @@ background-size:cover; margin-top:-5%; height:90vh;">
         <div class="col-xl-4 col-md-8 align-items-stretch " data-aos="zoom-in" data-aos-delay="100">
             <center>
                     <div class="card text-white mb-3 " style="max-width: 18rem;background: rgba(255,255,255,0.5);">
-                        <div class="card-header" style = "text-align:left; color:#424242;" > <a href="" style = "color:#424242;">Klik Di sini</a> </div>
+                        <div class="card-header" style = "text-align:left; color:#424242;" > <a href="{{url('/daftar-mitra/'. Auth::user()->id)}}" style = "color:#424242;">Klik Di sini</a> </div>
                         <div class="card-body" style="background-color: #155059;">
                             <h5 class="card-title">
                             <img src="{{asset('/mitra-locumart/mulai-jualan.png')}}" alt="" style = "width:250px;">

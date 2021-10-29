@@ -1,5 +1,11 @@
 @extends('marketplace.template')
 
+@section('judul')
+ Riwayat Toko Anda   
+@endsection
+
+
+
 @section('style')
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <style>
@@ -27,9 +33,9 @@
 <div class="container">
 
     <div class="float-right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style = "margin-top:10px;">
+        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style = "margin-top:10px;">
          <i class = "fa fa-plus"></i>    Tambah Data
-          </button>
+          </button> --}}
     </div><br> <br>
 
     <center>

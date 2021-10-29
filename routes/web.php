@@ -27,9 +27,26 @@ use App\Http\Controllers\ProdukController;
 
 
 
+
+
+
+
+
 Route::get('/dashboard', function () {
     return view('marketplace.dashboard');
 });
+
+// Route::get('/daftar-mitra', function () {
+//     return view('mitra-locumart.form-daftar-mitra');
+// });
+
+
+
+
+
+
+
+
 
 
 // Route::get('/temp', function () {
@@ -71,6 +88,11 @@ Route::get('/produk/{id}',[LandingController::class,'lihatproduk'])->name('lihat
 // Halaman User 
 Route::get('/keranjang/{id}',[LandingController::class,'lihatkeranjangspesifik'])->name('lihatkeranjangspesifik');
 Route::get('/bayar',[LandingController::class,'initPaymentGateway'])->name('initPaymentGateway')->middleware('auth');
+
+Route::get('/daftar-mitra/{id}',[LandingController::class,'edit_daftarmitra'])->name('edit_daftarmitra')->middleware('auth');
+Route::patch('/daftar-mitra/{id}',[LandingController::class,'daftarmitra'])->name('daftarmitra')->middleware('auth');
+Route::patch('/daftar-mitra/{id}/norek',[LandingController::class,'daftarnorek'])->name('daftarnorek')->middleware('auth');
+
 
 // Route::get('home/searchkategori',[LandingController::class,'searchkategori'])->name('searchkategori');
 Route::get('/home/searchkategori','App\Http\Controllers\LandingController@searchkategori')->middleware('auth');
@@ -148,7 +170,7 @@ Route::get('/tentang-locumart/partnership', function () {
 
 Route::get('/mitra-locumart/home', function () {
     return view('mitra-locumart/home');
-});
+})->middleware('auth');
 
 Route::get('/mitra-locumart/mulai-berjualan', function () {
     return view('mitra-locumart/mulai-berjualan');

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('judul')</title>
-    <link rel="shortcut icon" href="{{asset('assets/logo-locumart.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('logo-locumart.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/base.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/main.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/grid.css')}}" type="text/css" />
@@ -291,7 +291,7 @@
               <a href="/" class="header__logo-link">
 
                 <img
-                src="{{asset('assets/logo-locumart.png')}}"
+                src="{{asset('logo-locumart.png')}}"
                 alt="Logo Locumart"
                 class="header__logo-img" 
               />
