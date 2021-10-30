@@ -75,7 +75,7 @@
                         @csrf
                         @method('DELETE')
 
-                    <button  class="btn btn-danger" style = "margin-top:10px;font-size:15px;"> <i class="fa fa-money-bill"></i> &nbsp; Hapus Produk</button>
+                    <button  class="btn btn-danger" style = "margin-top:10px;font-size:15px;"> <i class="fa fa-money-bill"></i> &nbsp; Hapus Pemesanan</button>
                     </form>
                  
     

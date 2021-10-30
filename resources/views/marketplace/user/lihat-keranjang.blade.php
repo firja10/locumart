@@ -459,7 +459,7 @@
               <nav class="mobile-category">
                 <ul class="mobile-category__list">
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Kategori A Kategori A</a>
+                    <a href="#" class="mobile-category__link">Kategori A</a>
                   </li>
                   <li class="mobile-category__item">
                     <a href="#" class="mobile-category__link">Kategori A</a>

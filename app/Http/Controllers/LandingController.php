@@ -47,7 +47,8 @@ class LandingController extends Controller
     {
         # code...
         $user_id = Auth::id();
-        $toko = DB::table('tokos')->where('user_id', $user_id)->get();
+        // $toko = DB::table('tokos')->where('user_id', $user_id)->get();
+                $toko = DB::table('tokos')->where('user_id', $user_id)->paginate(1);
         return view('marketplace.pemilik.riwayat-toko', compact('user_id','toko'));
 
     }
@@ -207,6 +208,42 @@ class LandingController extends Controller
         return redirect('keranjang')->with('success-cart','Anda Telah Menambahkan Keranjang');
 
     }
+
+
+
+
+
+
+
+
+    public function doCheckout()
+    {
+        # code...
+
+        
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public function lihatkeranjang()
@@ -439,7 +476,7 @@ class LandingController extends Controller
 
 
             $cost = $rajaOngkir->ongkosKirim([
-            'origin'        => 489,     // ID kota/kabupaten asal
+            'origin'        => 501,     // ID kota/kabupaten asal
             'originType' => "city",
             'destination'   => 30,      // ID kota/kabupaten tujuan
             'destinationType' => "city",
@@ -482,6 +519,9 @@ class LandingController extends Controller
 
 
         // return view('marketplace.user.tambah-provinsi',compact('daftarProvinsi'));
+
+
+
         return view('marketplace.user.tambah-ongkir', compact('cost'));
     }
 
@@ -498,6 +538,76 @@ class LandingController extends Controller
         ]);
 
     }
+
+
+
+
+
+
+
+    private function _getShippingCost($destination, $weight)
+	{
+		$params = [
+			'origin' => env('RAJAONGKIR_ORIGIN'),
+			'destination' => $destination,
+			'weight' => $weight,
+		];
+
+		$results = [];
+		foreach ($this->couriers as $code => $courier) {
+			$params['courier'] = $code;
+			
+			$response = $this->rajaOngkirRequest('cost', $params, 'POST');
+			
+			if (!empty($response['rajaongkir']['results'])) {
+				foreach ($response['rajaongkir']['results'] as $cost) {
+					if (!empty($cost['costs'])) {
+						foreach ($cost['costs'] as $costDetail) {
+							$serviceName = strtoupper($cost['code']) .' - '. $costDetail['service'];
+							$costAmount = $costDetail['cost'][0]['value'];
+							$etd = $costDetail['cost'][0]['etd'];
+
+							$result = [
+								'service' => $serviceName,
+								'cost' => $costAmount,
+								'etd' => $etd,
+								'courier' => $code,
+							];
+
+							$results[] = $result;
+						}
+					}
+				}
+			}
+		}
+
+		$response = [
+			'origin' => $params['origin'],
+			'destination' => $destination,
+			'weight' => $weight,
+			'results' => $results,
+		];
+		
+		return $response;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public function statusbayartiga()

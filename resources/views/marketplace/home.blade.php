@@ -432,7 +432,8 @@
                     class="header__cart-no-cart-img"
                   />
                   <span class="header__cart-list-no-cart-msg">
-                    Chưa có sản phẩm
+                    {{-- Chưa có sản phẩm --}}
+                    Message
                   </span>
                   <!-- Hascart -->
                   <h4 class="header__cart-heading">Cek Keranjang</h4>
@@ -441,7 +442,7 @@
                     @foreach ($pesanan as $item)
                     <li class="header__cart-item">
                       <img
-                        src="{{asset('storage/Pemesanan/'.$item->gambar_produk)}}"
+                        src="{{asset('storage/Produk/'.$item->gambar_produk)}}"
                         alt=""
                         class="header__cart-img"
                       />
@@ -462,7 +463,14 @@
                           <span class="header__cart-item-description"
                             >{{$item->kategori}}</span
                           >
-                          <span class="header__cart-item-remove">Selesaikan Pembayaran</span>
+                          <span class="header__cart-item-remove">
+
+                            <a href="{{route('lihatkeranjangspesifik', $item->id)}}" style = "text-decoration:none">
+                              Beli Produk
+                            </a>
+                          
+
+                          </span>
                         </div>
                       </div>
                     </li>

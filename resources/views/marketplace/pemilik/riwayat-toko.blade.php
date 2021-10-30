@@ -39,13 +39,13 @@
     </div><br> <br>
 
     <center>
-        <h1 style = "text-align: center;">Daftar Toko Anda</h1>
+        <h1 style = "text-align: center;">Toko Anda</h1>
     </center>
  <br>
  <br>
 
 
-    <div class="row" class = "mt-4">
+    <div class="row" class = "mt-4" style=" background-color:#2C3764; border-radius:40px;">
 
 
         
@@ -54,39 +54,49 @@
 
 
 @foreach ($toko as $tokos)
-<div class="col-md-3">
-    <div class="card" style="width: 20rem;">
-        {{-- <img class="card-img-top" src="..." alt="Card image cap"> --}}
-        <img src="{{asset('storage/Toko/'.$tokos->gambar_toko)}}" alt="" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">{{$tokos->nama_toko}}</h5>
-          <p class="card-text">{{$tokos->deskripsi_toko}}</p>
-         
-          {{-- <span id="rateMe1"></span> --}}
-
-          <center>
-
-            <p>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-              </p>
-             
-
-
-            <a href="{{route('daftar-toko.edit', $tokos->id)}}" class="btn btn-primary" style = "text-align:center;">Lihat Toko</a>
-            <br>
 
 
 
-        </center>
 
-        </div>
-      </div>
-   
+<div class="col-md-4" style = "margin-top:40px; margin-bottom:40px; ">
+  <center>
+  <img src="{{asset('storage/Toko/'.$tokos->gambar_toko)}}" alt="" style = "width:300px; border-radius:50px;">
+</center>
 </div>
+
+
+<div class="col-md-8" style = "margin-top:40px; margin-bottom:40px; color:#ffff ">
+
+  <br>
+  <center>
+      <h1 style = "text-align: center;">{{$tokos->nama_toko}}</h1>
+      <br>
+      <p>{{$tokos->deskripsi_toko}}</p>
+      <h3> <i class="fa fa-phone"></i> &nbsp; Nomor Handphone : {{$tokos->nomor_hp_toko}} </h3>
+
+      <h3> <i class="fas fa-location-arrow"></i> &nbsp; Lokasi : {{$tokos->lokasi_toko}}</h3>
+      <h3><i class="fa fa-university"></i> &nbsp; Jenis Bank : {{$tokos->jenis_bank}}</h3>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style = "margin-top:10px;">
+          <i class = "fa fa-edit" aria-hidden="true"></i>  Edit Toko 
+          </button>
+          <br>
+        <a href="{{route('daftarproduktoko',$tokos->id)}}" class="btn btn-success" style = "margin-top:10px; padding-top:10px; text-align:center;">Daftar Produk</a>
+
+  </center>
+  <br>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
 @endforeach
        
         {{-- <div class="col-md-3">
@@ -103,7 +113,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h3 class="modal-title" id="exampleModalLabel">Modal title</h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

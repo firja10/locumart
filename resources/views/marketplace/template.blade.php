@@ -155,14 +155,21 @@
 
 
 
-            <ul class="header__navbar-list">
+            <ul class="header__navbar-list" >
               <li
-                class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate"
+                class="header__navbar-item header__navbar-item--has-qr "
               >
-              Profil Anda
+              <strong>
+                Download Aplikasi Locumart
+              </strong>
+            
                 <!-- Header QR Code -->
                 <div class="header__qr">
-
+                  {{-- <img
+                    src="./assets/img/qr_code.png"
+                    alt="QR Code"
+                    class="header__qr-img"
+                  /> --}}
                   <div class="header__qr-apps">
                     <a href="" class="header__qr-link">
                       <img
@@ -174,16 +181,17 @@
                     </a>
                     <a href="" class="header__qr-link">
                       <img
-                      src="{{url('app-store.png')}}"
+                        src="{{url('app-store.png')}}"
                         alt="App Store"
                         class="header__qr-download-img"
                       />
                       App Store
+
                     </a>
                   </div>
                 </div>
               </li>
-              <li class="header__navbar-item">
+              {{-- <li class="header__navbar-item">
                 <span class="header__navbar-title--no-pointer">Sosial Media Anda</span>
 
                 <a href="" class="header__navbar-icon-link">
@@ -192,11 +200,12 @@
                 <a href="" class="header__navbar-icon-link">
                   <i class="header__navbar-icon fab fa-instagram"></i>
                 </a>
-              </li>
+              </li> --}}
             </ul>
-            <ul class="header__navbar-list">
+
+            <ul class="header__navbar-list" >
               <li class="header__navbar-item">
-                <a href="{{url('/pemilik/riwayat-toko')}}" class="header__navbar-item-link">
+                <a href="{{url('/pemilik/riwayat-toko')}}" class="header__navbar-item-link" style = "text-decoration: none;">
                   {{-- <i class="header__navbar-icon far fa-question-circle"></i> --}}
                   <i class="header__navbar-icon fas fa-funnel-dollar"></i>
 
@@ -204,65 +213,20 @@
                 </a>
               </li>
               <li class="header__navbar-item">
-                <a href="" class="header__navbar-item-link">
+                <a href="{{url('/tentang-locumart/deskripsi')}}" class="header__navbar-item-link" style = "text-decoration: none;">
                   <i class="header__navbar-icon far fa-question-circle"></i>
 
-                  FAQ
-                </a>
-              </li>
-              <li class="header__navbar-item">
-                <a href="{{url('/')}}" class="header__navbar-item-link">
-                  <i class="header__navbar-icon fas fa-home"></i>
-                  Beranda
+                  Tentang Locumart
                 </a>
               </li>
 
               <li class="header__navbar-item">
-                <a href="{{url('/tagihan-anda')}}" class="header__navbar-item-link">
-                  <i class="header__navbar-icon fas fa-money-bill-alt"></i>
-                  Tagihan Anda
+                <a href="{{url('/mitra-locumart/home')}}" class="header__navbar-item-link" style = "text-decoration: none;">
+                  <i class="header__navbar-icon fa fa-users"></i>
+
+                  Mitra Locumart
                 </a>
               </li>
-              <!-- <li
-                class="header__navbar-item header__navbar-item--strong header__navbar-item--separate"
-              >
-                Đăng ký
-              </li>
-              <li class="header__navbar-item header__navbar-item--strong">
-                Đăng Nhập
-              </li> -->
-
-
-
-
-
-
-              {{-- <li class="header__navbar-item header__navbar-user">
-                <img
-                  src="./assets/img/user_avatar.png"
-                  alt=""
-                  class="header__navbar-user-img"
-                />
-                <span class="header__navbar-user-name">
-                  Tín Phạm
-                </span>
-                <ul class="header__navbar-user-menu">
-                  <li class="header__navbar-user-item">
-                    <a href="">Tài khoản của tôi</a>
-                  </li>
-                  <li class="header__navbar-user-item">
-                    <a href="">Địa chỉ của tôi</a>
-                  </li>
-                  <li class="header__navbar-user-item">
-                    <a href="">Đơn mua</a>
-                  </li>
-                  <li
-                    class="header__navbar-user-item header__navbar-user-item--separate"
-                  >
-                    <a href="">Đăng xuất</a>
-                  </li>
-                </ul>
-              </li> --}}
             </ul>
 
 
@@ -454,7 +418,7 @@
       <footer class="footer">
         <div class="grid wide footer__content">
           <div class="row">
-            <div class="col l-4-8 m-4 c-8">
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">LOCUMART PRESENT</h3>
               <span class="footer__text">Memberi Pelayanan Terbaik untuk Kita Semua</span>
               {{-- <ul class="footer-list">
@@ -479,7 +443,27 @@
             <div class="col l-2-4 m-4 c-6">
         
             </div>--}}
-            <div class="col l-4-8 m-4 c-8">
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
+              <h3 class="footer__heading">Pembayaran :</h3>
+              
+              <div 
+              {{-- style = "text-align: center" --}}
+              >
+                <img src="{{url('assets/pembayarans.png')}}" alt="" style = "width:150px;">
+              </div>
+              {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
+
+              <br>
+              <br>
+
+        
+
+            </div> 
+
+
+
+
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">Tentang Kami</h3>
 
               <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span>
@@ -487,36 +471,62 @@
             </div> 
 
 
-            <div class="col l-4-8 m-4 c-8">
+
+
+
+            
+
+
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">Sosial Media Kami</h3>
-              <ul class="footer-list">
-                <li class="footer-item">
+              <center>
+
+          
+              <ul class="footer-list" style = "text-align: center; display:flex; justify-content:center;">
+                <li class="footer-item" style = "display:inline-block; justify-content:center;" >
                   <a href="#" class="footer-item__link">
                     <i class="footer-item__icon fab fa-facebook-square"></i>
-                    Facebook</a
+                    {{-- Facebook --}}
+                    </a
                   >
                 </li>
-                <li class="footer-item">
+                <li class="footer-item" style = "display:inline-block;justify-content:center;">
                   <a href="#" class="footer-item__link">
                     <i class="footer-item__icon fab fa-instagram-square"></i>
-                    Instagram</a
+                    {{-- Instagram --}}
+                    </a
                   >
                 </li>
-                <li class="footer-item">
+                <li class="footer-item" style = "display:inline-block; justify-content:center;">
                   <a href="#" class="footer-item__link">
                     <i class="footer-item__icon fab fa-linkedin"></i>
-                    Linkedin</a
+                    {{-- Linkedin --}}
+                    </a
                   >
                 </li>
               </ul>
-
+            </center>
 
             </div>
+
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
+              <h3 class="footer__heading">Pengantaran :</h3>
+
+              {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
+              <div 
+              {{-- style = "text-align: center" --}}
+              >
+                <img src="{{url('assets/pengantarans.png')}}" alt="" style = "width:150px;">
+              </div>
+            </div> 
+
+
+
 
 
           </div>
         </div>
-        <div class="footer__bottom" style = "background-color:#E4C752;">
+        <div class="footer__bottom" style = "background-color:#E4C752">
           <div class="grid wide">
             <p class="footer__text" style = "color:#2C3764;">
             <b>© 2021 Locumart PRESENT</b>  
@@ -524,6 +534,7 @@
           </div>
         </div>
       </footer>
+
 
       <!-- Modal Layout -->
       <!-- <div class="modal">
