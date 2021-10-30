@@ -961,6 +961,77 @@ class LandingController extends Controller
 
 
 
+
+
+    public function daftarmitratoko(Request $request)
+    {
+        # code...
+
+        $mitra = new Toko;
+        if($request->hasFile('gambar_toko'))
+        {
+
+                $filename = $request['gambar_toko']->getClientOriginalName();
+
+                if($mitra->gambar_toko)
+                {
+                    Storage::delete('/public/storage/Toko/'.$filename);
+                }
+
+                $request['gambar_toko']->storeAs('Toko',$filename,'public');
+        }
+
+        else {
+            $filename = $mitra->gambar_toko;
+        }
+
+
+        $mitra->gambar_toko = $filename;
+        $mitra->nama_toko = $request['nama_toko'];
+        $mitra->lokasi_toko = $request['lokasi_toko'];
+        $mitra->deskripsi_toko = $request['deskripsi_toko'];
+        $mitra->nomor_hp_toko = $request['nomor_hp_toko'];
+        $mitra->rating_toko = $request['rating_toko'];
+
+
+        $mitra->name = $request['name'];
+        $mitra->email = $request['email'];
+        $mitra->jenis_kelamin = $request['jenis_kelamin'];
+        $mitra->tempat_lahir = $request['tempat_lahir'];
+
+        $mitra->tanggal_lahir = $request['tanggal_lahir'];
+        $mitra->kategori_usaha = $request['kategori_usaha'];
+
+        $mitra->nomor_rekening = $request['nomor_rekening'];
+        $mitra->jenis_bank = $request['jenis_bank'];
+
+        
+        
+        $mitra->save();
+        return redirect('/pemilik/riwayat-toko')->with('store-toko','Anda Berhasil Menambahkan Toko');
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function daftarnorek($id, Request $request, User $user)
     {
         # code...

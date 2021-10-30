@@ -20,7 +20,7 @@
   <div class="card card-outline card-danger">
     <div class="card-header text-center">
       {{-- <a href="{{asset('adminlte/index2.html')}}" class="h1"><b>Admin</b>LTE</a> --}}
-      <a href="{{url('/register')}}" class="h1">
+      <a href="{{url('/')}}" class="h1">
         <img src="{{asset('logo-locumart.png')}}" alt="" style = "width:15%;">
     </a>
 
@@ -30,14 +30,17 @@
 
 
       @php
-        $alamat_perusahaan = $mitra->alamat_perusahaan;
-        $nama_usaha = $mitra->nama_usaha;
+
+        $data = DB::table('tokos')->where('user_id',$mitra->user_id)->count();
+        $alamat_perusahaan = $mitra->lokasi_toko;
+        $nama_usaha = $mitra->nama_toko;
         $kategori_usaha = $mitra->kategori_usaha;
         $nomor_rekening = $mitra->nomor_rekening;
         $jenis_bank = $mitra->jenis_bank;
+        $user_id = $mitra->user_id;
       @endphp
 
-       @if($alamat_perusahaan != NULL && $nama_usaha !=NULL && $kategori_usaha !=NULL && $nomor_rekening !=NULL && $jenis_bank !=NULL)
+       @if($alamat_perusahaan != NULL || $nama_usaha !=NULL || $kategori_usaha !=NULL || $nomor_rekening !=NULL || $jenis_bank !=NULL || $data >= 1)
         
    
         <div class="col-12" style = "justify-content: center; margin-top:15px;">
@@ -47,7 +50,7 @@
                 <h2 style = "color:white;">Anda Telah Terdaftar Sebagai Mitra</h2>
             </div>
 
-              <a href="" class="btn btn-primary" style = "margin-top:30px;" > Silakan Kunjungi Toko Anda</a>
+              <a href="{{url('/pemilik/riwayat-toko')}}" class="btn btn-primary" style = "margin-top:30px;" > Silakan Kunjungi Toko Anda</a>
             </center>
         
            </div>
@@ -56,10 +59,13 @@
 
 
        
-       @elseif($alamat_perusahaan == NULL || $nama_usaha ==NULL || $kategori_usaha ==NULL || $nomor_rekening ==NULL || $jenis_bank ==NULL)   
+       @elseif($alamat_perusahaan == NULL || $nama_usaha ==NULL || $kategori_usaha ==NULL || $nomor_rekening ==NULL || $jenis_bank ==NULL || $data == NULL)   
    
-      <form action="{{route('daftarmitra', $mitra->id)}}" method="post" enctype="multipart/form-data" >
-        @method('PATCH')
+       <h2><?php echo $data  ?></h2>
+           <br>
+
+      <form action="{{route('daftarmitratoko')}}" method="post" enctype="multipart/form-data" >
+        {{-- @method('PATCH') --}}
         <center>
                <h1><strong>Pendaftaran Mitra </strong></h1>
           <div style = "background-color:rgba(2, 117, 216, 0.5); margin-top:50px;">
@@ -78,6 +84,7 @@
         <div class="input-group col mb-3">
             <br>
           <input type="text" class="form-control" placeholder="Nama Lengkap" name = "name" value = "{{$mitra->name}}">
+          <input type="hidden" class="form-control"  name = "user_id" value = "{{Auth::user()->id}}">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -191,7 +198,7 @@
     
     
             <div class="input-group col mb-3">
-              <input type="number" class="form-control" placeholder="Nomor Telepon Perusahaan" name="nomor_telp_perusahaan">
+              <input type="number" class="form-control" placeholder="Nomor Telepon Perusahaan" name="nomor_hp_toko">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-phone"></span>
@@ -253,7 +260,7 @@
                     {{-- <label for="ttl">Tempat, Tanggal Lahir</label>  --}}
                         <div class="input-group col mb-3">
                                 <br>
-                          <input type="text" class="form-control" placeholder="Nama Usaha" name = "nama_usaha" id = "nama_usaha" value = "{{$mitra->nama_usaha}}">
+                          <input type="text" class="form-control" placeholder="Nama Usaha" name = "nama_toko" id = "nama_toko" value = "{{$mitra->nama_toko}}">
                      
                 
                           <div class="input-group-append">

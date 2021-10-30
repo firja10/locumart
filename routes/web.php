@@ -89,9 +89,9 @@ Route::get('/produk/{id}',[LandingController::class,'lihatproduk'])->name('lihat
 Route::get('/keranjang/{id}',[LandingController::class,'lihatkeranjangspesifik'])->name('lihatkeranjangspesifik');
 Route::get('/bayar',[LandingController::class,'initPaymentGateway'])->name('initPaymentGateway')->middleware('auth');
 
-Route::get('/daftar-mitra/{id}',[LandingController::class,'edit_daftarmitra'])->name('edit_daftarmitra')->middleware('auth');
-Route::patch('/daftar-mitra/{id}',[LandingController::class,'daftarmitra'])->name('daftarmitra')->middleware('auth');
-Route::patch('/daftar-mitra/{id}/norek',[LandingController::class,'daftarnorek'])->name('daftarnorek')->middleware('auth');
+Route::get('/daftar-mitra',[LandingController::class,'edit_daftarmitra'])->name('edit_daftarmitra')->middleware('auth');
+Route::post('/daftar-mitra',[LandingController::class,'daftarmitratoko'])->name('daftarmitratoko')->middleware('auth');
+// Route::patch('/daftar-mitra/{id}/norek',[LandingController::class,'daftarnorek'])->name('daftarnorek')->middleware('auth');
 
 
 // Route::get('home/searchkategori',[LandingController::class,'searchkategori'])->name('searchkategori');
