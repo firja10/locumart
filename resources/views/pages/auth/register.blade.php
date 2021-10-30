@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> Registration | Locumart</title>
 
-  <link rel="shortcut icon" href="{{asset('marketplace/logo-locumart.png')}}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{asset('logo-locumart.png')}}" type="image/x-icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -15,7 +15,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
 </head>
-<body class="hold-transition register-page" style="background:url('register-bg.png'); background-size:cover; background-repeat:no-repeat;">
+<body class="hold-transition register-page" style="background:url('bg-masuk.png'); background-size:cover; background-repeat:no-repeat;">
 <div class="register-box">
   <div class="card card-outline card-danger">
     <div class="card-header text-center">
