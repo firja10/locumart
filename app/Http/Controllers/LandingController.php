@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Kavist\RajaOngkir\RajaOngkir;
 use Midtrans\Snap;
+use Illuminate\Support\Facades\Mail;
 
 
 class LandingController extends Controller
@@ -911,6 +912,11 @@ class LandingController extends Controller
         # code...
         $user_id = Auth::user()->id;
         $mitra = User::findOrFail($user_id);
+
+       
+        // $tokos = $toko::findOrFail($id);
+        // $toko = Toko::where('user_id', $user_id)->first();
+    
         return view('mitra-locumart.form-daftar-mitra',compact('mitra'));
     }
 
@@ -1004,11 +1010,12 @@ class LandingController extends Controller
 
         $mitra->nomor_rekening = $request['nomor_rekening'];
         $mitra->jenis_bank = $request['jenis_bank'];
+        $mitra->user_id = $request['user_id'];
 
         
         
         $mitra->save();
-        return redirect('/pemilik/riwayat-toko')->with('store-toko','Anda Berhasil Menambahkan Toko');
+        return redirect('/daftar-mitra')->with('store-toko','Anda Berhasil Menambahkan Toko');
 
 
 
@@ -1141,6 +1148,7 @@ class LandingController extends Controller
 
 
     }
+    
 
 
 
@@ -1155,6 +1163,48 @@ class LandingController extends Controller
 
     }
 
+
+
+    public function daftartoko(Toko $toko)
+    {
+        # code...
+
+        $toko = Toko::all();
+        return view('marketplace.admin-home', compact('toko'));
+
+    }
+
+
+
+
+
+
+    public function veriftoko(Request $request, $id)
+    // public function veriftoko($id)
+    {
+        # code...
+        $toko = Toko::where('id', $id)->update([
+            'legal_id' => 1,
+        ]);
+
+        $tokoid = Toko::find($id)->toArray();
+        $kata = 'Selamat, Toko Anda yang bernama ' . $tokoid['nama_toko']  . ' Telah Berhasil Terverifikasi';
+
+        
+        
+        $details = [
+            'title' => 'Selamat, Toko Anda Terverifikasi',
+            'body' => $kata,
+        ];
+       
+        Mail::to($tokoid['email'])->send(new \App\Mail\VerifTokoMail($details));
+
+
+        return redirect('/admin-home')->with('lolos-toko','Toko Lulus Legalitas');
+
+
+
+    }
 
 
 

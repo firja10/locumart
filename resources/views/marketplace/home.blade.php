@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/main.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/grid.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/responsive.css')}}" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css')}}"
@@ -27,6 +29,54 @@
 
 
     <style>
+
+
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
+
+
+
+
+
+
+
         * {box-sizing: border-box}
         /* body {font-family: Verdana, sans-serif; margin:0} */
         .mySlides {display: none}
@@ -485,12 +535,30 @@
               </div>
             </div>
 
+            <?php 
+            // $usercek = Auth::user();
+            // $usercek->hasVerifiedEmail();
+            // $usercek = Auth::hasVerifiedEmail();
+            ?>
 
-            @if(Auth::check())
-            <span style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> <b>{{Auth::user()->name}}</b></span>   
-           
-           <a style = "color:white;font-size:15px; margin-left:5px; text-decoration:none;"  href="{{ route('logout') }}" id = "keluar"  onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">Logout</a>
+            @if(Auth::check() && Auth::user()->hasVerifiedEmail() )
+        
+
+            <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">{{Auth::user()->name}}
+                &nbsp;
+                <i class = "fa fa-chevron-down" ></i>
+              </button>
+              
+              <div id="myDropdown" class="dropdown-content">
+               
+                @if(Auth::user()->is_admin == 1)
+                <a href="{{url('/admin-home')}}"> Admin Page</a>
+                @endif
+                <a  href="{{ route('logout') }}" id = "keluar"  onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">Logout</a>
+              </div>
+            </div>
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
   @csrf
@@ -1178,6 +1246,25 @@
 
 
 
+    </script>
+    <script>
+      function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
     </script>
 
 

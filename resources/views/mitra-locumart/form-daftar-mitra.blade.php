@@ -30,21 +30,32 @@
 
 
       @php
-
-        $data = DB::table('tokos')->where('user_id',$mitra->user_id)->count();
+      
+        $user_id = Auth::user()->id;
+      
+        $data = DB::table('tokos')->where('user_id',$user_id)->count();
+        $datas = DB::table('tokos')->where('user_id',$user_id);
+        $datass = $datas->where('legal_id',1)->count();
+        // $datadua = $datas->where('legal_id', 1)->first();
         $alamat_perusahaan = $mitra->lokasi_toko;
         $nama_usaha = $mitra->nama_toko;
         $kategori_usaha = $mitra->kategori_usaha;
         $nomor_rekening = $mitra->nomor_rekening;
         $jenis_bank = $mitra->jenis_bank;
         $user_id = $mitra->user_id;
+        $legal_id = $mitra->legal_id;
       @endphp
 
-       @if($alamat_perusahaan != NULL || $nama_usaha !=NULL || $kategori_usaha !=NULL || $nomor_rekening !=NULL || $jenis_bank !=NULL || $data >= 1)
+       {{-- @if($data >= 1) --}}
+
         
    
-        <div class="col-12" style = "justify-content: center; margin-top:15px;">
-
+    
+        
+          @if($data >= 1 && $datass== 1)
+          
+          <div class="col-12" style = "justify-content: center; margin-top:15px;">
+   
             <center>
               <div style = "margin-top:20px;" class = " p-3 mb-2 bg-success ">
                 <h2 style = "color:white;">Anda Telah Terdaftar Sebagai Mitra</h2>
@@ -52,16 +63,29 @@
 
               <a href="{{url('/pemilik/riwayat-toko')}}" class="btn btn-primary" style = "margin-top:30px;" > Silakan Kunjungi Toko Anda</a>
             </center>
-        
+          </div>
+          
+              
+          @elseif($data >= 1 && $datass == NULL)
+     
+          <div class="col-12" style = "justify-content: center; margin-top:15px;">
+          <center>
+            <div style = "margin-top:20px;" class = " p-3 mb-2 bg-warning ">
+              <h2 style = "color:white;">Silakan Tunggu Konfirmasi dari Admin</h2>
+          </div>
+
+            <p style = "color:#2c3764ff"> Admin akan mengirimkan konfirmasi melalui Email bahwa anda terdaftar sebagai Mitra </p>
+          
+          </center>
            </div>
 
 
 
 
        
-       @elseif($alamat_perusahaan == NULL || $nama_usaha ==NULL || $kategori_usaha ==NULL || $nomor_rekening ==NULL || $jenis_bank ==NULL || $data == NULL)   
+       @elseif($data == NULL || $data == 0)   
    
-       <h2><?php echo $data  ?></h2>
+
            <br>
 
       <form action="{{route('daftarmitratoko')}}" method="post" enctype="multipart/form-data" >

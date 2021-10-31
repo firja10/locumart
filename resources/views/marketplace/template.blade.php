@@ -31,6 +31,22 @@
 
 
     <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         * {box-sizing: border-box}
         /* body {font-family: Verdana, sans-serif; margin:0} */
         .mySlides {display: none}
@@ -386,12 +402,24 @@
               </div>
             </div>
 
+            @if(Auth::check() && Auth::user()->hasVerifiedEmail() )
 
-            @if(Auth::check())
-            <span style = "color:white;font-size:15px; margin-right:5px; text-decoration:none;"> <b>{{Auth::user()->name}}</b></span>   
-           
-           <a style = "color:white;font-size:15px; margin-left:5px; text-decoration:none;"  href="{{ route('logout') }}" id = "keluar"  onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">Logout</a>
+
+            <div class="dropdown">
+              <button style = "font-size:15px;" class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{Auth::user()->name}}
+                &nbsp;
+               
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                @if(Auth::user()->is_admin == 1)
+                <a href="{{url('/admin-home')}}" class = "dropdown-item"> Admin Page</a>
+                @endif
+                <a  href="{{ route('logout') }}" id = "keluar"  onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();" class = "dropdown-item">Logout</a>
+              </div>
+            </div>
+
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
   @csrf

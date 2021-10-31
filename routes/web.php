@@ -21,9 +21,13 @@ use App\Http\Controllers\ProdukController;
 //     return view('welcome');
 // });
 
-// Route::get('/', function () {
-//     return view('marketplace.dashboard');
-// });
+Route::get('/template-admin', function () {
+    return view('admin.template');
+});
+
+Route::get('/admin-home', function () {
+    return view('marketplace.admin-home');
+});
 
 
 
@@ -73,9 +77,18 @@ Route::get('/daftar-produk',[LandingController::class,'daftarprodukberanda'])->n
 //     return view('marketplace.home');
 // });
 
-Route::get('/home',[LandingController::class,'home'])->name('home');
-
 Route::get('/',[LandingController::class,'landing'])->name('landing');
+
+Auth::routes(['verify' => true]);
+
+Route::get('/admin-home', [LandingController::class,'daftartoko'])->name('daftartoko')->middleware('is_admin');
+Route::patch('/admin-home/{id}', [LandingController::class,'veriftoko'])->name('veriftoko')->middleware('is_admin');
+
+
+
+Route::get('/home',[LandingController::class,'home'])->name('home')->middleware('verified');
+
+
 Route::get('/pemilik/riwayat-toko',[LandingController::class,'daftartokouser'])->name('daftartokouser')->middleware('auth');
 
 
@@ -181,7 +194,7 @@ Route::get('/tentang-locumart/partnership', function () {
 
 Route::get('/mitra-locumart/home', function () {
     return view('mitra-locumart/home');
-})->middleware('auth');
+})->middleware('verified');
 
 Route::get('/mitra-locumart/mulai-berjualan', function () {
     return view('mitra-locumart/mulai-berjualan');
@@ -199,15 +212,18 @@ Route::get('/mitra-locumart/survey', function () {
     return view('mitra-locumart/survey');
 });
 
-Route::get('/login', function () {
-    return view('pages/auth/login');
-});
+// Route::get('/login', function () {
+//     return view('pages/auth/login');
+// });
 
-Route::get('/register', function () {
-    return view('pages/auth/register');
-});
+// Route::get('/register', function () {
+//     return view('pages/auth/register');
+// });
 
-Auth::routes();
+
+
+
+// Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
