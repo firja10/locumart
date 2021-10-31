@@ -212,30 +212,39 @@ Route::get('/tentang-locumart/partnership', [LandingController::class],'tentangp
 
 
 
+// Route::get('/mitra-locumart/mulai-berjualan', function () {
+//     return view('mitra-locumart/mulai-berjualan');
+// });
 
 
+// Route::get('/mitra-locumart/business-upgrading', function () {
+//     return view('mitra-locumart/business-upgrading');
+// });
 
+// Route::get('/mitra-locumart/crowdfunding', function () {
+//     return view('mitra-locumart/crowdfunding');
+// });
 
-
+// Route::get('/mitra-locumart/survey', function () {
+//     return view('mitra-locumart/survey');
+// });
 
 
 Route::get('/mitra-locumart/home', [LandingController::class,'mitrahome'])->name('mitrahome')->middleware('auth');
 
-Route::get('/mitra-locumart/mulai-berjualan', function () {
-    return view('mitra-locumart/mulai-berjualan');
-});
+Route::get('/mitra-locumart/mulai-berjualan', [LandingController::class,'mitrajualan'])->name('mitrajualan')->middleware('auth');
 
-Route::get('/mitra-locumart/business-upgrading', function () {
-    return view('mitra-locumart/business-upgrading');
-});
+Route::get('/mitra-locumart/crowdfunding', [LandingController::class,'mitracrowd'])->name('mitracrowd')->middleware('auth');
 
-Route::get('/mitra-locumart/crowdfunding', function () {
-    return view('mitra-locumart/crowdfunding');
-});
+Route::get('/mitra-locumart/survey', [LandingController::class,'mitrasurvey'])->name('mitrasurvey')->middleware('auth');
 
-Route::get('/mitra-locumart/survey', function () {
-    return view('mitra-locumart/survey');
-});
+
+
+
+
+
+
+
 
 // Route::get('/login', function () {
 //     return view('pages/auth/login');

@@ -1225,6 +1225,20 @@ class LandingController extends Controller
         return view('/tentang-locumart/nilai-unggul');
     }
 
+    public function tentangmedia()
+    {
+        # code...
+        return view('/tentang-locumart/media-locumart');
+    }
+
+
+    public function tentangpartner()
+    {
+        # code...
+        return view('/tentang-locumart/partnership');
+    }
+
+
 
 
 
@@ -1241,6 +1255,31 @@ class LandingController extends Controller
 
         return view('/mitra-locumart/home');
 
+    }
+
+
+
+    public function mitrajualan()
+    {
+        # code...
+
+        return view('/mitra-locumart/mulai-berjualan');
+
+    }
+
+
+    public function mitracrowd()
+    {
+        # code...
+        return view('/mitra-locumart/crowdfunding');
+    }
+
+
+    
+    public function mitrasurvey()
+    {
+        # code...
+        return view('/mitra-locumart/survey');
     }
 
 
