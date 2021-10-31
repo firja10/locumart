@@ -178,7 +178,7 @@ Route::delete('pemilik/daftar-produk/{id}',[LandingController::class,'hapusprodu
 
 Route::get('/tentang-locumart/deskripsi', function () {
     return view('tentang-locumart/deskripsi');
-});
+})->middleware('auth');
 
 Route::get('/tentang-locumart/nilai-unggul', function () {
     return view('tentang-locumart/nilai-unggul');
