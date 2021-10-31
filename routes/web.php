@@ -192,7 +192,7 @@ Route::get('/tentang-locumart/partnership', function () {
     return view('tentang-locumart/partnership');
 });
 
-Route::get('/mitra-locumart/home', [LandingController::class,'mitrahome'])->name('mitrahome')->middleware('verified');
+Route::get('/mitra-locumart/home', [LandingController::class,'mitrahome'])->name('mitrahome')->middleware('auth');
 
 Route::get('/mitra-locumart/mulai-berjualan', function () {
     return view('mitra-locumart/mulai-berjualan');
