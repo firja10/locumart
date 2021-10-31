@@ -1209,6 +1209,16 @@ class LandingController extends Controller
 
 
 
+    public function mitrahome()
+    {
+        # code...
+
+        return view('/mitra-locumart/home');
+
+    }
+
+
+
 
 
 
