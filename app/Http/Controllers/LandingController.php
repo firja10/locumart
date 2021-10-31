@@ -1212,7 +1212,11 @@ class LandingController extends Controller
 
 
 
-
+    public function tentangdesc()
+    {
+        # code...
+        return view('/tentang-locumart/deskripsi');
+    }
 
 
 
