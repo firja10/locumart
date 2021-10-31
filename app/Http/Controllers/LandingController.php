@@ -46,7 +46,7 @@ class LandingController extends Controller
     public function daftartokouser()
     {
         # code...
-        $user_id = Auth::id();
+        $user_id = Auth::user()->id;
         // $toko = DB::table('tokos')->where('user_id', $user_id)->get();
                 $toko = DB::table('tokos')->where('user_id', $user_id)->paginate(1);
         return view('marketplace.pemilik.riwayat-toko', compact('user_id','toko'));
@@ -1046,6 +1046,129 @@ class LandingController extends Controller
 
 
 
+
+    public function edittoko(Toko $tokos, $id)
+    {
+        //
+        $tokos = Toko::findOrFail($id);
+        return view('marketplace.pemilik.edit-toko',compact('tokos'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    public function updatetoko(Request $request, Toko $toko, $id)
+    {
+        //
+        
+        if($request->hasFile('gambar_toko')){
+            $filename = $request["gambar_toko"]->getClientOriginalName();
+
+            if( Toko::find($id)->gambar_toko ){
+                Storage::delete('/public/storage/Toko/'.Toko::find($id)->gambar_toko);
+            }
+            $request["gambar_toko"]->storeAs('Toko', $filename, 'public');
+        }else{
+            $filename=Toko::find($id)->gambar_toko;
+        }
+
+    $toko = Toko::where('id', $id)->update([
+
+            'gambar_toko' => $filename,
+            // 'gambar_toko' => $request['gambar_toko'],
+            'nama_toko' => $request['nama_toko'],
+            'lokasi_toko' => $request['lokasi_toko'],
+            'nomor_hp_toko' => $request['nomor_hp_toko'],
+            'deskripsi_toko'=> $request['deskripsi_toko'],
+            // 'rating_toko' => $request['rating_toko'],
+            'kategori_usaha' => $request['kategori_usaha'],
+            // 'alamat_perusahaan' => $request['alamat_perusahaan'],
+
+        ]);
+
+        return redirect('/pemilik/riwayat-toko')->with('sukses-update-toko','Toko Anda Sudah Berhasil diupdate');
+
+
+
+
+    }
+
+
+
+
+
+
+    public function updateprofil(Request $request, Toko $toko, $id)
+    {
+        //
+        
+        if($request->hasFile('gambar_toko')){
+            $filename = $request["gambar_toko"]->getClientOriginalName();
+
+            if( Toko::find($id)->gambar_toko ){
+                Storage::delete('/public/storage/Toko/'.Toko::find($id)->gambar_toko);
+            }
+            $request["gambar_toko"]->storeAs('Toko', $filename, 'public');
+        }else{
+            $filename=Toko::find($id)->gambar_toko;
+        }
+
+    $toko = Toko::where('id', $id)->update([
+
+            'name' => $request['name'],
+            'nomor_hp' => $request['nomor_hp'],
+            'jenis_kelamin' => $request['jenis_kelamin'],
+            'tempat_lahir' => $request['tempat_lahir'],
+            'tanggal_lahir' => $request['tanggal_lahir'],
+            'alamat' => $request['alamat'],
+            'nomor_rekening' => $request['nomor_rekening'],
+            'jenis_bank' => $request['jenis_bank'],
+
+
+        ]);
+
+        return redirect('/pemilik/riwayat-toko')->with('sukses-update-toko','Toko Anda Sudah Berhasil diupdate');
+
+
+
+
+    }
+
+
+
+
+    public function pesanansaya()
+    {
+        # code...
+
+        // $user_id = Auth::user()->id;
+        // $riwayat = DB::table('pemesanans')->where('user_id', $user_id)->get();
+        // return view('')
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 

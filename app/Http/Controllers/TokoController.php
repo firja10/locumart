@@ -128,7 +128,7 @@ class TokoController extends Controller
             'rating_toko' => $request['rating_toko'],
         ]);
 
-        return redirect('/pemilik/daftar-toko')->with('sukses-update-toko','Toko Anda Sudah Berhasil diupdate');
+        return redirect('/pemilik/riwayat-toko')->with('sukses-update-toko','Toko Anda Sudah Berhasil diupdate');
 
 
 

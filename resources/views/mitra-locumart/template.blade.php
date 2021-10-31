@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('marketplace/logo-locumart.png')}}" rel="icon">
-  <link href="{{asset('marketplace/logo-locumart.png')}}" rel="apple-touch-icon">
+  <link href="{{asset('logo-locumart.png')}}" rel="icon">
+  <link href="{{asset('logo-locumart.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -50,7 +50,32 @@
           <li><a href="{{url('/mitra-locumart/business-upgrading')}}">Business Upgrading</a></li>
           <li><a href="{{url('/mitra-locumart/crowdfunding')}}">Crowdfunding</a></li>
           <li><a href="{{url('/mitra-locumart/survey')}}">Survey</a></li>
+
+          @if(Auth::check())
+        
+          <li><a href="{{url('/')}}">
+          <?php
+            echo Auth::user()->name; 
+            ?>
+          </a></li>
+          <li>          <a style = "color:white;font-size:15px; margin-left:5px; text-decoration:none;"  href="{{ route('logout') }}" id = "keluar"  onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">Logout</a></li>
+
+
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+@csrf
+</form>
+              
+          @else
+
           <li style = "display: inline-flex"><a href="{{url('/login')}}">Masuk</a> <a href="">&nbsp; | &nbsp;</a>  <a href="{{url('/register')}}">Daftar</a> </li>
+          
+
+
+          
+          @endif
+
           {{-- <li style = "display: inline-flex"><a href="#contact">Masuk</a> <a href="">&nbsp; | &nbsp;</a>  <a href="">Daftar</a> </li> --}}
 
         </ul>

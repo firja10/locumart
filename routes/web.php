@@ -64,6 +64,7 @@ Route::get('/daftar-produk',[LandingController::class,'daftarprodukberanda'])->n
 
 
 
+
 // Route::get('/', function () {
 //     return view('marketplace.home');
 // });
@@ -101,6 +102,16 @@ Route::get('/home/searchkategori','App\Http\Controllers\LandingController@search
 // Halaman Pemilik 
 
 Route::resource('/pemilik/daftar-toko', TokoController::class)->middleware('auth');
+
+Route::patch('/pemilik/riwayat-toko/{id}/profil',[LandingController::class,'updateprofil'])->name('updateprofil')->middleware('auth');
+
+Route::patch('/pemilik/riwayat-toko/{id}/toko',[LandingController::class,'updatetoko'])->name('updatetoko')->middleware('auth');
+
+Route::get('/pemilik/riwayat-toko/{id}',[LandingController::class,'edittoko'])->name('edittoko')->middleware('auth');
+
+
+
+
 Route::resource('/pemilik/daftar-produk', ProdukController::class)->middleware('auth');
 Route::get('/pemilik/riwayat-toko',[LandingController::class,'daftartokouser'])->name('daftartokouser')->middleware('auth');
 Route::get('/pemilik/riwayat-produk/{id}',[LandingController::class,'daftarproduktoko'])->name('daftarproduktoko')->middleware('auth');

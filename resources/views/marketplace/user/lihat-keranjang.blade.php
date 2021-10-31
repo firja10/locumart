@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marketplace</title>
-    <link rel="shortcut icon" href="{{asset('marketplace/logo-locumart.png')}}" type="image/x-icon">
+    <title>Keranjang Pesanan Anda</title>
+    <link rel="shortcut icon" href="{{asset('logo-locumart.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/base.css')}}" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/main.css')}}" />
     <link rel="stylesheet" href="{{asset('shopeeclone/assets/css/grid.css')}}" />
@@ -155,9 +155,12 @@
 
             <ul class="header__navbar-list">
               <li
-                class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate"
+                class="header__navbar-item header__navbar-item--has-qr"
               >
-   Profil Anda
+              <strong>
+                Download Aplikasi Locumart
+              </strong>
+            
                 <!-- Header QR Code -->
                 <div class="header__qr">
                   <img
@@ -183,16 +186,7 @@
                   </div>
                 </div>
               </li>
-              <li class="header__navbar-item">
-                <span class="header__navbar-title--no-pointer">Sosial Media Anda</span>
-
-                <a href="" class="header__navbar-icon-link">
-                  <i class="header__navbar-icon fab fa-facebook"></i>
-                </a>
-                <a href="" class="header__navbar-icon-link">
-                  <i class="header__navbar-icon fab fa-instagram"></i>
-                </a>
-              </li>
+           
             </ul>
             <ul class="header__navbar-list">
               <li class="header__navbar-item">
@@ -218,46 +212,12 @@
                   Home
                 </a>
               </li>
-              <!-- <li
-                class="header__navbar-item header__navbar-item--strong header__navbar-item--separate"
-              >
-                Đăng ký
-              </li>
-              <li class="header__navbar-item header__navbar-item--strong">
-                Đăng Nhập
-              </li> -->
+          
 
 
 
 
 
-
-              {{-- <li class="header__navbar-item header__navbar-user">
-                <img
-                  src="./assets/img/user_avatar.png"
-                  alt=""
-                  class="header__navbar-user-img"
-                />
-                <span class="header__navbar-user-name">
-                  Tín Phạm
-                </span>
-                <ul class="header__navbar-user-menu">
-                  <li class="header__navbar-user-item">
-                    <a href="">Tài khoản của tôi</a>
-                  </li>
-                  <li class="header__navbar-user-item">
-                    <a href="">Địa chỉ của tôi</a>
-                  </li>
-                  <li class="header__navbar-user-item">
-                    <a href="">Đơn mua</a>
-                  </li>
-                  <li
-                    class="header__navbar-user-item header__navbar-user-item--separate"
-                  >
-                    <a href="">Đăng xuất</a>
-                  </li>
-                </ul>
-              </li> --}}
             </ul>
 
           
@@ -282,7 +242,7 @@
               <a href="/" class="header__logo-link">
 
                 <img
-                src="{{asset('marketplace/logo-locumart.png')}}"
+                src="{{asset('logo-locumart.png')}}"
                 alt="Logo Locumart"
                 class="header__logo-img" 
               />
@@ -357,7 +317,7 @@
                     class="header__cart-no-cart-img"
                   />
                   <span class="header__cart-list-no-cart-msg">
-                    Chưa có sản phẩm
+            
                   </span>
                   <!-- Hascart -->
                   <h4 class="header__cart-heading">Cek Keranjang</h4>
@@ -540,8 +500,29 @@
                         style="background-image:url({{asset('storage/Produk/'. $produks->gambar_produk)}});"
                       ></div>
                       <h4 class="home-product-item__name">
-                        {{$produks->nama_produk}}
+                        <strong>
+                          {{$produks->nama_produk}}
+                        </strong>
+
                       </h4>
+                   
+
+                      <center>
+                     
+                          @if ($produks->status_pembayaran == 0 || $produks->status_pembayaran == 1)
+                          <h5 style = "color:#df4759;  font-weight:700; font-size:15px;">
+                          Belum Dibayar
+                          </h5>
+                          @elseif($produks->status_pembayaran == 2 || $produks->status_pembayaran == 3)
+                          <h5 style = "color:	#42ba96 ; font-weight:700; font-size:15px;">
+                          Sudah Dibayar
+                         </h5>
+                          @endif
+                  
+                          
+                       
+                      </center>
+
                       <div class="home-product-item__price">
                         <span class="home-product-item__price-old"
                           >Rp. <?php echo $harga_sell;  ?></span
@@ -648,7 +629,7 @@
       <footer class="footer">
         <div class="grid wide footer__content">
           <div class="row">
-            <div class="col l-4-8 m-4 c-8">
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">LOCUMART PRESENT</h3>
               <span class="footer__text">Memberi Pelayanan Terbaik untuk Kita Semua</span>
               {{-- <ul class="footer-list">
@@ -673,7 +654,27 @@
             <div class="col l-2-4 m-4 c-6">
         
             </div>--}}
-            <div class="col l-4-8 m-4 c-8">
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
+              <h3 class="footer__heading">Pembayaran :</h3>
+              
+              <div 
+              {{-- style = "text-align: center" --}}
+              >
+                <img src="{{url('assets/pembayarans.png')}}" alt="" style = "width:150px;">
+              </div>
+              {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
+
+              <br>
+              <br>
+
+        
+
+            </div> 
+
+
+
+
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">Tentang Kami</h3>
 
               <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span>
@@ -681,43 +682,71 @@
             </div> 
 
 
-            <div class="col l-4-8 m-4 c-8">
+
+
+
+            
+
+
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">Sosial Media Kami</h3>
-              <ul class="footer-list">
-                <li class="footer-item">
+              <center>
+
+          
+              <ul class="footer-list" style = "text-align: center; display:flex; justify-content:center;">
+                <li class="footer-item" style = "display:inline-block; justify-content:center;" >
                   <a href="#" class="footer-item__link">
                     <i class="footer-item__icon fab fa-facebook-square"></i>
-                    Facebook</a
+                    {{-- Facebook --}}
+                    </a
                   >
                 </li>
-                <li class="footer-item">
+                <li class="footer-item" style = "display:inline-block;justify-content:center;">
                   <a href="#" class="footer-item__link">
                     <i class="footer-item__icon fab fa-instagram-square"></i>
-                    Instagram</a
+                    {{-- Instagram --}}
+                    </a
                   >
                 </li>
-                <li class="footer-item">
+                <li class="footer-item" style = "display:inline-block; justify-content:center;">
                   <a href="#" class="footer-item__link">
                     <i class="footer-item__icon fab fa-linkedin"></i>
-                    Linkedin</a
+                    {{-- Linkedin --}}
+                    </a
                   >
                 </li>
               </ul>
-
+            </center>
 
             </div>
+
+            <div class="col l-2-4 m-2 c-4" style = "text-align: center">
+              <h3 class="footer__heading">Pengantaran :</h3>
+
+              {{-- <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span> --}}
+              <div 
+              {{-- style = "text-align: center" --}}
+              >
+                <img src="{{url('assets/pengantarans.png')}}" alt="" style = "width:150px;">
+              </div>
+            </div> 
+
+
+
 
 
           </div>
         </div>
-        <div class="footer__bottom" style = "background-color:#972A29;">
+        <div class="footer__bottom" style = "background-color:#E4C752">
           <div class="grid wide">
-            <p class="footer__text" style = "color:white;">
+            <p class="footer__text" style = "color:#2C3764;">
             <b>© 2021 Locumart PRESENT</b>  
             </p>
           </div>
         </div>
       </footer>
+
+
 
       <!-- Modal Layout -->
       <!-- <div class="modal">

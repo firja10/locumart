@@ -21,7 +21,7 @@
     <div class="card-header text-center">
       {{-- <a href="{{asset('adminlte/index2.html')}}" class="h1"><b>Admin</b>LTE</a> --}}
       <a href="{{url('/register')}}" class="h1">
-        <img src="{{asset('marketplace/logo-locumart.png')}}" alt="" style = "width:20%;">
+        <img src="{{asset('logo-locumart.png')}}" alt="" style = "width:20%;">
     </a>
 
     </div>
