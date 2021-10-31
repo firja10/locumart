@@ -1219,6 +1219,13 @@ class LandingController extends Controller
     }
 
 
+    public function tentangunggul()
+    {
+        # code...
+        return view('/tentang-locumart/nilai-unggul');
+    }
+
+
 
 
 

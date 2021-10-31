@@ -181,22 +181,43 @@ Route::delete('pemilik/daftar-produk/{id}',[LandingController::class,'hapusprodu
 // })->middleware('auth');
 
 
-Route::get('/tentang-locumart/home', [LandingController::class,'tentangdesc'])->name('tentangdesc')->middleware('auth');
+// Route::get('/tentang-locumart/nilai-unggul', function () {
+//     return view('tentang-locumart/nilai-unggul');
+// });
+
+
+
+// Route::get('/tentang-locumart/media-locu', function () {
+//     return view('tentang-locumart/media-locu');
+// });
+
+// Route::get('/tentang-locumart/partnership', function () {
+//     return view('tentang-locumart/partnership');
+// });
 
 
 
 
-Route::get('/tentang-locumart/nilai-unggul', function () {
-    return view('tentang-locumart/nilai-unggul');
-});
+Route::get('/tentang-locumart/deskripsi', [LandingController::class,'tentangdesc'])->name('tentangdesc')->middleware('auth');
 
-Route::get('/tentang-locumart/media-locu', function () {
-    return view('tentang-locumart/media-locu');
-});
 
-Route::get('/tentang-locumart/partnership', function () {
-    return view('tentang-locumart/partnership');
-});
+Route::get('/tentang-locumart/nilai-unggul', [LandingController::class],'tentangunggul')->name('tentangunggul')->middleware('auth');
+
+
+Route::get('/tentang-locumart/media-locu', [LandingController::class],'tentangmedia')->name('tentangmedia')->middleware('auth');
+
+
+Route::get('/tentang-locumart/partnership', [LandingController::class],'tentangpartner')->name('tentangpartner')->middleware('auth');
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/mitra-locumart/home', [LandingController::class,'mitrahome'])->name('mitrahome')->middleware('auth');
 
