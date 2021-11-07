@@ -987,7 +987,7 @@
           <div class="row">
             <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">LOCUMART PRESENT</h3>
-              <span class="footer__text">Memberi Pelayanan Terbaik untuk Kita Semua</span>
+              <span class="footer__text">#solusiprodukkreatifnusantara</span>
               {{-- <ul class="footer-list">
                 <li class="footer-item">
                   <a href="#" class="footer-item__link">Trung Tâm Trợ Giúp</a>
@@ -1031,9 +1031,14 @@
 
 
             <div class="col l-2-4 m-2 c-4" style = "text-align: center">
-              <h3 class="footer__heading">Tentang Kami</h3>
-
-              <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Kota Tasikmalaya, Jawa Barat  </span>
+              <h3 class="footer__heading">Mitra Kami</h3>
+{{-- 
+              <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Kota Tasikmalaya, Jawa Barat  </span> --}}
+              <div 
+              {{-- style = "text-align: center" --}}
+              >
+                <img src="{{url('marketplace/mitra-pendukung.png')}}" alt="" style = "width:150px;">
+              </div>
 
             </div> 
 
