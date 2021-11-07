@@ -143,10 +143,17 @@
                 <br>
           {{-- <input type="text" class="form-control" placeholder="Tempat Lahir" name = "tempat-lahir" id = "tempat-lahir"> --}}
             <select name="tempat_lahir" id="tempat_lahir" class = "form-control" >
-                <option value="" selected="true" disabled="disabled">-- Tempat Lahir --</option>
-                <option value="jakarta"> Jakarta </option>
-                <option value="tasikmalaya"> Tasikmalaya </option>
-            </select>
+             
+              {{-- <option value="" selected="true" disabled="disabled">-- Tempat Lahir --</option> --}}
+              
+              @foreach ($kota as $regency)
+              <option value="{{$regency->name}}"> {{$regency->name}}</option>
+              @endforeach
+
+    
+               
+            
+              </select>
 
           <div class="input-group-append">
             <div class="input-group-text">
@@ -177,7 +184,7 @@
 
 
     <div class="input-group mb-3">
-      <input type="file" class="form-control" placeholder="Pas Foto" name="foto">
+      <input type="file" class="form-control" placeholder="Gambar Toko" name="gambar_toko">
       <div class="input-group-append">
         <div class="input-group-text">
           <span class="fas fa-birthday-cake"></span>
@@ -222,7 +229,7 @@
     
     
             <div class="input-group col mb-3">
-              <input type="number" class="form-control" placeholder="Nomor Telepon Perusahaan" name="nomor_hp_toko">
+              <input type="number" class="form-control" placeholder="Nomor Telepon Perusahaan" name="nomor_hp_toko" value = "{{$mitra->nomor_hp_toko}}">
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-phone"></span>

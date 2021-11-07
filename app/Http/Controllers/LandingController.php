@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Toko;
 use App\Models\Produk;
+use App\Models\Regency;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -912,12 +913,13 @@ class LandingController extends Controller
         # code...
         $user_id = Auth::user()->id;
         $mitra = User::findOrFail($user_id);
+        $kota = Regency::all();
 
        
         // $tokos = $toko::findOrFail($id);
         // $toko = Toko::where('user_id', $user_id)->first();
     
-        return view('mitra-locumart.form-daftar-mitra',compact('mitra'));
+        return view('mitra-locumart.form-daftar-mitra',compact('mitra','kota'));
     }
 
 

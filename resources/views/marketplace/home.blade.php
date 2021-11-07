@@ -744,7 +744,7 @@
                                       {{-- <a href="" onclick="openKategori('Makanan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p style="color:#fff;font-size:13px;" >Makanan</p> </a>  
                                        --}}
                                       <input type="hidden" name="kategori" value = "Makanan">
-                                       <button class = "tombol" type = "submit" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px; padding-top:8px; "> <p  style="color:black;font-size:13px;" >Makanan</p> </button>  
+                                       <button class = "tombol" type = "submit" style = "text-decoration:none;"><img src="{{asset('marketplace/makanan-1.png')}}" alt="" style = "width:70px; padding-top:8px; "> <p  style="color:black;font-size:13px;" >Makanan</p> </button>  
                                   </form>
                                 </li>
 
@@ -754,7 +754,7 @@
                                       {{-- <a href="" onclick="openKategori('Kesenian')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"> <p style="color:#fff;font-size:13px;">Kesenian</p></a>  --}}
 
                                       <input type="hidden" name="kategori" value = "Kesenian">
-                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;padding-top:8px;"> <p style="color:black7;font-size:13px;">Kesenian</p></button> 
+                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/kesenian-1.png')}}" alt="" style = "width:70px;padding-top:8px;"> <p style="color:black7;font-size:13px;">Kesenian</p></button> 
                                     </form>
                                  </li>
 
@@ -764,7 +764,7 @@
                                   <form action="/home/searchkategori" method="GET">
                                       {{-- <a href="" onclick="openKategori('Kebutuhan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"><p style="color:#fff;font-size:13px;">Kebutuhan</p></a>   --}}
                                       <input type="hidden" name="kategori" value = "Kebutuhan">
-                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;padding-top:8px;"><p style="color:black;font-size:13px;">Kebutuhan</p></button>  
+                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/kebutuhan-1.png')}}" alt="" style = "width:70px;padding-top:8px;"><p style="color:black;font-size:13px;">Kebutuhan</p></button>  
 
                                   </form>
 
@@ -782,7 +782,11 @@
         <div class="col l-4" style = "margin:auto;">
                     <!-- Cart layout -->
                     <h2 style = "color:black; align-items: right" >Kategori</h2>
-                    <p style = "color:black">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                    <p style = "color:black">Subsektor unggulan berkaitan dengan
+                      perannya dalam pertumbuhan Ekonomi Kreatif
+                      yang mencakup subsektor kriya, kuliner, fashion.
+                      Ketiga subsektor ini menyumbang sekitar 76%
+                      PDB ekonomi kreatif. </p>
         
 
 
@@ -1029,7 +1033,7 @@
             <div class="col l-2-4 m-2 c-4" style = "text-align: center">
               <h3 class="footer__heading">Tentang Kami</h3>
 
-              <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Cibeureum, Kota Tasikmalaya, Jawa Barat  </span>
+              <span class="footer__text" style = "text-align:center;"> Alamat Kami : <br> Kota Tasikmalaya, Jawa Barat  </span>
 
             </div> 
 
