@@ -595,7 +595,8 @@
 
                             <div class="mySlides fade">
                               <div class="numbertext">1 / 3</div>
-                              <img src="{{asset('marketplace/produk-3.png')}}" alt="" style = "width:100%;" class = "gambar-slide">
+                              {{-- <img src="{{asset('marketplace/produk-3.png')}}" alt="" style = "width:100%;" class = "gambar-slide"> --}}
+                              <img src="{{asset('assets/slide1.jpeg')}}" alt="" style = "width:100%;" class = "gambar-slide">
                               <div class="text"> <b>Inilah Tawaran Kami</b> </div>
                             </div>
                             
