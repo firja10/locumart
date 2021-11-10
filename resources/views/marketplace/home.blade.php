@@ -641,10 +641,10 @@
 
                 <ul class="mobile-category__list">
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Makanan</a>
+                    <a href="#" class="mobile-category__link">Kuliner</a>
                   </li>
                   <li class="mobile-category__item">
-                    <a href="#" class="mobile-category__link">Kesehatan</a>
+                    <a href="#" class="mobile-category__link">Fashion</a>
                   </li>
                   <li class="mobile-category__item">
                     <a href="#" class="mobile-category__link">Pakaian</a>
@@ -699,7 +699,7 @@
                     <div class="col l-4" style = "margin-right:-150px;">
                     <div class="header__logo hide-on-tablet">
                       <a href="/" class="header__logo-link">
-                        <h1 style = "color:black;">KATEGORI</h1>
+                        <h1 style = "color:black;">LOCUMART</h1>
                       </a>
                     </div>
                 </div>
@@ -745,7 +745,7 @@
                                       {{-- <a href="" onclick="openKategori('Makanan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-1.png')}}" alt="" style = "width:70px;  "> <p style="color:#fff;font-size:13px;" >Makanan</p> </a>  
                                        --}}
                                       <input type="hidden" name="kategori" value = "Makanan">
-                                       <button class = "tombol" type = "submit" style = "text-decoration:none;"><img src="{{asset('marketplace/makanan-1.png')}}" alt="" style = "width:70px; padding-top:8px; "> <p  style="color:black;font-size:13px;" >Makanan</p> </button>  
+                                       <button class = "tombol" type = "submit" style = "text-decoration:none;"><img src="{{asset('marketplace/makanan-1.png')}}" alt="" style = "width:70px; padding-top:8px; "> <p  style="color:black;font-size:13px;" >Kuliner</p> </button>  
                                   </form>
                                 </li>
 
@@ -755,7 +755,7 @@
                                       {{-- <a href="" onclick="openKategori('Kesenian')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-2.png')}}" alt="" style = "width:70px;"> <p style="color:#fff;font-size:13px;">Kesenian</p></a>  --}}
 
                                       <input type="hidden" name="kategori" value = "Kesenian">
-                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/kesenian-1.png')}}" alt="" style = "width:70px;padding-top:8px;"> <p style="color:black7;font-size:13px;">Kesenian</p></button> 
+                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/kesenian-1.png')}}" alt="" style = "width:70px;padding-top:8px;"> <p style="color:black7;font-size:13px;">Fashion</p></button> 
                                     </form>
                                  </li>
 
@@ -765,7 +765,7 @@
                                   <form action="/home/searchkategori" method="GET">
                                       {{-- <a href="" onclick="openKategori('Kebutuhan')" style = "text-decoration:none;"><img src="{{asset('marketplace/pilihan-3.png')}}" alt="" style = "width:70px;"><p style="color:#fff;font-size:13px;">Kebutuhan</p></a>   --}}
                                       <input type="hidden" name="kategori" value = "Kebutuhan">
-                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/kebutuhan-1.png')}}" alt="" style = "width:70px;padding-top:8px;"><p style="color:black;font-size:13px;">Kebutuhan</p></button>  
+                                      <button  class = "tombol" type = "submit"  style = "text-decoration:none;"><img src="{{asset('marketplace/kebutuhan-1.png')}}" alt="" style = "width:70px;padding-top:8px;"><p style="color:black;font-size:13px;">Kriya</p></button>  
 
                                   </form>
 
