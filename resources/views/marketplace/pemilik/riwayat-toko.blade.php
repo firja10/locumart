@@ -463,9 +463,11 @@ font-size: 15px;
 </div>
 
 <div id="tambah_produk" class="tabcontent" style = "background-color: #FBE177; padding:40px;">
- 
-  <table>
+  <form method = "POST" enctype = "multipart/form-data" action = "{{route('daftar-produk.store')}}"  >
+    @csrf
+    <table>
     
+  
     <tbody>
       <tr>
         <td style = "padding:15px; text-align:left;"> 
@@ -477,10 +479,10 @@ font-size: 15px;
           <input type="file" class = "form-control" placeholder = "Ganti Gambar" > --}}
 
 
-          <form>
+  
             <div class="form-group">
               <label for="exampleInputEmail1">Nama Produk</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mama Produk" style = "background-color: #FBE177; border-color:#2C3764; font-size:10px; font-weight:bold;" name = "nama_produk">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nama Produk" style = "background-color: #FBE177; border-color:#2C3764; font-size:10px; font-weight:bold;" name = "nama_produk">
               
             </div>
 
@@ -503,16 +505,13 @@ font-size: 15px;
               <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Harga Jual Produk" style = "background-color: #FBE177; border-color:#2C3764 ; font-size:10px; font-weight:bold;" name = "harga_jual">  
             </div>
 
-            
 
-
-          </form>
 
         </td>
 
 
         <td style = "padding:15px; text-align:left;"> 
-          <form>
+
             <div class="form-group">
               <label for="exampleInputPassword1">Harga Diskon</label>
               <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Harga Diskon Produk" style = "background-color: #FBE177; border-color:#2C3764; font-size:10px; font-weight:bold; "  name = "harga_diskon" >
@@ -532,7 +531,7 @@ font-size: 15px;
 
    
  
-          </form>
+
 
         </td>
 
@@ -568,9 +567,11 @@ font-size: 15px;
       
     </tbody>
 
+
 </table>
 <center>
-  <button class = "btn" id = "tombol-submit"> Tambah Produk </button>
+  <button class = "btn" id = "tombol-submit" type="submit"> Tambah Produk </button>
+</form>
 </center>
 
 

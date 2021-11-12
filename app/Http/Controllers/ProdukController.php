@@ -71,7 +71,8 @@ class ProdukController extends Controller
         $data->rating_produk = $request['rating_produk'];
         
         $data->save();
-        return redirect('pemilik/riwayat-produk/'.$request['toko_id'])->with('store-produk','Produk Berhasil Ditambahkan');
+        // return redirect('pemilik/riwayat-produk/'.$request['toko_id'])->with('store-produk','Produk Berhasil Ditambahkan');
+        return redirect('pemilik/riwayat-toko')->with('store-produk','Produk Berhasil Ditambahkan');
 
 
     }

@@ -20,6 +20,56 @@ class LandingController extends Controller
 {
     //
 
+
+    public function produkbaru(Request $request)
+    {
+        //
+        $data = new Produk;
+        if($request->hasFile('gambar_produk'))
+        {
+
+                $filename = $request['gambar_produk']->getClientOriginalName();
+
+                if($data->gambar_produk)
+                {
+                    Storage::delete('/public/storage/Produk/'.$filename);
+                }
+
+                $request['gambar_produk']->storeAs('Produk',$filename,'public');
+        }
+
+        else {
+            $filename = $data->gambar_produk;
+        }
+
+
+        $data->gambar_produk = $filename;
+        $data->nama_produk = $request['nama_produk'];
+        $data->harga_jual = $request['harga_jual'];
+        $data->harga_diskon = $request['harga_diskon'];
+        $data->deskripsi_produk = $request['deskripsi_produk'];
+        $data->kategori = $request['kategori'];
+        $data->stok_terjual = $request['stok_terjual'];
+        $data->stok_sisa = $request['stok_sisa'];
+        $data->rating_produk = $request['rating_produk'];
+        
+        $data->save();
+        return redirect('pemilik/riwayat-toko')->with('store-produk','Produk Berhasil Ditambahkan');
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     public function daftarprodukberanda()
     {
         # code...
