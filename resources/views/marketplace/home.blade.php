@@ -886,7 +886,7 @@
                           <div class="home-product-item__sold">Rating Pelanggan</div>
                         </div>
                         <div class="home-product-item__origin">
-                          <span class="home-product-item__brand">Whoo</span>
+                          <span class="home-product-item__brand">{{$item->nama_toko}}</span>
                           <span class="home-product-item__origin-name"
                             >{{$item->stok_terjual}} Terjual</span
                           >
@@ -897,7 +897,20 @@
                         </div>
                         <div class="home-product-item__sale-off">
                           <span class="home-product-item__sale-off-percent"
-                            >43%</span
+                            >
+                            <?php 
+                            
+                            $diskon = $item->harga_diskon;
+                            $jual = $item->harga_jual;
+                            $total = ($jual - $diskon)/$jual;
+                            $hasil = 100*$total;
+
+                            // echo $hasil . '%';
+                            echo round($hasil,2) . '%';
+                            ?>
+
+                            
+                            </span
                           >
                           <span class="home-product-item__sale-off-label"
                             >OFF</span

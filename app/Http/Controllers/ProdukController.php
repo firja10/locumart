@@ -70,9 +70,15 @@ class ProdukController extends Controller
         $data->stok_sisa = $request['stok_sisa'];
         $data->rating_produk = $request['rating_produk'];
         
+        $data->gambar_produk1 = $request['gambar_produk1'];
+        $data->gambar_produk2 = $request['gambar_produk2'];
+
+        $data->nama_toko = $request['nama_toko'];
+ 
         $data->save();
         // return redirect('pemilik/riwayat-produk/'.$request['toko_id'])->with('store-produk','Produk Berhasil Ditambahkan');
-        return redirect('pemilik/riwayat-toko')->with('store-produk','Produk Berhasil Ditambahkan');
+        // return redirect('pemilik/riwayat-toko')->with('store-produk','Produk Berhasil Ditambahkan');
+        return redirect('/')->with('store-produk','Produk Berhasil Ditambahkan');
 
 
     }
@@ -130,8 +136,8 @@ class ProdukController extends Controller
 
             'gambar_produk' => $filename,
             // 'gambar_produk' => $request['gambar_produk'],
-            'nama_toko' => $request['nama_toko'],
-            'lokasi_toko' => $request['lokasi_toko'],
+            'gambar_produk1' => $request['gambar_produk1'],
+            'gambar_produk2' => $request['gambar_produk2'],
             'nomor_hp_toko' => $request['nomor_hp_toko'],
             'rating_toko' => $request['rating_toko'],
         ]);

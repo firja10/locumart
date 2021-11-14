@@ -539,16 +539,33 @@ font-size: 15px;
          
           
 
-          <div class="form-group">
+          {{-- <div class="form-group">
             <h3> <img src="{{asset('keranjang.png')}}" alt="" style = "width:120px;"></h3>
            </div>
- 
+  --}}
  
           <div class="form-group">
-               <label for="exampleInputPassword1">Foto Produk</label>
+               <label for="exampleInputPassword1">Foto Produk 1</label>
                <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Foto Produk" style = "background-color: #FBE177; border-color:#2C3764; font-size:10px; font-weight:bold; width:110%;" name = "gambar_produk">
               
              </div>
+
+             <div class="form-group">
+              <label for="exampleInputPassword1">Foto Produk 2</label>
+              <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Foto Produk" style = "background-color: #FBE177; border-color:#2C3764; font-size:10px; font-weight:bold; width:110%;" name = "gambar_produk1">
+             
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Foto Produk 3</label>
+              <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Foto Produk" style = "background-color: #FBE177; border-color:#2C3764; font-size:10px; font-weight:bold; width:110%;" name = "gambar_produk2">
+             
+            </div>
+
+ 
+              <input type="hidden" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Foto Produk" style = "background-color: #FBE177; border-color:#2C3764; font-size:10px; font-weight:bold; width:110%;" name = "nama_toko" value = "{{$tokos->nama_toko}}">
+             
+ 
 
 
          
